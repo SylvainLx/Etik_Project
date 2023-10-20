@@ -53,6 +53,7 @@
 		EB30B1982AE285F800B75A21 /* TextFieldProfil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldProfil.swift; sourceTree = "<group>"; };
 		EB30B19A2AE2860200B75A21 /* CardCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollection.swift; sourceTree = "<group>"; };
 		EB30B19C2AE2860800B75A21 /* CardProduit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardProduit.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +86,7 @@
 		A9D565432AE2814100085CE2 /* EtiK_AFP */ = {
 			isa = PBXGroup;
 			children = (
+				EB30B1A02AE288AE00B75A21 /* EtiK-AFP-Info.plist */,
 				A9D565522AE2820D00085CE2 /* App */,
 				A9D565532AE2821300085CE2 /* View */,
 				A9D565542AE2821F00085CE2 /* Model */,
@@ -390,6 +392,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"EtiK_AFP/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EtiK-AFP-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -418,6 +421,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"EtiK_AFP/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EtiK-AFP-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
