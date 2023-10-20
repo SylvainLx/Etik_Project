@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct CardCategorie: View {
+    
+    @State var categorie:String
+    @State var image:String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+             
+            ZStack {
+                
+                SmallCard()
+                    .foregroundColor(.beige)
+                
+                Image(systemName: image)
+                    .font(.system(size: 50))
+                    .foregroundColor(.white)
+                 
+            }
+            
+            
+            Text(categorie)
+                .font(.custom("Italiana", size: 20))
+            
+        }
     }
 }
 
 #Preview {
-    CardCategorie()
+    CardCategorie(categorie: "Vegan", image: "pawprint")
 }

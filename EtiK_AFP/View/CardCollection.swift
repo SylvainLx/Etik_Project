@@ -9,10 +9,7 @@ import SwiftUI
 
 struct CardCollection: View {
     var body: some View {
-        
-        
-        NavigationStack {
-            
+         
             VStack {
                  
                 ZStack(alignment: .bottom) {
@@ -35,11 +32,7 @@ struct CardCollection: View {
                     .font(.custom("LibreFranklin", size: 10))
                     .foregroundStyle(.gray)
             }
-            
-        }
-        
-        
-        
+         
     }
 }
 

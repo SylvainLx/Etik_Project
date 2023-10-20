@@ -68,7 +68,7 @@ struct DetailProduit: View {
                     PiluleLabel(label: "🐼")
                     PiluleLabel(label: "🇫🇷")
                     PiluleLabel(label: "🌸")
-                    PiluleLabel(label: "🤲🏻")
+                    PiluleLabel(label: "🤲🏾")
                 }.padding(.bottom)
                 
             }.padding(.horizontal)

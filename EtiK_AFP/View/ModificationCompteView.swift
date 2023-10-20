@@ -9,7 +9,18 @@ import SwiftUI
 
 struct ModificationCompteView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        
+        ZStack {
+            Circle()
+                .foregroundColor(.beige)
+            Image()
+                .resizable()
+                .frame(width: 200)
+                .padding(.top, 350)
+        }.edgesIgnoringSafeArea(.all)
+        
+        
     }
 }
 

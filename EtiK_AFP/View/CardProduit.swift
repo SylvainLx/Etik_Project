@@ -13,9 +13,7 @@ struct CardProduit: View {
     @State var prix:Double = 80
     
     var body: some View {
-        
-        NavigationStack {
-           
+         
                 VStack {
                      
                     ZStack(alignment: .bottom) {
@@ -46,7 +44,6 @@ struct CardProduit: View {
                     .foregroundStyle(.gray)
             }
             
-        }
     }
 }
 
