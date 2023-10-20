@@ -12,6 +12,7 @@ struct CreationView: View {
         
         
         VStack {
+            
             HStack {
                 Image(systemName: "paperplane")
                     .font(.custom("Italianno", size: 20))
@@ -22,16 +23,13 @@ struct CreationView: View {
                 Image(systemName: "bell")
                     .font(.custom("Italianno", size: 20))
             }.padding(.horizontal)
-            
-        Spacer()
-            
-            CardProduit()
-            CardCollection()
-            
-            
-            
+             
+            HStack {
+                CardCollection()
+                CardCollection()
+                CardCollection()
+            }
         }
-         
     }
 }
 

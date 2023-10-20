@@ -17,9 +17,7 @@ struct CardProduit: View {
         NavigationStack {
            
                 VStack {
-                    
-                    NavigationLink(destination: DetailProduit()) {
-                    
+                     
                     ZStack(alignment: .bottom) {
                         
                         SmallCard()
@@ -39,7 +37,7 @@ struct CardProduit: View {
                             .padding(.bottom, 30)
                             .shadow(radius: 5)
                     }
-                }
+                 
                  
                 Text(titre)
                     .font(.custom("Italiana", size: 20))

@@ -41,7 +41,7 @@ struct DetailProduit: View {
                                         .scaledToFit()
                                         .frame(width: 350)
                                         .padding(.bottom, 50)
-                                        .shadow(radius: 5)
+                                        .shadow(radius: 2)
                                         .containerRelativeFrame(.horizontal)
                                         .scrollTransition(.animated) { content, phase in
                                             content
@@ -60,6 +60,8 @@ struct DetailProduit: View {
                         .font(.system(size: 20))
                         .fontWeight(.bold)
                         .padding(.bottom, 8)
+                        .foregroundColor(.white)
+                        .shadow(radius: 2)
                 }.frame(width: 350, height: 320)
                 
                 HStack {
