@@ -22,6 +22,11 @@
 		A9D5656D2AE2829200085CE2 /* Italiana.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656A2AE2829200085CE2 /* Italiana.ttf */; };
 		A9D5656E2AE2829200085CE2 /* LibreFranklin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */; };
 		A9D5656F2AE2829200085CE2 /* Italianno.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656C2AE2829200085CE2 /* Italianno.ttf */; };
+		CACC4EAC2AE2BA7F00DCBDCA /* chatbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC4EAB2AE2BA7F00DCBDCA /* chatbase.swift */; };
+		CACC4EAE2AE2BAD800DCBDCA /* chatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC4EAD2AE2BAD800DCBDCA /* chatRow.swift */; };
+		CACC4EB02AE2BB0900DCBDCA /* chatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC4EAF2AE2BB0900DCBDCA /* chatView.swift */; };
+		CACC4EB22AE2BB3500DCBDCA /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC4EB12AE2BB3500DCBDCA /* Date+Helpers.swift */; };
+		CACC4EB42AE2BBB000DCBDCA /* chatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC4EB32AE2BBB000DCBDCA /* chatModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		A9D5656A2AE2829200085CE2 /* Italiana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italiana.ttf; sourceTree = "<group>"; };
 		A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LibreFranklin.ttf; sourceTree = "<group>"; };
 		A9D5656C2AE2829200085CE2 /* Italianno.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italianno.ttf; sourceTree = "<group>"; };
+		CACC4EAB2AE2BA7F00DCBDCA /* chatbase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatbase.swift; sourceTree = "<group>"; };
+		CACC4EAD2AE2BAD800DCBDCA /* chatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = chatRow.swift; path = EtiK_AFP/View/chatRow.swift; sourceTree = SOURCE_ROOT; };
+		CACC4EAF2AE2BB0900DCBDCA /* chatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatView.swift; sourceTree = "<group>"; };
+		CACC4EB12AE2BB3500DCBDCA /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Helpers.swift"; path = "EtiK_AFP/View/Date+Helpers.swift"; sourceTree = SOURCE_ROOT; };
+		CACC4EB32AE2BBB000DCBDCA /* chatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = chatModel.swift; path = EtiK_AFP/View/chatModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				A9D565572AE2826300085CE2 /* LandingView.swift */,
+				CACC4EAB2AE2BA7F00DCBDCA /* chatbase.swift */,
 				A9D5655F2AE2827F00085CE2 /* CreationView.swift */,
 				A9D5655E2AE2827F00085CE2 /* DetailProduit.swift */,
 				A9D5655D2AE2827F00085CE2 /* EventView.swift */,
@@ -113,6 +124,7 @@
 				A9D5655A2AE2827F00085CE2 /* PanierView.swift */,
 				A9D5655B2AE2827F00085CE2 /* PiluleLabel.swift */,
 				A9D565602AE2827F00085CE2 /* ProfilView.swift */,
+				CACC4EAF2AE2BB0900DCBDCA /* chatView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +132,8 @@
 		A9D565542AE2821F00085CE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CACC4EAD2AE2BAD800DCBDCA /* chatRow.swift */,
+				CACC4EB32AE2BBB000DCBDCA /* chatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +148,7 @@
 		A9D565562AE2822B00085CE2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CACC4EB12AE2BB3500DCBDCA /* Date+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -228,9 +243,14 @@
 				A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */,
 				A9D565672AE2828000085CE2 /* CreationView.swift in Sources */,
 				A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */,
+				CACC4EB02AE2BB0900DCBDCA /* chatView.swift in Sources */,
 				A9D565642AE2828000085CE2 /* FavorisView.swift in Sources */,
+				CACC4EB42AE2BBB000DCBDCA /* chatModel.swift in Sources */,
+				CACC4EB22AE2BB3500DCBDCA /* Date+Helpers.swift in Sources */,
+				CACC4EAE2AE2BAD800DCBDCA /* chatRow.swift in Sources */,
 				A9D565632AE2828000085CE2 /* PiluleLabel.swift in Sources */,
 				A9D565612AE2828000085CE2 /* LargeButton.swift in Sources */,
+				CACC4EAC2AE2BA7F00DCBDCA /* chatbase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
