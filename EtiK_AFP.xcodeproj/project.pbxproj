@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67B185702AE2883500E9822B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B1856F2AE2883500E9822B /* LoginView.swift */; };
+		67B185722AE28CE200E9822B /* ModifCompteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B185712AE28CE200E9822B /* ModifCompteView.swift */; };
 		A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */; };
 		A9D565492AE2814300085CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D565482AE2814300085CE2 /* Assets.xcassets */; };
 		A9D5654C2AE2814300085CE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D5654B2AE2814300085CE2 /* Preview Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67B1856F2AE2883500E9822B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		67B185712AE28CE200E9822B /* ModifCompteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifCompteView.swift; sourceTree = "<group>"; };
 		A9D565412AE2814100085CE2 /* EtiK_AFP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtiK_AFP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtiK_AFPApp.swift; sourceTree = "<group>"; };
 		A9D565482AE2814300085CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,8 +139,14 @@
 				EB30B1A52AE2AC3900B75A21 /* CatalogueView.swift */,
 				A9D5655D2AE2827F00085CE2 /* EventView.swift */,
 				A9D5655C2AE2827F00085CE2 /* FavorisView.swift */,
+				67B185712AE28CE200E9822B /* ModifCompteView.swift */,
+				A9D565592AE2827E00085CE2 /* LargeButton.swift */,
+
 				A9D5655A2AE2827F00085CE2 /* PanierView.swift */,
 				A9D565602AE2827F00085CE2 /* ProfilView.swift */,
+
+				67B1856F2AE2883500E9822B /* LoginView.swift */,
+
 				C382A4032AE2865C00AA4C48 /* Searchtab.swift */,
 				C382A4052AE286B700AA4C48 /* CategorieCard.swift */,
 				C382A4072AE288BD00AA4C48 /* Thematiquecard.swift */,
@@ -272,6 +282,10 @@
 				A9D565672AE2828000085CE2 /* CreationView.swift in Sources */,
 				A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */,
 				A9D565642AE2828000085CE2 /* FavorisView.swift in Sources */,
+				67B185702AE2883500E9822B /* LoginView.swift in Sources */,
+				A9D565632AE2828000085CE2 /* PiluleLabel.swift in Sources */,
+				67B185722AE28CE200E9822B /* ModifCompteView.swift in Sources */,
+
 				EB30B1992AE285F800B75A21 /* TextFieldProfil.swift in Sources */,
 				EB30B1952AE285ED00B75A21 /* SmallButton.swift in Sources */,
 				A9D565632AE2828000085CE2 /* PiluleLabel.swift in Sources */,
@@ -279,6 +293,7 @@
 				EB30B1A42AE2A14E00B75A21 /* CardThematique.swift in Sources */,
 				EB30B19D2AE2860800B75A21 /* CardProduit.swift in Sources */,
 				EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */,
+
 				A9D565612AE2828000085CE2 /* LargeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
