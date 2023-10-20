@@ -24,6 +24,7 @@
 		A9D5656F2AE2829200085CE2 /* Italianno.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656C2AE2829200085CE2 /* Italianno.ttf */; };
 		C382A4042AE2865C00AA4C48 /* Searchtab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C382A4032AE2865C00AA4C48 /* Searchtab.swift */; };
 		C382A4062AE286B700AA4C48 /* CategorieCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C382A4052AE286B700AA4C48 /* CategorieCard.swift */; };
+		C382A4082AE288BD00AA4C48 /* Thematiquecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C382A4072AE288BD00AA4C48 /* Thematiquecard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		A9D5656C2AE2829200085CE2 /* Italianno.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italianno.ttf; sourceTree = "<group>"; };
 		C382A4032AE2865C00AA4C48 /* Searchtab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchtab.swift; sourceTree = "<group>"; };
 		C382A4052AE286B700AA4C48 /* CategorieCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieCard.swift; sourceTree = "<group>"; };
+		C382A4072AE288BD00AA4C48 /* Thematiquecard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thematiquecard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				A9D565602AE2827F00085CE2 /* ProfilView.swift */,
 				C382A4032AE2865C00AA4C48 /* Searchtab.swift */,
 				C382A4052AE286B700AA4C48 /* CategorieCard.swift */,
+				C382A4072AE288BD00AA4C48 /* Thematiquecard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				A9D565582AE2826300085CE2 /* LandingView.swift in Sources */,
 				C382A4062AE286B700AA4C48 /* CategorieCard.swift in Sources */,
 				A9D565652AE2828000085CE2 /* EventView.swift in Sources */,
+				C382A4082AE288BD00AA4C48 /* Thematiquecard.swift in Sources */,
 				A9D565622AE2828000085CE2 /* PanierView.swift in Sources */,
 				A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */,
 				C382A4042AE2865C00AA4C48 /* Searchtab.swift in Sources */,
