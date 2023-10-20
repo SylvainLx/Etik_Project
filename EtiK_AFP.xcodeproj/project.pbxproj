@@ -22,6 +22,12 @@
 		A9D5656D2AE2829200085CE2 /* Italiana.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656A2AE2829200085CE2 /* Italiana.ttf */; };
 		A9D5656E2AE2829200085CE2 /* LibreFranklin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */; };
 		A9D5656F2AE2829200085CE2 /* Italianno.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656C2AE2829200085CE2 /* Italianno.ttf */; };
+		A9D565762AE285EC00085CE2 /* CreateurFiltre.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565722AE285EC00085CE2 /* CreateurFiltre.swift */; };
+		A9D565772AE285EC00085CE2 /* SmallButtonToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565732AE285EC00085CE2 /* SmallButtonToggle.swift */; };
+		A9D565782AE285EC00085CE2 /* SmallCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565742AE285EC00085CE2 /* SmallCreator.swift */; };
+		A9D565792AE285ED00085CE2 /* SmallButtonDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565752AE285EC00085CE2 /* SmallButtonDestination.swift */; };
+		A9D5657C2AE285F800085CE2 /* FollowedCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5657A2AE285F800085CE2 /* FollowedCreatorView.swift */; };
+		A9D5657D2AE285F800085CE2 /* CreatorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5657B2AE285F800085CE2 /* CreatorDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +47,12 @@
 		A9D5656A2AE2829200085CE2 /* Italiana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italiana.ttf; sourceTree = "<group>"; };
 		A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LibreFranklin.ttf; sourceTree = "<group>"; };
 		A9D5656C2AE2829200085CE2 /* Italianno.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italianno.ttf; sourceTree = "<group>"; };
+		A9D565722AE285EC00085CE2 /* CreateurFiltre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateurFiltre.swift; sourceTree = "<group>"; };
+		A9D565732AE285EC00085CE2 /* SmallButtonToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallButtonToggle.swift; sourceTree = "<group>"; };
+		A9D565742AE285EC00085CE2 /* SmallCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallCreator.swift; sourceTree = "<group>"; };
+		A9D565752AE285EC00085CE2 /* SmallButtonDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallButtonDestination.swift; sourceTree = "<group>"; };
+		A9D5657A2AE285F800085CE2 /* FollowedCreatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowedCreatorView.swift; sourceTree = "<group>"; };
+		A9D5657B2AE285F800085CE2 /* CreatorDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,8 @@
 				A9D5655A2AE2827F00085CE2 /* PanierView.swift */,
 				A9D5655B2AE2827F00085CE2 /* PiluleLabel.swift */,
 				A9D565602AE2827F00085CE2 /* ProfilView.swift */,
+				A9D5657B2AE285F800085CE2 /* CreatorDetailView.swift */,
+				A9D5657A2AE285F800085CE2 /* FollowedCreatorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,6 +148,10 @@
 		A9D565562AE2822B00085CE2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A9D565722AE285EC00085CE2 /* CreateurFiltre.swift */,
+				A9D565752AE285EC00085CE2 /* SmallButtonDestination.swift */,
+				A9D565732AE285EC00085CE2 /* SmallButtonToggle.swift */,
+				A9D565742AE285EC00085CE2 /* SmallCreator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -221,15 +239,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D5657D2AE285F800085CE2 /* CreatorDetailView.swift in Sources */,
 				A9D565662AE2828000085CE2 /* DetailProduit.swift in Sources */,
 				A9D565582AE2826300085CE2 /* LandingView.swift in Sources */,
+				A9D565792AE285ED00085CE2 /* SmallButtonDestination.swift in Sources */,
 				A9D565652AE2828000085CE2 /* EventView.swift in Sources */,
+				A9D565782AE285EC00085CE2 /* SmallCreator.swift in Sources */,
 				A9D565622AE2828000085CE2 /* PanierView.swift in Sources */,
 				A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */,
+				A9D565772AE285EC00085CE2 /* SmallButtonToggle.swift in Sources */,
+				A9D565762AE285EC00085CE2 /* CreateurFiltre.swift in Sources */,
 				A9D565672AE2828000085CE2 /* CreationView.swift in Sources */,
 				A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */,
 				A9D565642AE2828000085CE2 /* FavorisView.swift in Sources */,
 				A9D565632AE2828000085CE2 /* PiluleLabel.swift in Sources */,
+				A9D5657C2AE285F800085CE2 /* FollowedCreatorView.swift in Sources */,
 				A9D565612AE2828000085CE2 /* LargeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
