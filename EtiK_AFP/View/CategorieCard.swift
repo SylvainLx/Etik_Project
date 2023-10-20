@@ -7,12 +7,22 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct CategorieCard: View {
+    @State var categories:String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width: 130, height: 80)
+                .padding(.top, 22)
+                .foregroundColor(.beige)
+            Image("madeinfrancecategory")
+        }
+        Text(categories)
+            .font(.custom("LibreFranklin", size: 13))
     }
 }
 
 #Preview {
-    SwiftUIView()
+    CategorieCard(categories: "Made in France 🇫🇷")
 }
