@@ -22,6 +22,12 @@
 		A9D5656D2AE2829200085CE2 /* Italiana.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656A2AE2829200085CE2 /* Italiana.ttf */; };
 		A9D5656E2AE2829200085CE2 /* LibreFranklin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */; };
 		A9D5656F2AE2829200085CE2 /* Italianno.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656C2AE2829200085CE2 /* Italianno.ttf */; };
+		EB30B1932AE285DB00B75A21 /* PiluleStatut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */; };
+		EB30B1952AE285ED00B75A21 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1942AE285ED00B75A21 /* SmallButton.swift */; };
+		EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1962AE285F300B75A21 /* SmallCard.swift */; };
+		EB30B1992AE285F800B75A21 /* TextFieldProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1982AE285F800B75A21 /* TextFieldProfil.swift */; };
+		EB30B19B2AE2860200B75A21 /* CardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B19A2AE2860200B75A21 /* CardCollection.swift */; };
+		EB30B19D2AE2860800B75A21 /* CardProduit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B19C2AE2860800B75A21 /* CardProduit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +47,13 @@
 		A9D5656A2AE2829200085CE2 /* Italiana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italiana.ttf; sourceTree = "<group>"; };
 		A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LibreFranklin.ttf; sourceTree = "<group>"; };
 		A9D5656C2AE2829200085CE2 /* Italianno.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italianno.ttf; sourceTree = "<group>"; };
-		EB30B1A02AE288AE00B75A21 /* EtiK-AFP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "EtiK-AFP-Info.plist"; sourceTree = SOURCE_ROOT; };
+		EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiluleStatut.swift; sourceTree = "<group>"; };
+		EB30B1942AE285ED00B75A21 /* SmallButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
+		EB30B1962AE285F300B75A21 /* SmallCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
+		EB30B1982AE285F800B75A21 /* TextFieldProfil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldProfil.swift; sourceTree = "<group>"; };
+		EB30B19A2AE2860200B75A21 /* CardCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollection.swift; sourceTree = "<group>"; };
+		EB30B19C2AE2860800B75A21 /* CardProduit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardProduit.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +123,10 @@
 				A9D5655E2AE2827F00085CE2 /* DetailProduit.swift */,
 				A9D5655D2AE2827F00085CE2 /* EventView.swift */,
 				A9D5655C2AE2827F00085CE2 /* FavorisView.swift */,
-				A9D565592AE2827E00085CE2 /* LargeButton.swift */,
 				A9D5655A2AE2827F00085CE2 /* PanierView.swift */,
-				A9D5655B2AE2827F00085CE2 /* PiluleLabel.swift */,
 				A9D565602AE2827F00085CE2 /* ProfilView.swift */,
+				EB30B19C2AE2860800B75A21 /* CardProduit.swift */,
+				EB30B19A2AE2860200B75A21 /* CardCollection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,6 +148,12 @@
 		A9D565562AE2822B00085CE2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A9D5655B2AE2827F00085CE2 /* PiluleLabel.swift */,
+				EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */,
+				EB30B1942AE285ED00B75A21 /* SmallButton.swift */,
+				A9D565592AE2827E00085CE2 /* LargeButton.swift */,
+				EB30B1962AE285F300B75A21 /* SmallCard.swift */,
+				EB30B1982AE285F800B75A21 /* TextFieldProfil.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -224,14 +242,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D565662AE2828000085CE2 /* DetailProduit.swift in Sources */,
+				EB30B1932AE285DB00B75A21 /* PiluleStatut.swift in Sources */,
 				A9D565582AE2826300085CE2 /* LandingView.swift in Sources */,
 				A9D565652AE2828000085CE2 /* EventView.swift in Sources */,
 				A9D565622AE2828000085CE2 /* PanierView.swift in Sources */,
 				A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */,
+				EB30B19B2AE2860200B75A21 /* CardCollection.swift in Sources */,
 				A9D565672AE2828000085CE2 /* CreationView.swift in Sources */,
 				A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */,
 				A9D565642AE2828000085CE2 /* FavorisView.swift in Sources */,
+				EB30B1992AE285F800B75A21 /* TextFieldProfil.swift in Sources */,
+				EB30B1952AE285ED00B75A21 /* SmallButton.swift in Sources */,
 				A9D565632AE2828000085CE2 /* PiluleLabel.swift in Sources */,
+				EB30B19D2AE2860800B75A21 /* CardProduit.swift in Sources */,
+				EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */,
 				A9D565612AE2828000085CE2 /* LargeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
