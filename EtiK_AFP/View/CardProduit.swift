@@ -13,13 +13,9 @@ struct CardProduit: View {
     @State var prix:Double = 80
     
     var body: some View {
-        
-        NavigationStack {
-           
+         
                 VStack {
-                    
-                    NavigationLink(destination: DetailProduit()) {
-                    
+                     
                     ZStack(alignment: .bottom) {
                         
                         SmallCard()
@@ -39,7 +35,7 @@ struct CardProduit: View {
                             .padding(.bottom, 30)
                             .shadow(radius: 5)
                     }
-                }
+                 
                  
                 Text(titre)
                     .font(.custom("Italiana", size: 20))
@@ -48,7 +44,6 @@ struct CardProduit: View {
                     .foregroundStyle(.gray)
             }
             
-        }
     }
 }
 
