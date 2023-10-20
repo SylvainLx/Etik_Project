@@ -41,6 +41,7 @@
 		A9D5656A2AE2829200085CE2 /* Italiana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italiana.ttf; sourceTree = "<group>"; };
 		A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LibreFranklin.ttf; sourceTree = "<group>"; };
 		A9D5656C2AE2829200085CE2 /* Italianno.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italianno.ttf; sourceTree = "<group>"; };
+		EB30B1A02AE288AE00B75A21 /* EtiK-AFP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "EtiK-AFP-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 		A9D565432AE2814100085CE2 /* EtiK_AFP */ = {
 			isa = PBXGroup;
 			children = (
+				EB30B1A02AE288AE00B75A21 /* EtiK-AFP-Info.plist */,
 				A9D565522AE2820D00085CE2 /* App */,
 				A9D565532AE2821300085CE2 /* View */,
 				A9D565542AE2821F00085CE2 /* Model */,
@@ -366,6 +368,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"EtiK_AFP/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EtiK-AFP-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -394,6 +397,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"EtiK_AFP/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EtiK-AFP-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
