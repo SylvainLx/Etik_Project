@@ -11,7 +11,7 @@ import SwiftUI
 struct EtiK_AFPApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LandingView()
         }
     }
 }

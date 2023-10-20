@@ -8,17 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */; };
-		A9D565472AE2814100085CE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565462AE2814100085CE2 /* ContentView.swift */; };
 		A9D565492AE2814300085CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D565482AE2814300085CE2 /* Assets.xcassets */; };
 		A9D5654C2AE2814300085CE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D5654B2AE2814300085CE2 /* Preview Assets.xcassets */; };
+		A9D565582AE2826300085CE2 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565572AE2826300085CE2 /* LandingView.swift */; };
+		A9D565612AE2828000085CE2 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565592AE2827E00085CE2 /* LargeButton.swift */; };
+		A9D565622AE2828000085CE2 /* PanierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5655A2AE2827F00085CE2 /* PanierView.swift */; };
+		A9D565632AE2828000085CE2 /* PiluleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5655B2AE2827F00085CE2 /* PiluleLabel.swift */; };
+		A9D565642AE2828000085CE2 /* FavorisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5655C2AE2827F00085CE2 /* FavorisView.swift */; };
+		A9D565652AE2828000085CE2 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5655D2AE2827F00085CE2 /* EventView.swift */; };
+		A9D565662AE2828000085CE2 /* DetailProduit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5655E2AE2827F00085CE2 /* DetailProduit.swift */; };
+		A9D565672AE2828000085CE2 /* CreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5655F2AE2827F00085CE2 /* CreationView.swift */; };
+		A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565602AE2827F00085CE2 /* ProfilView.swift */; };
+		A9D5656D2AE2829200085CE2 /* Italiana.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656A2AE2829200085CE2 /* Italiana.ttf */; };
+		A9D5656E2AE2829200085CE2 /* LibreFranklin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */; };
+		A9D5656F2AE2829200085CE2 /* Italianno.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D5656C2AE2829200085CE2 /* Italianno.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A9D565412AE2814100085CE2 /* EtiK_AFP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtiK_AFP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtiK_AFPApp.swift; sourceTree = "<group>"; };
-		A9D565462AE2814100085CE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9D565482AE2814300085CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9D5654B2AE2814300085CE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A9D565572AE2826300085CE2 /* LandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		A9D565592AE2827E00085CE2 /* LargeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		A9D5655A2AE2827F00085CE2 /* PanierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanierView.swift; sourceTree = "<group>"; };
+		A9D5655B2AE2827F00085CE2 /* PiluleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiluleLabel.swift; sourceTree = "<group>"; };
+		A9D5655C2AE2827F00085CE2 /* FavorisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavorisView.swift; sourceTree = "<group>"; };
+		A9D5655D2AE2827F00085CE2 /* EventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		A9D5655E2AE2827F00085CE2 /* DetailProduit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProduit.swift; sourceTree = "<group>"; };
+		A9D5655F2AE2827F00085CE2 /* CreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationView.swift; sourceTree = "<group>"; };
+		A9D565602AE2827F00085CE2 /* ProfilView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
+		A9D5656A2AE2829200085CE2 /* Italiana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italiana.ttf; sourceTree = "<group>"; };
+		A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LibreFranklin.ttf; sourceTree = "<group>"; };
+		A9D5656C2AE2829200085CE2 /* Italianno.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italianno.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +73,13 @@
 		A9D565432AE2814100085CE2 /* EtiK_AFP */ = {
 			isa = PBXGroup;
 			children = (
-				A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */,
-				A9D565462AE2814100085CE2 /* ContentView.swift */,
+				A9D565522AE2820D00085CE2 /* App */,
+				A9D565532AE2821300085CE2 /* View */,
+				A9D565542AE2821F00085CE2 /* Model */,
+				A9D565562AE2822B00085CE2 /* Helpers */,
+				A9D565552AE2822500085CE2 /* ViewModel */,
 				A9D565482AE2814300085CE2 /* Assets.xcassets */,
+				A9D565692AE2829200085CE2 /* Fonts */,
 				A9D5654A2AE2814300085CE2 /* Preview Content */,
 			);
 			path = EtiK_AFP;
@@ -65,6 +91,61 @@
 				A9D5654B2AE2814300085CE2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A9D565522AE2820D00085CE2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A9D565532AE2821300085CE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9D565572AE2826300085CE2 /* LandingView.swift */,
+				A9D5655F2AE2827F00085CE2 /* CreationView.swift */,
+				A9D5655E2AE2827F00085CE2 /* DetailProduit.swift */,
+				A9D5655D2AE2827F00085CE2 /* EventView.swift */,
+				A9D5655C2AE2827F00085CE2 /* FavorisView.swift */,
+				A9D565592AE2827E00085CE2 /* LargeButton.swift */,
+				A9D5655A2AE2827F00085CE2 /* PanierView.swift */,
+				A9D5655B2AE2827F00085CE2 /* PiluleLabel.swift */,
+				A9D565602AE2827F00085CE2 /* ProfilView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9D565542AE2821F00085CE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9D565552AE2822500085CE2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A9D565562AE2822B00085CE2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A9D565692AE2829200085CE2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A9D5656A2AE2829200085CE2 /* Italiana.ttf */,
+				A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */,
+				A9D5656C2AE2829200085CE2 /* Italianno.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +206,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D5656F2AE2829200085CE2 /* Italianno.ttf in Resources */,
+				A9D5656E2AE2829200085CE2 /* LibreFranklin.ttf in Resources */,
 				A9D5654C2AE2814300085CE2 /* Preview Assets.xcassets in Resources */,
+				A9D5656D2AE2829200085CE2 /* Italiana.ttf in Resources */,
 				A9D565492AE2814300085CE2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +221,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9D565472AE2814100085CE2 /* ContentView.swift in Sources */,
+				A9D565662AE2828000085CE2 /* DetailProduit.swift in Sources */,
+				A9D565582AE2826300085CE2 /* LandingView.swift in Sources */,
+				A9D565652AE2828000085CE2 /* EventView.swift in Sources */,
+				A9D565622AE2828000085CE2 /* PanierView.swift in Sources */,
 				A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */,
+				A9D565672AE2828000085CE2 /* CreationView.swift in Sources */,
+				A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */,
+				A9D565642AE2828000085CE2 /* FavorisView.swift in Sources */,
+				A9D565632AE2828000085CE2 /* PiluleLabel.swift in Sources */,
+				A9D565612AE2828000085CE2 /* LargeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
