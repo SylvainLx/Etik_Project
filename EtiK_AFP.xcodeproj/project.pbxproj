@@ -29,6 +29,7 @@
 		A9D5657C2AE285F800085CE2 /* FollowedCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5657A2AE285F800085CE2 /* FollowedCreatorView.swift */; };
 		A9D5657D2AE285F800085CE2 /* CreatorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5657B2AE285F800085CE2 /* CreatorDetailView.swift */; };
 		A9D954D62AE29EB800C6933D /* RGPDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D954D52AE29EB800C6933D /* RGPDView.swift */; };
+		A9D954D82AE2A2B800C6933D /* ReturnArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D954D72AE2A2B800C6933D /* ReturnArticleView.swift */; };
 		EB30B1932AE285DB00B75A21 /* PiluleStatut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */; };
 		EB30B1952AE285ED00B75A21 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1942AE285ED00B75A21 /* SmallButton.swift */; };
 		EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1962AE285F300B75A21 /* SmallCard.swift */; };
@@ -61,6 +62,7 @@
 		A9D5657A2AE285F800085CE2 /* FollowedCreatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowedCreatorView.swift; sourceTree = "<group>"; };
 		A9D5657B2AE285F800085CE2 /* CreatorDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorDetailView.swift; sourceTree = "<group>"; };
 		A9D954D52AE29EB800C6933D /* RGPDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGPDView.swift; sourceTree = "<group>"; };
+		A9D954D72AE2A2B800C6933D /* ReturnArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnArticleView.swift; sourceTree = "<group>"; };
 		EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiluleStatut.swift; sourceTree = "<group>"; };
 		EB30B1942AE285ED00B75A21 /* SmallButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		EB30B1962AE285F300B75A21 /* SmallCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				EB30B19C2AE2860800B75A21 /* CardProduit.swift */,
 				EB30B19A2AE2860200B75A21 /* CardCollection.swift */,
 				A9D954D52AE29EB800C6933D /* RGPDView.swift */,
+				A9D954D72AE2A2B800C6933D /* ReturnArticleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D5657D2AE285F800085CE2 /* CreatorDetailView.swift in Sources */,
+				A9D954D82AE2A2B800C6933D /* ReturnArticleView.swift in Sources */,
 				A9D565662AE2828000085CE2 /* DetailProduit.swift in Sources */,
 				EB30B1932AE285DB00B75A21 /* PiluleStatut.swift in Sources */,
 				A9D565582AE2826300085CE2 /* LandingView.swift in Sources */,
