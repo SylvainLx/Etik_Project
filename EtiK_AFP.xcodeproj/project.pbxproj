@@ -28,6 +28,7 @@
 		A9D565792AE285ED00085CE2 /* SmallButtonDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565752AE285EC00085CE2 /* SmallButtonDestination.swift */; };
 		A9D5657C2AE285F800085CE2 /* FollowedCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5657A2AE285F800085CE2 /* FollowedCreatorView.swift */; };
 		A9D5657D2AE285F800085CE2 /* CreatorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5657B2AE285F800085CE2 /* CreatorDetailView.swift */; };
+		A9D954D62AE29EB800C6933D /* RGPDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D954D52AE29EB800C6933D /* RGPDView.swift */; };
 		EB30B1932AE285DB00B75A21 /* PiluleStatut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */; };
 		EB30B1952AE285ED00B75A21 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1942AE285ED00B75A21 /* SmallButton.swift */; };
 		EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1962AE285F300B75A21 /* SmallCard.swift */; };
@@ -53,19 +54,19 @@
 		A9D5656A2AE2829200085CE2 /* Italiana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italiana.ttf; sourceTree = "<group>"; };
 		A9D5656B2AE2829200085CE2 /* LibreFranklin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LibreFranklin.ttf; sourceTree = "<group>"; };
 		A9D5656C2AE2829200085CE2 /* Italianno.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Italianno.ttf; sourceTree = "<group>"; };
-		EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiluleStatut.swift; sourceTree = "<group>"; };
-		EB30B1942AE285ED00B75A21 /* SmallButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
-		EB30B1962AE285F300B75A21 /* SmallCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
-		EB30B1982AE285F800B75A21 /* TextFieldProfil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldProfil.swift; sourceTree = "<group>"; };
-		EB30B19A2AE2860200B75A21 /* CardCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollection.swift; sourceTree = "<group>"; };
-		EB30B19C2AE2860800B75A21 /* CardProduit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardProduit.swift; sourceTree = "<group>"; };
-
 		A9D565722AE285EC00085CE2 /* CreateurFiltre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateurFiltre.swift; sourceTree = "<group>"; };
 		A9D565732AE285EC00085CE2 /* SmallButtonToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallButtonToggle.swift; sourceTree = "<group>"; };
 		A9D565742AE285EC00085CE2 /* SmallCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallCreator.swift; sourceTree = "<group>"; };
 		A9D565752AE285EC00085CE2 /* SmallButtonDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallButtonDestination.swift; sourceTree = "<group>"; };
 		A9D5657A2AE285F800085CE2 /* FollowedCreatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowedCreatorView.swift; sourceTree = "<group>"; };
 		A9D5657B2AE285F800085CE2 /* CreatorDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorDetailView.swift; sourceTree = "<group>"; };
+		A9D954D52AE29EB800C6933D /* RGPDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGPDView.swift; sourceTree = "<group>"; };
+		EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiluleStatut.swift; sourceTree = "<group>"; };
+		EB30B1942AE285ED00B75A21 /* SmallButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
+		EB30B1962AE285F300B75A21 /* SmallCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
+		EB30B1982AE285F800B75A21 /* TextFieldProfil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldProfil.swift; sourceTree = "<group>"; };
+		EB30B19A2AE2860200B75A21 /* CardCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollection.swift; sourceTree = "<group>"; };
+		EB30B19C2AE2860800B75A21 /* CardProduit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardProduit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +99,6 @@
 		A9D565432AE2814100085CE2 /* EtiK_AFP */ = {
 			isa = PBXGroup;
 			children = (
-				EB30B1A02AE288AE00B75A21 /* EtiK-AFP-Info.plist */,
 				A9D565522AE2820D00085CE2 /* App */,
 				A9D565532AE2821300085CE2 /* View */,
 				A9D565542AE2821F00085CE2 /* Model */,
@@ -141,6 +141,7 @@
 				A9D5657A2AE285F800085CE2 /* FollowedCreatorView.swift */,
 				EB30B19C2AE2860800B75A21 /* CardProduit.swift */,
 				EB30B19A2AE2860200B75A21 /* CardCollection.swift */,
+				A9D954D52AE29EB800C6933D /* RGPDView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +271,7 @@
 				A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */,
 				EB30B19B2AE2860200B75A21 /* CardCollection.swift in Sources */,
 				A9D565772AE285EC00085CE2 /* SmallButtonToggle.swift in Sources */,
+				A9D954D62AE29EB800C6933D /* RGPDView.swift in Sources */,
 				A9D565762AE285EC00085CE2 /* CreateurFiltre.swift in Sources */,
 				A9D565672AE2828000085CE2 /* CreationView.swift in Sources */,
 				A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */,
