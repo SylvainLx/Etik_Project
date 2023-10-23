@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailProduit: View {
     
+    
     @State var articleTitle:String = "Chemise en lin"
     @State var articleDesc:String = "Découvrez notre chemise en lin vegan, fabriquée en France. Confectionnée à partir de lin durable et respectueux de l'environnement, elle est légère, respirante et confortable. Sa coupe élégante ajoute une touche de style à votre tenue. Chaque chemise est fabriquée avec une grande attention aux détails par des artisans français. Opter pour cette chemise, c'est choisir la mode éthique et soutenir l'artisanat local, tout en restant élégant et soucieux de l'environnement."
     @State var articlePhoto = ["lin", "shirt", "shirt2", "shirt3"]
