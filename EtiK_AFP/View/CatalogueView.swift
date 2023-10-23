@@ -22,6 +22,7 @@ struct CatalogueView: View {
                 }
             }
         }
+        .padding()
     }
 }
 
