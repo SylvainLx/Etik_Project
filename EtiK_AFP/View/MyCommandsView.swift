@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct MyCommandsView: View {
+  
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    Text("Mes commandes")
+                        .font(.custom("Italianno", size: 50))
+                        .padding(.vertical, -8)
+                    NavigationLink(destination: CommandDetailView(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")) {
+                        CommandReturnCard(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")
+                    }.foregroundColor(.black)
+                    NavigationLink(destination: CommandDetailView(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")) {
+                    CommandReturnCard(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 200, statut: "En cours de livraison...")
+                    }.foregroundColor(.black)
+                }
+                .padding(8)
+                
+            }
+        }}
 }
 
 #Preview {
