@@ -63,20 +63,18 @@ struct Page_filtre_Article_Createurs: View {
                                 VStack {
                                     
                                     if let message = message {
-                                        Text(message )
-                                        
-                                        Text(item)
-                                            .font(.title)
-                                            .padding()
-                                        
-                                        
+
                                         if message == "Produits" {
                                             List(filteredProduits.filter {
                                                 searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText)
                                             }, id: \.self) { item in
+                                                
+                                                
+                                                
                                                 Text(item)
                                             }
                                         } else if message == "Créateurs" {
+                                            
                                             List(filteredCreateurs.filter {
                                                 searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText)
                                             }, id: \.self) { item in

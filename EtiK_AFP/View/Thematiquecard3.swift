@@ -9,7 +9,19 @@ import SwiftUI
 
 struct Thematiquecard3: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+        Rectangle()
+            .frame(height: 150)
+            .foregroundColor(.white)
+        Image("newyear")
+                .resizable()
+                .frame(height: 150)
+        Image("2024")
+                    .resizable()
+                    .frame(height: 50)
+                    .padding(.top, 60)
+
+        }
     }
 }
 
