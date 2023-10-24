@@ -15,24 +15,24 @@ struct CardCategorie: View {
     var body: some View {
         VStack {
              
-            ZStack {
-                
+            ZStack { 
                 MiniCard()
                     .foregroundColor(.beige)
                 
                 Image(systemName: image)
                     .font(.system(size: 40))
                     .foregroundColor(.white)
-                 
             }
             
             Text(categorie)
                 .font(.custom("Italiana", size: 15))
+                .frame(width: 75)
+                .multilineTextAlignment(.center)
             
         }
     }
 }
 
 #Preview {
-    CardCategorie(categorie: "Vegan", image: "leaf")
+    CardCategorie(categorie: "Made in france", image: "leaf")
 }
