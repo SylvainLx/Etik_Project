@@ -17,7 +17,7 @@ struct SmallButtonToggle: View {
                 Rectangle()
                     .cornerRadius(20)
                     .frame(width: 100, height: 28)
-                    .foregroundColor(.marron)
+                    .foregroundColor(isPresented ? .beige : .marron)
                 Text(isPresented ? "Suivi" : "Suivre")
                     .foregroundColor(.white)
                     .font(.custom("Italiana", size: 20))
