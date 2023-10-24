@@ -39,9 +39,7 @@ struct PanierView: View {
                     List {
                         ForEach(articles) { article in
                                 ArticlePanierCard(article: article)
-                            
-                            }
-                            .onDelete(perform: deleteArticle)
+                            } .onDelete(perform: deleteArticle)
                     }
                     .scrollContentBackground(.hidden)
                     .listStyle(PlainListStyle())
@@ -66,6 +64,7 @@ struct PanierView: View {
                     }.padding(.horizontal)
                     // .font(.custom("LibreFranklin", size: 14))
                     LargeButton(labelButton: "Paiement")
+                        .padding()
                     
                 }
             }

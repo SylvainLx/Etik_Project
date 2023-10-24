@@ -13,7 +13,8 @@ struct SmallCreator: View {
     @State var destination:AnyView?
     
     var body: some View {
-        NavigationLink(destination: destination) {
+        NavigationLink(destination: CreatorDetailView()) {
+            
             ZStack {
                 Circle()
                     .foregroundColor(.beige)

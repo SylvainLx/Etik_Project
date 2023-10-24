@@ -19,7 +19,7 @@ struct NotifParamView: View {
         VStack(alignment: .leading) {
             Text("Paramètres de notifications")
                 .font(.custom("Italiana", size: 24))
-                .padding()
+                .padding() 
                 .padding(.bottom, 16)
             VStack(spacing: 32) {
                 Toggle(isOn: $newCreator) {

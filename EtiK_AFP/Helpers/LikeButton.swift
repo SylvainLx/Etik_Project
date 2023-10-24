@@ -8,10 +8,26 @@
 import SwiftUI
 
 struct LikeButton: View {
+     
+    @State var isLiked: Bool = false
+    @State var likesCount: Int = 0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Button(action: {
+                withAnimation(.interactiveSpring(duration: 2) ) {
+                    isLiked.toggle()
+                }
+            }, label: {
+                Image(systemName: isLiked ? "heart.fill" : "heart")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.red)
+            })
+        }
     }
 }
+
 
 #Preview {
     LikeButton()

@@ -10,7 +10,9 @@ import SwiftUI
 struct LandingView: View {
     var body: some View {
         
-        TabView {
+        NavigationStack {
+            
+            TabView {
                 CreationView()
                     .tabItem { Label("Créations", systemImage: "sun.max") }
                 EventView()
@@ -21,9 +23,15 @@ struct LandingView: View {
                     .tabItem { Label("Panier", systemImage: "basket") }
                 ProfilView()
                     .tabItem { Label("Profil", systemImage: "person") }
-        }.accentColor(.marron)
-        
-        
+            }.accentColor(.marron)
+                .onAppear {
+                    // correct the transparency bug for Tab bars
+                    let tabBarAppearance = UITabBarAppearance()
+                    tabBarAppearance.configureWithOpaqueBackground()
+                    UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance 
+                }
+            
+        }
     }
 }
 

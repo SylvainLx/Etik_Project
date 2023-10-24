@@ -31,48 +31,55 @@ struct DetailProduit: View {
             
             VStack {
                 
-                ZStack(alignment: .bottom) {
+                ZStack(alignment: .topTrailing) {
                     
-                    RoundedRectangle(cornerRadius: 30)
-                        .foregroundColor(.beige)
-                        .frame(width: 350, height: 300)
+                    ZStack(alignment: .bottom) {
                         
+                        RoundedRectangle(cornerRadius: 30)
+                            .foregroundColor(.beige)
+                            .frame(width: 350, height: 300)
+                            
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack(spacing: 10) {
+                                ForEach(articlePhoto, id: \.self) { photo in
+                                    Image(photo)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 350)
+                                        .padding(.bottom, 50)
+                                        .shadow(radius: 2)
+                                        .containerRelativeFrame(.horizontal)
+                                        .scrollTransition(.animated) { content, phase in
+                                            content
+                                                .opacity(phase.isIdentity ? 1 : 0.3)
+                                                .scaleEffect(phase.isIdentity ? 1 : 0.8)
+                                                .rotation3DEffect(.radians(phase.value), axis: (1, 1, 1))
+                                        }
+                                    
+                                }
+                            }.scrollTargetLayout()
+                        }.scrollTargetBehavior(.viewAligned)
+                        
+                        
+                        
+                        Text("\(prix, specifier: "%.2f") €")
+                            .font(.system(size: 20))
+                            .fontWeight(.bold)
+                            .padding(.bottom, 8)
+                            .foregroundColor(.white)
+                            .shadow(radius: 2)
+                    }.frame(width: 350, height: 320)
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 10) {
-                            ForEach(articlePhoto, id: \.self) { photo in
-                                Image(photo)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 350)
-                                    .padding(.bottom, 50)
-                                    .shadow(radius: 2)
-                                    .containerRelativeFrame(.horizontal)
-                                    .scrollTransition(.animated) { content, phase in
-                                        content
-                                            .opacity(phase.isIdentity ? 1 : 0.3)
-                                            .scaleEffect(phase.isIdentity ? 1 : 0.8)
-                                            .rotation3DEffect(.radians(phase.value), axis: (1, 1, 1))
-                                    }
-                                
-                            }
-                        }.scrollTargetLayout()
-                    }.scrollTargetBehavior(.viewAligned)
-                    
-                    
-                    
-                    Text("\(prix, specifier: "%.2f") €")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .padding(.bottom, 8)
-                        .foregroundColor(.white)
-                        .shadow(radius: 2)
-                }.frame(width: 350, height: 320)
+                    LikeButton()
+                        .padding(.top, 40)
+                        .padding(.trailing, 20)
+                }
                 
                 HStack {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
-                            PiluleLabel(label: "🌱air", labelText: "Vegan", selectedPiluleLabel: $selectedPiluleLabel)
+                            PiluleLabel(label: "🌱", labelText: "Vegan", selectedPiluleLabel: $selectedPiluleLabel)
                             PiluleLabel(label: "🇫🇷", labelText: "Made in France", selectedPiluleLabel: $selectedPiluleLabel)
                             PiluleLabel(label: "🌸", labelText: "Biologique", selectedPiluleLabel: $selectedPiluleLabel)
                             PiluleLabel(label: "🤲🏾", labelText: "Fait main", selectedPiluleLabel: $selectedPiluleLabel)

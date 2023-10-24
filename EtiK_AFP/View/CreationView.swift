@@ -24,8 +24,7 @@ struct CreationView: View {
                     Image(systemName: "paperplane")
                         .font(.custom("Italianno", size: 20))
                 }.foregroundColor(.black)
-                
-                
+                 
                 Spacer()
                 
                 Text("Créations")
@@ -44,7 +43,7 @@ struct CreationView: View {
             }.padding(.horizontal)
                 .padding(.vertical, -10)
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 
                 ZStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
@@ -96,7 +95,7 @@ struct CreationView: View {
                             .padding(.vertical, -1)
                         
                         
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(1...20, id: \.self) { _ in
                                     SmallCreator(img: "creatrice")
@@ -104,7 +103,6 @@ struct CreationView: View {
                                             content
                                                 .opacity(phase.isIdentity ? 1 : 0)
                                                 .scaleEffect(phase.isIdentity ? 1 : 0.5)
-                                            
                                         }
                                 }
                             }.scrollTargetLayout()
@@ -114,21 +112,21 @@ struct CreationView: View {
                             .font(.custom("Italianno", size: 30))
                             .padding(.vertical, -1)
                         
-                        ScrollView(.horizontal) {
-                            HStack {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 16) {
                                 CardCategorie(categorie: "Vegan", image: "leaf")
                                 CardCategorie(categorie: "Made in France", image: "flag")
                                 CardCategorie(categorie: "Fait main", image: "hand.raised")
                                 CardCategorie(categorie: "Biologique", image: "cloud")
                                 CardCategorie(categorie: "Upcycling", image: "arrow.3.trianglepath")
-                            }
-                        }
+                            }.scrollTargetLayout()
+                        }.scrollTargetBehavior(.viewAligned)
                         
                         Text("Top 30")
                             .font(.custom("Italianno", size: 30))
                             .padding(.vertical, -1)
                         
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
                                 CardCollection()
@@ -136,11 +134,9 @@ struct CreationView: View {
                             }
                         }
                     }.padding(.horizontal)
-                    
                 }
             }
         }
-        
     }
     
     func startAutoScrollTimer() {

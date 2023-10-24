@@ -61,7 +61,7 @@ struct LoginView: View {
                 } label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 30)
-                            .stroke(.black, lineWidth: 4)
+                            .stroke(.black, lineWidth: 2)
                             .foregroundColor(.white)
                             .frame(width: 300, height: 50)
                             
