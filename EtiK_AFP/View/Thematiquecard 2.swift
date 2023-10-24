@@ -1,14 +1,15 @@
 //
-//  CardThematique.swift
+//  Thematiquecard.swift
 //  EtiK_AFP
 //
-//  Created by Émilien Giraud on 20/10/2023.
+//  Created by apprenant48 on 20/10/2023.
 //
 
 import SwiftUI
 
-struct CardThematique: View {
+struct Thematiquecard: View {
     var body: some View {
+        
         ZStack {
             Rectangle()
                 .frame(height: 150)
@@ -39,10 +40,10 @@ struct CardThematique: View {
                     .padding(.top, -30)
                     .offset(x:99)
             }
-        }.frame(width: 400, height: 150)
+        }
     }
 }
 
 #Preview {
-    CardThematique()
+    Thematiquecard()
 }

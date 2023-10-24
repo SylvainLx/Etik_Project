@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MiniCard: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        RoundedRectangle(cornerRadius: 20)
+            .frame(width: 75, height: 75)
     }
 }
 

@@ -18,9 +18,6 @@ struct ReturnArticleView: View {
     var body: some View {
         VStack {
             Text("Mes retours articles")
-                .font(.custom("Italianno", size: 50))
-                .padding(.vertical, -10)
-            
             HStack (spacing: 16) {
                 ZStack(alignment: .bottom) {
                     
@@ -54,7 +51,6 @@ struct ReturnArticleView: View {
                 .padding(.top, 4)
             Divider()
                 .padding()
-            Spacer()
         }
         .padding(8)
         

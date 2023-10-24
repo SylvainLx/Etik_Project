@@ -11,17 +11,18 @@ struct LandingView: View {
     var body: some View {
         
         TabView {
-            CreationView()
-                .tabItem { Label("Créations", systemImage: "sun.max") }
-            EventView()
-                .tabItem { Label("Évènements", systemImage: "calendar") }
-            FavorisView()
-                .tabItem { Label("Favoris", systemImage: "heart") }
-            PanierView(vide: true)
-                .tabItem { Label("Panier", systemImage: "basket") }
-            ProfilView()
-                .tabItem { Label("Profil", systemImage: "person") }
+                CreationView()
+                    .tabItem { Label("Créations", systemImage: "sun.max") }
+                EventView()
+                    .tabItem { Label("Évènements", systemImage: "calendar") }
+                FavorisView()
+                    .tabItem { Label("Favoris", systemImage: "heart") }
+                PanierView(vide: false, articles: articles)
+                    .tabItem { Label("Panier", systemImage: "basket") }
+                ProfilView()
+                    .tabItem { Label("Profil", systemImage: "person") }
         }.accentColor(.marron)
+        
         
     }
 }

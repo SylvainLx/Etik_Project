@@ -9,7 +9,13 @@ import SwiftUI
 
 struct StarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(spacing: 0) {
+            ForEach(0..<4) { _ in
+                Image(systemName: "star.fill")
+            }
+            Image(systemName: "star.leadinghalf.filled")
+        }
+        .foregroundColor(.yellow)
     }
 }
 

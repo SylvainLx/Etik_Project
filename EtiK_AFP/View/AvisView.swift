@@ -9,7 +9,21 @@ import SwiftUI
 
 struct AvisView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            
+            Text("Avis")
+                .font(.custom("Italianno", size: 50))
+                .padding(.vertical, -10)
+            
+            ScrollView {
+                ForEach(1...10, id: \.self) { _ in
+                    AvisCard(photo: "creatrice", name: "Berenice", commentaire: "Produit conforme a la description, je recommande cet article. Livré a temps et bien emballé. conforme a la description, je recommande cet article. Livré a temps et bien emballé.", heure: "5h", note: 4.5)
+                }
+            }
+            
+        }
+        
     }
 }
 

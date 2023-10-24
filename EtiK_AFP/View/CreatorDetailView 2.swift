@@ -31,7 +31,13 @@ struct CreatorDetailView: View {
                         Text("Schwartz")
                     }.font(.custom("Italiana", size : 32))
                     VStack(spacing: 4) {
-                        StarView()
+                        HStack(spacing: 0) {
+                            ForEach(0..<4) { _ in
+                                Image(systemName: "star.fill")
+                            }
+                            Image(systemName: "star.leadinghalf.filled")
+                        }
+                        .foregroundColor(.yellow)
                         Text("5/5")
                         Text("(121 avis)")
                         NavigationLink(destination: destination) {
@@ -81,9 +87,9 @@ struct CreatorDetailView: View {
                 .padding(.horizontal)
                 ScrollView(.horizontal) {
                     HStack {
-                        CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
-                        CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
-                        CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                        CardProduit()
+                        CardProduit()
+                        CardProduit()
                     }                }
                 .padding()
             }
