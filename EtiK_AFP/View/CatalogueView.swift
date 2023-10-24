@@ -18,10 +18,11 @@ struct CatalogueView: View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
                 ForEach(1...7, id: \.self) { _ in
-                    CardProduit()
+                    CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
                 }
             }
         }
+        .padding()
     }
 }
 

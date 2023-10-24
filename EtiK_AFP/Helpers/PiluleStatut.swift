@@ -9,8 +9,8 @@ import SwiftUI
 
 struct PiluleStatut: View {
     
-    @State var progress:CGFloat = 100
-    @State var statut:String = "En cours de traitement..."
+    @State var progress:CGFloat
+    @State var statut:String
     
     var body: some View {
         
@@ -33,5 +33,5 @@ struct PiluleStatut: View {
 }
 
 #Preview {
-    PiluleStatut()
+    PiluleStatut(progress: 100, statut: "En cours de traitement...")
 }
