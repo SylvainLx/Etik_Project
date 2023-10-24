@@ -25,6 +25,11 @@ struct ReturnArticleView: View {
                 }
                 .padding(8)
             }
+            PiluleStatut()
+                .padding(.top, 4)
+            Divider()
+                .padding()
+            Spacer()
         }
     }
 }

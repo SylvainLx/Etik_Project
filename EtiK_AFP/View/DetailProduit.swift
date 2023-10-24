@@ -18,13 +18,16 @@ struct DetailProduit: View {
     
     var sizes = ["XS", "S", "M", "L", "XL", "XXL"]
     @State private var selectedSize = "XS"
+    @State private var showInfo: Bool = false
+    
+    @State private var selectedPiluleLabel: String?
     
     var body: some View {
         
         VStack {
             Text(articleTitle)
                 .font(.custom("Italianno", size: 80))
-                .padding(10)
+                .padding(-20)
             
             VStack {
                 
@@ -33,30 +36,31 @@ struct DetailProduit: View {
                     RoundedRectangle(cornerRadius: 30)
                         .foregroundColor(.beige)
                         .frame(width: 350, height: 300)
- 
-                        ScrollView(.horizontal) {
-                            LazyHStack(spacing: 10) {
-                                ForEach(articlePhoto, id: \.self) { photo in
-                                    Image(photo)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 350)
-                                        .padding(.bottom, 50)
-                                        .shadow(radius: 2)
-                                        .containerRelativeFrame(.horizontal)
-                                        .scrollTransition(.animated) { content, phase in
-                                            content
-                                                .opacity(phase.isIdentity ? 1 : 0.3)
-                                                .scaleEffect(phase.isIdentity ? 1 : 0.8)
-                                                .rotation3DEffect(.radians(phase.value), axis: (1, 1, 1))
-                                        }
-                                    
-                                }
-                            }.scrollTargetLayout()
-                        }.scrollTargetBehavior(.viewAligned)
- 
-                          
                         
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 10) {
+                            ForEach(articlePhoto, id: \.self) { photo in
+                                Image(photo)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 350)
+                                    .padding(.bottom, 50)
+                                    .shadow(radius: 2)
+                                    .containerRelativeFrame(.horizontal)
+                                    .scrollTransition(.animated) { content, phase in
+                                        content
+                                            .opacity(phase.isIdentity ? 1 : 0.3)
+                                            .scaleEffect(phase.isIdentity ? 1 : 0.8)
+                                            .rotation3DEffect(.radians(phase.value), axis: (1, 1, 1))
+                                    }
+                                
+                            }
+                        }.scrollTargetLayout()
+                    }.scrollTargetBehavior(.viewAligned)
+                    
+                    
+                    
                     Text("\(prix, specifier: "%.2f") €")
                         .font(.system(size: 20))
                         .fontWeight(.bold)
@@ -66,13 +70,17 @@ struct DetailProduit: View {
                 }.frame(width: 350, height: 320)
                 
                 HStack {
-                    PiluleLabel(label: "🐼")
-                    PiluleLabel(label: "🇫🇷")
-                    PiluleLabel(label: "🌸")
-                    PiluleLabel(label: "🤲🏾")
-                }.padding(.bottom)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            PiluleLabel(label: "🌱", labelText: "Vegan", selectedPiluleLabel: $selectedPiluleLabel)
+                            PiluleLabel(label: "🇫🇷", labelText: "Made in France", selectedPiluleLabel: $selectedPiluleLabel)
+                            PiluleLabel(label: "🌸", labelText: "Biologique", selectedPiluleLabel: $selectedPiluleLabel)
+                            PiluleLabel(label: "🤲🏾", labelText: "Fait main", selectedPiluleLabel: $selectedPiluleLabel)
+                        }.frame(width: 400,alignment: .center) 
+                    }
+                }
                 
-            }.padding(.horizontal)
+            }
             
             
             HStack {
@@ -100,13 +108,13 @@ struct DetailProduit: View {
                     .font(.custom("LibreFranklin", size: 12))
             }
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 Text(articleDesc)
                     .font(.custom("LibreFranklin", size: 15))
                     .foregroundStyle(.gray)
-                    .padding()
                     .multilineTextAlignment(.center)
-            }
+                
+            }.padding()
         }
         
         

@@ -17,18 +17,17 @@ struct CardCategorie: View {
              
             ZStack {
                 
-                SmallCard()
+                MiniCard()
                     .foregroundColor(.beige)
                 
                 Image(systemName: image)
-                    .font(.system(size: 50))
+                    .font(.system(size: 40))
                     .foregroundColor(.white)
                  
             }
             
-            
             Text(categorie)
-                .font(.custom("Italiana", size: 20))
+                .font(.custom("Italiana", size: 15))
             
         }
     }
