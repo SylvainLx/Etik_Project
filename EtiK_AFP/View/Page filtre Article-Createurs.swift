@@ -10,17 +10,22 @@ import SwiftUI
 struct Page_filtre_Article_Createurs: View {
     @State private var message: String?
     @State private var searchText = ""
-    let data: [String] = (1...2).map { "Élément \($0)" }
-    let columns = [
+    
+    @State private var filteredProduits: [String] = ["Apple", "Banana", "Cherry", "Date", "Fig", "Grapes"]
+    
+    @State private var filteredCreateurs: [String] = ["Pomme", "Banane", "Cerise", "Date", "Figue", "Raisin"]
+    
+    let columns1 = [
+        GridItem(.flexible(),spacing: 0)
+    ]
+    
+    let columns2 = [
         GridItem(.flexible(),spacing: 0),
         GridItem(.flexible(),spacing: 0)
     ]
     
-    @State private var filteredProduits: [String] = ["Apple", "Banana", "Cherry", "Date", "Fig", "Grapes"]
-    @State private var filteredCreateurs: [String] = ["Pomme", "Banane", "Cerise", "Date", "Figue", "Raisin"]
-    
-    
     var body: some View {
+        
         NavigationView{
             
             VStack(alignment: .center){
@@ -44,7 +49,7 @@ struct Page_filtre_Article_Createurs: View {
                     }) {
                         Text("Créateurs")
                             .frame(maxWidth: .infinity)
-                            .font(.headline)
+                        
                             .padding(10)
                             .background(Color.white)
                             .foregroundColor(.black)
@@ -52,47 +57,44 @@ struct Page_filtre_Article_Createurs: View {
                     }
                     .border(Color.black, width: 2)
                 }
-                ScrollView{
-                    LazyVGrid(columns: columns,spacing: 0) {
-                        ForEach(data, id: \.self) { item in
-                            ZStack{
-                                Rectangle()
-                                    .frame(height: 620)
-                                    .background()
-                                    .opacity(0)
-                                VStack {
-                                    
-                                    if let message = message {
 
-                                        if message == "Produits" {
-                                            List(filteredProduits.filter {
-                                                searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText)
-                                            }, id: \.self) { item in
-                                                
-                                                
-                                                
-                                                Text(item)
-                                            }
-                                        } else if message == "Créateurs" {
-                                            
-                                            List(filteredCreateurs.filter {
-                                                searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText)
-                                            }, id: \.self) { item in
-                                                Text(item)
-                                            }
-                                        }
-                                    }
+                
+                if let message = message {
+                    if message == "Produits" {
+                        
+                        ScrollView {
+                            LazyVGrid(columns: columns2,spacing: 10) {
+                                
+                                ForEach(filteredProduits.filter {
+                                    searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText)
+                                }, id: \.self) { item in
+                                    CardProduit(titre: item, prix: 30)
+                                        .padding(.top, 20)
                                 }
                             }
+                            
+                        }}
+                    else if message == "Créateurs" {
+                        ScrollView {
+                            LazyVGrid(columns: columns1,spacing: 20) {
+                                
+                                ForEach(filteredCreateurs.filter {
+                                    searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText)
+                                }, id: \.self) { item in
+                                    CreateurFiltre()
+                                        .padding(.top, 20)
+                                }
+                            }
+                            
                         }
                     }
                 }
+                Spacer()
             }
             .searchable(text: $searchText, prompt: "Veuillez saisir votre recherche ici")
         }
     }
 }
-    #Preview {
-        Page_filtre_Article_Createurs();
-    }
-
+#Preview {
+    Page_filtre_Article_Createurs()
+}

@@ -18,8 +18,8 @@ struct Thematiquecard3: View {
                 .frame(height: 150)
         Image("2024")
                     .resizable()
-                    .frame(height: 50)
-                    .padding(.top, 60)
+                    .frame(width: 300, height: 50)
+                    .padding(.top, 70)
 
         }
     }
