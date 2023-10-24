@@ -9,8 +9,11 @@ import SwiftUI
 
 struct CardProduit: View {
     
-    @State var titre:String = "Chemise en lin"
-    @State var prix:Double = 80
+    @State var titre:String
+    @State var prix:Double
+    @State var photo:String
+    @State var category:String
+    @State var type:String
     
     var body: some View {
          
@@ -28,7 +31,7 @@ struct CardProduit: View {
                             .foregroundColor(.white)
                             .shadow(radius: 5)
                         
-                        Image("lin")
+                        Image(photo)
                             .resizable()
                             .scaledToFit()
                             .frame(height: 100)
@@ -39,7 +42,7 @@ struct CardProduit: View {
                  
                 Text(titre)
                     .font(.custom("Italiana", size: 20))
-                Text("Vegan")
+                Text(category + " / " + type)
                     .font(.custom("LibreFranklin", size: 10))
                     .foregroundStyle(.gray)
             }
@@ -48,5 +51,5 @@ struct CardProduit: View {
 }
 
 #Preview {
-    CardProduit()
+    CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
 }
