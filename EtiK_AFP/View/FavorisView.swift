@@ -21,7 +21,7 @@ struct FavorisView: View {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                     ForEach(1...7, id: \.self) { _ in
                         NavigationLink(destination: DetailProduit()) {
-                            CardProduit()
+                            CardProduit(titre: "ok", prix: 12.23, photo: "lin", category: "ok", type: "ok")
                                 .foregroundColor(.black)
                         }
                     }
