@@ -38,7 +38,7 @@ struct AvisCard: View {
                 }
                 
                 HStack {
-                    StarView()
+                    StarView(note: note)
                     Text("\(note, specifier: "%.1f")/5")
                         .font(.custom("LibreFranklin", size: 14))
                 }
@@ -56,5 +56,5 @@ struct AvisCard: View {
 }
 
 #Preview {
-    AvisCard(photo: "creatrice", name: "Berangère", commentaire: "Produit conforme à la description. Je suis ravie de cet achat. Je recommande cette créatrice. Petit bémol sur le colis qui était mal emballé", heure: "5 min", note: 4.5)
+    AvisCard(photo: "creatrice", name: "Berangère", commentaire: "Produit conforme à la description. Je suis ravie de cet achat. Je recommande cette créatrice. Petit bémol sur le colis qui était mal emballé", heure: "5 min", note: 3.6)
 }

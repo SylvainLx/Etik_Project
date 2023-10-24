@@ -34,5 +34,5 @@ struct CardCategorie: View {
 }
 
 #Preview {
-    CardCategorie(categorie: "Vegan", image: "pawprint")
+    CardCategorie(categorie: "Vegan", image: "leaf")
 }
