@@ -18,7 +18,7 @@ struct AvisView: View {
             
             ScrollView {
                 ForEach(1...10, id: \.self) { _ in
-                    AvisCard(photo: "creatrice", name: "Berenice", commentaire: "Produit conforme a la description, je recommande cet article. Livré a temps et bien emballé. conforme a la description, je recommande cet article. Livré a temps et bien emballé.", heure: "5h", note: 4.5)
+                    AvisCard(photo: "creatrice", name: "Berenice", commentaire: "Produit conforme a la description, je recommande cet article. Livré a temps et bien emballé. conforme a la description, je recommande cet article. Livré a temps et bien emballé.", heure: "5h", note: 3.2)
                 }
             }
             

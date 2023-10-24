@@ -46,7 +46,6 @@
 		CACC4EB02AE2BB0900DCBDCA /* chatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC4EAF2AE2BB0900DCBDCA /* chatView.swift */; };
 		CACC4EB22AE2BB3500DCBDCA /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC4EB12AE2BB3500DCBDCA /* Date+Helpers.swift */; };
 		CACC4EB42AE2BBB000DCBDCA /* chatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC4EB32AE2BBB000DCBDCA /* chatModel.swift */; };
-		EB2E07F72AE6CEAC0078373A /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E07F62AE6CEAC0078373A /* Bubble.swift */; };
 		EB30B1932AE285DB00B75A21 /* PiluleStatut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */; };
 		EB30B1952AE285ED00B75A21 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1942AE285ED00B75A21 /* SmallButton.swift */; };
 		EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1962AE285F300B75A21 /* SmallCard.swift */; };
@@ -105,7 +104,6 @@
 		CACC4EAF2AE2BB0900DCBDCA /* chatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatView.swift; sourceTree = "<group>"; };
 		CACC4EB12AE2BB3500DCBDCA /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Helpers.swift"; path = "EtiK_AFP/View/Date+Helpers.swift"; sourceTree = SOURCE_ROOT; };
 		CACC4EB32AE2BBB000DCBDCA /* chatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = chatModel.swift; path = EtiK_AFP/View/chatModel.swift; sourceTree = SOURCE_ROOT; };
-		EB2E07F62AE6CEAC0078373A /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiluleStatut.swift; sourceTree = "<group>"; };
 		EB30B1942AE285ED00B75A21 /* SmallButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		EB30B1962AE285F300B75A21 /* SmallCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
@@ -270,7 +268,6 @@
 				EBA511352AE65A9F00210517 /* StarView.swift */,
 				EBA511372AE65B0500210517 /* AvisCard.swift */,
 				EBA5113B2AE670A000210517 /* ArticlePanierCard.swift */,
-				EB2E07F62AE6CEAC0078373A /* Bubble.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

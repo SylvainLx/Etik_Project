@@ -72,7 +72,7 @@ struct DetailProduit: View {
                 HStack {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
-                            PiluleLabel(label: "🌱", labelText: "Vegan", selectedPiluleLabel: $selectedPiluleLabel)
+                            PiluleLabel(label: "🌱air", labelText: "Vegan", selectedPiluleLabel: $selectedPiluleLabel)
                             PiluleLabel(label: "🇫🇷", labelText: "Made in France", selectedPiluleLabel: $selectedPiluleLabel)
                             PiluleLabel(label: "🌸", labelText: "Biologique", selectedPiluleLabel: $selectedPiluleLabel)
                             PiluleLabel(label: "🤲🏾", labelText: "Fait main", selectedPiluleLabel: $selectedPiluleLabel)

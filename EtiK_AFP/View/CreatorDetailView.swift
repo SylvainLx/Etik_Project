@@ -31,8 +31,8 @@ struct CreatorDetailView: View {
                         Text("Schwartz")
                     }.font(.custom("Italiana", size : 32))
                     VStack(spacing: 4) {
-                        StarView()
-                        Text("5/5")
+                        StarView(note: 4.6)
+                        Text("4.6/5")
                         Text("(121 avis)")
                         NavigationLink(destination: destination) {
                             Text("Voir les avis")
