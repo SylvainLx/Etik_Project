@@ -9,9 +9,16 @@ import SwiftUI
 import MapKit
 
 struct DetailEventView: View {
+   
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+   
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
+        
+        Button("Retour") {
+                    dismiss()
+                }
         
         ZStack{
             RoundedRectangle(cornerRadius: 25.0)
