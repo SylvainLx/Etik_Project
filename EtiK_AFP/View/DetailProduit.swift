@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailProduit: View {
     
     @State var articleTitle:String = "Chemise en lin bio"
-    @State var articleDesc:String = "Découvrez notre chemise en lin vegan, fabriquée en France. Confectionnée à partir de lin durable et respectueux de l'environnement, elle est légère, respirante et confortable. Sa coupe élégante ajoute une touche de style à votre tenue. Chaque chemise est fabriquée avec une grande attention aux détails par des artisans français. Opter pour cette chemise, c'est choisir la mode éthique et soutenir l'artisanat local, tout en restant élégant et soucieux de l'environnement."
+    @State var articleDesc:String = "Découvrez notre chemise en lin vegan, fabriquée en France. Confectionnée à partir de lin durable et respectueux de l'environnement, elle est légère, respirante et confortable."
     @State var articlePhoto = ["lin3", "lin1", "lin2"]
     @State var stock:Int = 2
     @State var prix:Double = 80.99
@@ -36,7 +36,7 @@ struct DetailProduit: View {
                         RoundedRectangle(cornerRadius: 30)
                             .foregroundColor(.beige)
                             .frame(width: 350, height: 300)
-                            
+                        
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 10) {
@@ -60,13 +60,14 @@ struct DetailProduit: View {
                         }.scrollTargetBehavior(.viewAligned)
                         
                         
-                        
                         Text("\(prix, specifier: "%.2f") €")
                             .font(.system(size: 35))
                             .fontWeight(.bold)
                             .padding(.bottom, 8)
                             .foregroundColor(.white)
                             .shadow(radius: 1)
+                        
+                        
                     }.frame(width: 350, height: 320)
                     
                     HStack {
@@ -78,7 +79,7 @@ struct DetailProduit: View {
                         .padding(.top, 30)
                     
                 }
-              
+                
                 HStack {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
@@ -86,10 +87,10 @@ struct DetailProduit: View {
                             PiluleLabel(label: "flag", labelText: "Made in France", selectedPiluleLabel: $selectedPiluleLabel)
                             PiluleLabel(label: "cloud", labelText: "Biologique", selectedPiluleLabel: $selectedPiluleLabel)
                             PiluleLabel(label: "hand.raised", labelText: "Fait main", selectedPiluleLabel: $selectedPiluleLabel)
-                        }.frame(width: 400,alignment: .center) 
+                        }.frame(width: 400,alignment: .center)
                     }
                 }.padding(.top)
-                Divider().padding()
+                Divider().padding(.horizontal)
                 
             }
             
@@ -117,20 +118,49 @@ struct DetailProduit: View {
                         .font(.custom("LibreFranklin", size: 12))
                 }
             }
-             
-            Divider().padding(.top)
+            
+            Divider().padding(.horizontal)
             
             ScrollView(showsIndicators: false) {
-                Text(articleDesc)
-                    .font(.custom("LibreFranklin", size: 15))
-                    .foregroundStyle(.gray)
-                    .multilineTextAlignment(.center)
                 
-            }.padding()
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Chloé Schwarz")
+                            .font(.custom("Italiana", size: 25))
+                        Spacer()
+                        SmallCreator(img: "profil")
+                            .frame(width: 50, height: 50)
+                    }
+                    
+                    
+                    Text(articleDesc)
+                        .font(.custom("LibreFranklin", size: 15))
+                        .foregroundStyle(.gray)
+                    
+                    Spacer()
+                    HStack {
+                        Text("Voir des produits similaires")
+                            .font(.custom("Italiana", size: 25))
+                        .padding(.bottom)
+                        Spacer()
+                        Button {
+                             
+                        } label: {
+                            Image(systemName: "chevron.forward.circle.fill")
+                                .foregroundColor(.beige)
+                                .font(.system(size: 30))
+                        }.padding(.bottom)
+                            .padding(.trailing, 8)
+                    }
+                     
+                }.padding(.horizontal)
+                
+            }
         }
         
         
         LargeButton(labelButton: "Ajouter au panier")
+            .padding(.bottom)
     }
 }
 

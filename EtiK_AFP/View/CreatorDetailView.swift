@@ -22,7 +22,9 @@ struct CreatorDetailView: View {
                             .frame(width: 100, height:100)
                         Image("creatrice")
                             .resizable()
-                            .frame(width: 80, height: 80)
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .frame(width: 80)
                     }
                     VStack {
                         Text("Chloé")
