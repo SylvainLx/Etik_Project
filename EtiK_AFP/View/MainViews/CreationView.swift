@@ -58,7 +58,6 @@ struct CreationView: View {
                                 HStack(spacing: 0) {
                                     ForEach(0..<numberOfPages, id: \.self) { page in
                                         CardThematique()
-                                            .frame(width: UIScreen.main.bounds.width)
                                     }
                                 }
                                 .onChange(of: currentPage) { newPage in
@@ -73,17 +72,15 @@ struct CreationView: View {
                         }
                         
                     }
-                    
-                   
                 }
                 
                 HStack {
-                    Circle().frame(width: currentPage == 0 ? 10 : 5)
-                        .foregroundColor(currentPage == 0 ? .black : .gray)
-                    Circle().frame(width: currentPage == 1 ? 10 : 5)
-                        .foregroundColor(currentPage == 1 ? .black : .gray)
-                    Circle().frame(width: currentPage == 2 ? 10 : 5)
-                        .foregroundColor(currentPage == 2 ? .black : .gray)
+                    Circle().frame(width: currentPage == 0 ? 8 : 5)
+                        .foregroundColor(currentPage == 0 ? .darkBeige : .beige)
+                    Circle().frame(width: currentPage == 1 ? 8 : 5)
+                        .foregroundColor(currentPage == 1 ? .darkBeige : .beige)
+                    Circle().frame(width: currentPage == 2 ? 8 : 5)
+                        .foregroundColor(currentPage == 2 ? .darkBeige : .beige)
                 }
                 
                 VStack {
@@ -93,6 +90,7 @@ struct CreationView: View {
                         Text("Créateurs")
                             .font(.custom("Italianno", size: 30))
                             .padding(.vertical, -1)
+                            .padding(.horizontal)
                         
                         
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -106,34 +104,38 @@ struct CreationView: View {
                                         }
                                 }
                             }.scrollTargetLayout()
+                                .padding(.horizontal)
                         }.scrollTargetBehavior(.viewAligned)
                         
                         Text("Catégories")
                             .font(.custom("Italianno", size: 30))
                             .padding(.vertical, -1)
+                            .padding(.horizontal)
                         
                         ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 16) {
+                            HStack {
                                 CardCategorie(categorie: "Vegan", image: "leaf")
                                 CardCategorie(categorie: "Made in France", image: "flag")
                                 CardCategorie(categorie: "Fait main", image: "hand.raised")
                                 CardCategorie(categorie: "Biologique", image: "cloud")
                                 CardCategorie(categorie: "Upcycling", image: "arrow.3.trianglepath")
                             }.scrollTargetLayout()
+                                .padding(.horizontal)
                         }.scrollTargetBehavior(.viewAligned)
                         
                         Text("Top 30")
                             .font(.custom("Italianno", size: 30))
                             .padding(.vertical, -1)
+                            .padding(.horizontal)
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
                                 CardCollection()
                                 CardCollection()
-                            }
+                            }.padding()
                         }
-                    }.padding(.horizontal)
+                    }
                 }
             }
         }
