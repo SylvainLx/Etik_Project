@@ -52,6 +52,7 @@
 		EB2E07FB2AE804B20078373A /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E07FA2AE804B20078373A /* LikeButton.swift */; };
 		EB2E07FE2AE81C9C0078373A /* ARButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E07FD2AE81C9C0078373A /* ARButton.swift */; };
 		EB2E08042AE90F170078373A /* TitleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E08032AE90F170078373A /* TitleCard.swift */; };
+		EB2E08062AE91CF10078373A /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E08052AE91CF10078373A /* PopUp.swift */; };
 		EB30B1932AE285DB00B75A21 /* PiluleStatut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */; };
 		EB30B1952AE285ED00B75A21 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1942AE285ED00B75A21 /* SmallButton.swift */; };
 		EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1962AE285F300B75A21 /* SmallCard.swift */; };
@@ -116,6 +117,7 @@
 		EB2E07FA2AE804B20078373A /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		EB2E07FD2AE81C9C0078373A /* ARButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARButton.swift; sourceTree = "<group>"; };
 		EB2E08032AE90F170078373A /* TitleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCard.swift; sourceTree = "<group>"; };
+		EB2E08052AE91CF10078373A /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiluleStatut.swift; sourceTree = "<group>"; };
 		EB30B1942AE285ED00B75A21 /* SmallButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		EB30B1962AE285F300B75A21 /* SmallCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				EB2E07FA2AE804B20078373A /* LikeButton.swift */,
 				EB2E07FD2AE81C9C0078373A /* ARButton.swift */,
 				EB2E08032AE90F170078373A /* TitleCard.swift */,
+				EB2E08052AE91CF10078373A /* PopUp.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				A9D565632AE2828000085CE2 /* PiluleLabel.swift in Sources */,
 				EB30B1A22AE2A14000B75A21 /* CardCategorie.swift in Sources */,
 				EB30B1A42AE2A14E00B75A21 /* CardThematique.swift in Sources */,
+				EB2E08062AE91CF10078373A /* PopUp.swift in Sources */,
 				EB30B19D2AE2860800B75A21 /* CardProduit.swift in Sources */,
 				EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */,
 				A9D5657C2AE285F800085CE2 /* FollowedCreatorView.swift in Sources */,

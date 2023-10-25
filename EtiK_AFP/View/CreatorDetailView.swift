@@ -13,37 +13,36 @@ struct CreatorDetailView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                
-                
-                VStack {
-                    HStack(alignment: .center, spacing: 26) {
-                        ZStack {
-                            Circle()
-                                .stroke(.beige, lineWidth: 5)
-                                .frame(width: 100, height:100)
-                            Image("creatrice")
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                        }
-                        VStack {
-                            Text("Chloé")
-                            Text("Schwartz")
-                        }.font(.custom("Italiana", size : 32))
-                        VStack(spacing: 4) {
-                            StarView(note: 4.6)
-                            Text("4.6/5")
-                            Text("(121 avis)")
-                            NavigationLink(destination: destination) {
-                                Text("Voir les avis")
-                            }.foregroundColor(.blue)
-                        } .font(.caption)
+             
+            VStack {
+                HStack(alignment: .center, spacing: 26) {
+                    ZStack {
+                        Circle()
+                            .stroke(.beige, lineWidth: 5)
+                            .frame(width: 100, height:100)
+                        Image("creatrice")
+                            .resizable()
+                            .frame(width: 80, height: 80)
                     }
-                    HStack(spacing: 26) {
-                        SmallButtonToggle()
-                        SmallButtonDestination(title: "Contacter")
-                        SmallButtonDestination(title: "Rencontrer")
-                    }
+                    VStack {
+                        Text("Chloé")
+                        Text("Schwartz")
+                    }.font(.custom("Italiana", size : 32))
+                    VStack(spacing: 4) {
+                        StarView(note: 4.6)
+                        Text("4.6/5")
+                        Text("(121 avis)")
+                        NavigationLink(destination: destination) {
+                            Text("Voir les avis")
+                        }.foregroundColor(.blue)
+                    } .font(.caption)
+                }
+                HStack(spacing: 26) {
+                    SmallButtonToggle()
+                    SmallButtonDestination(title: "Contacter")
+                    SmallButtonDestination(title: "Rencontrer")
+                }
+                ScrollView {
                     HStack {
                         Text("Mon Histoire")
                             .font(.custom("LibreFranklin", size: 18))
@@ -86,7 +85,6 @@ struct CreatorDetailView: View {
                             CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
                         }.padding()
                     }
-                    
                 }
             }
         }

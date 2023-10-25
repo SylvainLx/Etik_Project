@@ -7,9 +7,35 @@
 
 import SwiftUI
 
-struct PopUp: View {
+struct PopUp : View {
+
+    @State private var showSheet = false
+
+       var body: some View {
+           Button("Present") {
+               showSheet.toggle()
+           }.font(.largeTitle)
+           .sheet(isPresented: $showSheet) {
+               SheetView()
+           }
+        }
+}
+
+struct SheetView: View {
+   @Environment(\.dismiss) var dismiss
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+           Button {
+              dismiss()
+           } label: {
+               Image(systemName: "xmark.circle")
+                 .font(.largeTitle)
+                 .foregroundColor(.gray)
+           }
+         }
+         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+         .padding()
     }
 }
 

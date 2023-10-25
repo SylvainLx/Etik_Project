@@ -35,12 +35,29 @@ struct ProfilView: View {
                 .frame(width: 400, height: 300)
                 
                 List {
-                    NavigationLink("Mes commandes", destination: MyCommandsView())
-                    NavigationLink("Mes retours", destination: ReturnArticleView())
-                    NavigationLink("Mes informations", destination: ModifCompteView())
-                    NavigationLink("Mes créateurs suivis", destination: FollowedCreatorView(name: "Chloé Schwarz", entreprise: "Ribambelle", city: "Paris", img: "creatrice"))
-                    NavigationLink("Mes notifications", destination: NotifParamView())
-                    NavigationLink("Protection des données", destination: RGPDView())
+                    NavigationLink(destination: MyCommandsView()) {
+                        Label("Mes commandes", systemImage: "purchased")
+                    }
+                    NavigationLink(destination: ReturnArticleView()) {
+                        Label("Mes retours", systemImage: "arrow.backward.circle")
+                    }
+
+                    NavigationLink(destination: ModifCompteView()) {
+                        Label("Mes informations", systemImage: "person")
+                    }
+
+                    NavigationLink(destination: FollowedCreatorView(name: "Chloé Schwarz", entreprise: "Ribambelle", city: "Paris", img: "creatrice")) {
+                        Label("Mes créateurs suivis", systemImage: "person.fill.checkmark")
+                    }
+
+                    NavigationLink(destination: NotifParamView()) {
+                        Label("Mes notifications", systemImage: "bell")
+                    }
+
+                    NavigationLink(destination: RGPDView()) {
+                        Label("Protection des données", systemImage: "lock.shield")
+                    }
+
                 }.accentColor(.marron)
                 .navigationBarHidden(true) // Cacher la barre de navigation
                 .listStyle(InsetGroupedListStyle())
