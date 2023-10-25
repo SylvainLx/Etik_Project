@@ -7,12 +7,28 @@
 
 import SwiftUI
 
+// ici, pour tester vos fichier APIRequest
+
+
 struct TestAPIView: View {
+    
+    @EnvironmentObject var userRequest: UserAPIRequest
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            LazyVStack {
+                ForEach(userRequest.allUser) { user in
+                    Text(user.lastName)
+                    Text(user.firstName)
+                }
+                Text("okokok")
+            }
+        }
     }
 }
 
 #Preview {
     TestAPIView()
+        .environmentObject(UserAPIRequest())
 }

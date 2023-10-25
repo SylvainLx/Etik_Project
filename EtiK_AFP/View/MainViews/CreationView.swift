@@ -11,7 +11,6 @@ struct CreationView: View {
     
     @State private var currentPage = 0
     let numberOfPages = 3
-    
     var body: some View {
         
         VStack {
