@@ -35,6 +35,8 @@
 		C3773AD32AE65AA30029B7B7 /* Page filtre Article-Createurs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3773AD22AE65AA30029B7B7 /* Page filtre Article-Createurs.swift */; };
 		C3773AD52AE6A7670029B7B7 /* Thematiquecard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3773AD42AE6A7670029B7B7 /* Thematiquecard2.swift */; };
 		C3773AD72AE6B3310029B7B7 /* Thematiquecard3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3773AD62AE6B3310029B7B7 /* Thematiquecard3.swift */; };
+		C3773ADB2AE7F9C20029B7B7 /* MapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3773ADA2AE7F9C20029B7B7 /* MapEvent.swift */; };
+		C3773AE32AE904050029B7B7 /* Map_struc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3773AE22AE904050029B7B7 /* Map_struc.swift */; };
 		C382A4042AE2865C00AA4C48 /* Searchtab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C382A4032AE2865C00AA4C48 /* Searchtab.swift */; };
 		C382A4062AE286B700AA4C48 /* CategorieCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C382A4052AE286B700AA4C48 /* CategorieCard.swift */; };
 		C382A4082AE288BD00AA4C48 /* Thematiquecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C382A4072AE288BD00AA4C48 /* Thematiquecard.swift */; };
@@ -84,6 +86,8 @@
 		C3773AD22AE65AA30029B7B7 /* Page filtre Article-Createurs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Page filtre Article-Createurs.swift"; sourceTree = "<group>"; };
 		C3773AD42AE6A7670029B7B7 /* Thematiquecard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thematiquecard2.swift; sourceTree = "<group>"; };
 		C3773AD62AE6B3310029B7B7 /* Thematiquecard3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thematiquecard3.swift; sourceTree = "<group>"; };
+		C3773ADA2AE7F9C20029B7B7 /* MapEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEvent.swift; sourceTree = "<group>"; };
+		C3773AE22AE904050029B7B7 /* Map_struc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Map_struc.swift; path = EtiK_AFP/View/Map_struc.swift; sourceTree = SOURCE_ROOT; };
 		C382A4032AE2865C00AA4C48 /* Searchtab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchtab.swift; sourceTree = "<group>"; };
 		C382A4052AE286B700AA4C48 /* CategorieCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieCard.swift; sourceTree = "<group>"; };
 		C382A4072AE288BD00AA4C48 /* Thematiquecard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thematiquecard.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 				EB30B1A12AE2A14000B75A21 /* CardCategorie.swift */,
 				EB30B1A32AE2A14E00B75A21 /* CardThematique.swift */,
 				C3773AD22AE65AA30029B7B7 /* Page filtre Article-Createurs.swift */,
+				C3773ADA2AE7F9C20029B7B7 /* MapEvent.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 			children = (
 				CACC4EAD2AE2BAD800DCBDCA /* chatRow.swift */,
 				CACC4EB32AE2BBB000DCBDCA /* chatModel.swift */,
+				C3773AE22AE904050029B7B7 /* Map_struc.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				CACC4EB02AE2BB0900DCBDCA /* chatView.swift in Sources */,
 				C3773AD32AE65AA30029B7B7 /* Page filtre Article-Createurs.swift in Sources */,
 				A9D565642AE2828000085CE2 /* FavorisView.swift in Sources */,
+				C3773ADB2AE7F9C20029B7B7 /* MapEvent.swift in Sources */,
 				CACC4EB42AE2BBB000DCBDCA /* chatModel.swift in Sources */,
 				CACC4EB22AE2BB3500DCBDCA /* Date+Helpers.swift in Sources */,
 				CACC4EAE2AE2BAD800DCBDCA /* chatRow.swift in Sources */,
@@ -350,6 +357,7 @@
 				EB30B1A42AE2A14E00B75A21 /* CardThematique.swift in Sources */,
 				EB30B19D2AE2860800B75A21 /* CardProduit.swift in Sources */,
 				EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */,
+				C3773AE32AE904050029B7B7 /* Map_struc.swift in Sources */,
 				A9D5657C2AE285F800085CE2 /* FollowedCreatorView.swift in Sources */,
 				A9D565612AE2828000085CE2 /* LargeButton.swift in Sources */,
 				CACC4EAC2AE2BA7F00DCBDCA /* chatbase.swift in Sources */,
