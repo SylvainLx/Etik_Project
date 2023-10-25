@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LandingView: View {
+    
+    @StateObject var userRequest = UserAPIRequest()
       
     var body: some View {
         
@@ -30,15 +32,20 @@ struct LandingView: View {
                     .tag(5)
             }.accentColor(.marron)
                 .onAppear {
+                    Task {
+                        userRequest.allUser = await userRequest.fetchedUser()
+                    }
                     // correct the transparency bug for Tab bars
                     let tabBarAppearance = UITabBarAppearance()
                     tabBarAppearance.configureWithOpaqueBackground()
                     UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
                 } 
-      
+                .environmentObject(userRequest)
     }
 }
 
 #Preview {
     LandingView()
+        .environmentObject(UserAPIRequest())
+
 }
