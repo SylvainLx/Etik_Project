@@ -24,12 +24,12 @@ struct CreationView: View {
                     Image(systemName: "paperplane")
                         .font(.custom("Italianno", size: 20))
                 }.foregroundColor(.black)
-                
-                
+                 
                 Spacer()
                 
-                Text("Créations")
+                Text("Créations  ")
                     .font(.custom("Italianno", size: 50))
+                    .padding(.leading, 2)
                 
                 Spacer()
                 
@@ -44,7 +44,7 @@ struct CreationView: View {
             }.padding(.horizontal)
                 .padding(.vertical, -10)
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 
                 ZStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
@@ -59,7 +59,6 @@ struct CreationView: View {
                                 HStack(spacing: 0) {
                                     ForEach(0..<numberOfPages, id: \.self) { page in
                                         CardThematique()
-                                            .frame(width: UIScreen.main.bounds.width)
                                     }
                                 }
                                 .onChange(of: currentPage) { newPage in
@@ -74,29 +73,46 @@ struct CreationView: View {
                         }
                         
                     }
-                    
-                   
                 }
                 
                 HStack {
-                    Circle().frame(width: currentPage == 0 ? 10 : 5)
-                        .foregroundColor(currentPage == 0 ? .black : .gray)
-                    Circle().frame(width: currentPage == 1 ? 10 : 5)
-                        .foregroundColor(currentPage == 1 ? .black : .gray)
-                    Circle().frame(width: currentPage == 2 ? 10 : 5)
-                        .foregroundColor(currentPage == 2 ? .black : .gray)
+                    Circle().frame(width: currentPage == 0 ? 8 : 5)
+                        .foregroundColor(currentPage == 0 ? .darkBeige : .beige)
+                    Circle().frame(width: currentPage == 1 ? 8 : 5)
+                        .foregroundColor(currentPage == 1 ? .darkBeige : .beige)
+                    Circle().frame(width: currentPage == 2 ? 8 : 5)
+                        .foregroundColor(currentPage == 2 ? .darkBeige : .beige)
                 }
                 
                 VStack {
                     
                     VStack(alignment: .leading) {
                         
+                        Text("Top créations")
+                            .font(.custom("Italianno", size: 30))
+                            .padding(.bottom, -20)
+                            .padding(.horizontal)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                                CardCollection()
+                                CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                                CardCollection()
+                                CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                                CardCollection()
+                                CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                                CardCollection()
+                            }.padding()
+                        }
+                        
                         Text("Créateurs")
                             .font(.custom("Italianno", size: 30))
                             .padding(.vertical, -1)
+                            .padding(.horizontal)
                         
                         
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(1...20, id: \.self) { _ in
                                     SmallCreator(img: "creatrice")
@@ -104,43 +120,32 @@ struct CreationView: View {
                                             content
                                                 .opacity(phase.isIdentity ? 1 : 0)
                                                 .scaleEffect(phase.isIdentity ? 1 : 0.5)
-                                            
                                         }
                                 }
                             }.scrollTargetLayout()
+                                .padding(.horizontal)
                         }.scrollTargetBehavior(.viewAligned)
                         
                         Text("Catégories")
                             .font(.custom("Italianno", size: 30))
                             .padding(.vertical, -1)
+                            .padding(.horizontal)
                         
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 CardCategorie(categorie: "Vegan", image: "leaf")
                                 CardCategorie(categorie: "Made in France", image: "flag")
                                 CardCategorie(categorie: "Fait main", image: "hand.raised")
                                 CardCategorie(categorie: "Biologique", image: "cloud")
                                 CardCategorie(categorie: "Upcycling", image: "arrow.3.trianglepath")
-                            }
-                        }
-                        
-                        Text("Top 30")
-                            .font(.custom("Italianno", size: 30))
-                            .padding(.vertical, -1)
-                        
-                        ScrollView(.horizontal) {
-                            HStack {
-                                CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
-                                CardCollection()
-                                CardCollection()
-                            }
-                        }
-                    }.padding(.horizontal)
-                    
+                            }.scrollTargetLayout()
+                                .padding(.horizontal)
+                        }.scrollTargetBehavior(.viewAligned)
+                         
+                    }
                 }
             }
         }
-        
     }
     
     func startAutoScrollTimer() {

@@ -1,5 +1,5 @@
 //
-//  chatView.swift
+//  ChatView.swift
 //  EtiK_AFP
 //
 //  Created by Iris Gourvil on 20/10/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct chatView: View {
+struct ChatView: View {
     let chat: Chat
     
     @State private var text = ""
@@ -104,6 +104,6 @@ GeometryReader{ reader in
 
 struct chatView_Previews: PreviewProvider {
     static var previews: some View {
-        chatView(chat: Chat.sampleChat[1])
+        ChatView(chat: Chat.sampleChat[1])
     }
 }

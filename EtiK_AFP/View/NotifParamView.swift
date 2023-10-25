@@ -16,11 +16,9 @@ struct NotifParamView: View {
 
     var body: some View {
         
-        VStack(alignment: .leading) {
-            Text("Paramètres de notifications")
-                .font(.custom("Italiana", size: 24))
-                .padding()
-                .padding(.bottom, 16)
+        VStack { 
+            TitleCard(title: "Paramètres de notifications")
+               
             VStack(spacing: 32) {
                 Toggle(isOn: $newCreator) {
                     Text("Nouveau Créateur")
@@ -34,7 +32,7 @@ struct NotifParamView: View {
                 Toggle(isOn: $eventFollow) {
                     Text("Evènements à venir")
                 }
-            }
+            }.toggleStyle(SwitchToggleStyle(tint: Color.marron))
             Spacer()
         }.padding()
     }

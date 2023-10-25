@@ -13,13 +13,15 @@ struct SmallCreator: View {
     @State var destination:AnyView?
     
     var body: some View {
-        NavigationLink(destination: destination) {
+        NavigationLink(destination: CreatorDetailView()) {
+            
             ZStack {
                 Circle()
                     .foregroundColor(.beige)
                     .frame(width: 70, height: 70)
                 Image(img)
                     .resizable()
+                    .scaledToFit()
                     .frame(width: 50, height: 50)
             }
         }
