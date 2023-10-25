@@ -9,13 +9,13 @@ import SwiftUI
 
 struct RGPDView: View {
     var body: some View {
-        ScrollView {
-            
-      
+        
+        
+        
         VStack(spacing: 16) {
-            Text("Protection des données")
-                .font(.custom("Italiana", size: 24))
-            Text("""
+            TitleCard(title: "Protection des données")
+            ScrollView {
+                Text("""
                 Chez Créations, nous nous soucions profondément de la protection de vos données personnelles. Cette politique de protection des données explique comment nous collectons, utilisons, partageons et protégeons vos informations personnelles lorsque vous utilisez notre application. Veuillez prendre le temps de lire attentivement cette politique afin de comprendre comment nous traitons vos données.
                     
                     Collecte de Données
@@ -48,12 +48,12 @@ struct RGPDView: View {
                 Si vous avez des questions concernant notre politique de protection des données ou si vous souhaitez exercer vos droits en matière de protection des données, n'hésitez pas à nous contacter.
                 Merci de nous avoir choisi. Votre confiance est précieuse pour nous, et nous nous engageons à protéger vos données personnelles et à vous offrir une expérience de shopping sécurisée et agréable.
                 """)
-            .padding()
+                .padding()
                 .font(.custom("LibreFranklin", size: 16))
-            
+                
+            }
         }
-        }
-       
+        
     }
 }
 

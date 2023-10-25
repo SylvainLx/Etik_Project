@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct TitleCard: View {
+    
+    @State var title:String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(title)
+            .font(.custom("Italianno", size: 50))
+            .padding(.top, -50)
+            .padding(.bottom)
+            .frame(width: 300)
+            .multilineTextAlignment(.center)
     }
 }
 
 #Preview {
-    TitleCard()
+    TitleCard(title: "Chemise en lin")
 }

@@ -20,13 +20,14 @@ struct CardCategorie: View {
                     .foregroundColor(.beige)
                 
                 Image(systemName: image)
-                    .font(.system(size: 40))
+                    .resizable()
+                    .frame(width: 35, height: 30)
                     .foregroundColor(.white)
             }
             
             Text(categorie)
                 .font(.custom("Italiana", size: 15))
-                .frame(width: 75)
+                .frame(width: 70, height: 36)
                 .multilineTextAlignment(.center)
             
         }
@@ -34,5 +35,9 @@ struct CardCategorie: View {
 }
 
 #Preview {
-    CardCategorie(categorie: "Made in france", image: "leaf")
+    HStack {
+        CardCategorie(categorie: "Made in france", image: "leaf")
+        CardCategorie(categorie: "Biologique", image: "cloud")
+    }
+    
 }

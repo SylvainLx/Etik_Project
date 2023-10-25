@@ -9,7 +9,18 @@ import SwiftUI
 
 struct ARButton: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            RoundedRectangle(cornerRadius: 30)
+                .frame(width: 75, height: 40)
+            .foregroundColor(.white)
+            
+            Text("Tester en AR")
+                .font(.custom("LibreFranklin", size: 10))
+        }
+        
+        
+        
     }
 }
 

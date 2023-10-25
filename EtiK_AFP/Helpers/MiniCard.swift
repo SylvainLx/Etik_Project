@@ -10,7 +10,7 @@ import SwiftUI
 struct MiniCard: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
-            .frame(width: 75, height: 75)
+            .frame(width: 70, height: 70)
     }
 }
 

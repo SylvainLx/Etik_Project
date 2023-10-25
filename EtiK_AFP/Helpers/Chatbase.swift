@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct chatbase: View {
+struct Chatbase: View {
     let chats = Chat.sampleChat
     var body: some View {
         
@@ -20,9 +20,9 @@ struct chatbase: View {
                     ForEach (chats) { chat in
                         
                         NavigationLink(destination: {
-                            chatView(chat: chat)
+                            ChatView(chat: chat)
                         }) {
-                            chatRow(chat: chat)
+                            ChatRow(chat: chat)
                             
                             
                         }
@@ -49,7 +49,7 @@ struct chatbase: View {
     
     struct chatbase_Previews: PreviewProvider {
         static var previews: some View {
-            chatbase()
+            Chatbase()
         }
     }
     

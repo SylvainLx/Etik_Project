@@ -10,11 +10,12 @@ import SwiftUI
 struct FavorisView: View {
     
     var body: some View {
+        
         NavigationStack {
-            
-            
-            Text("Favoris")
+             
+            Text("Favoris  ")
                 .font(.custom("Italianno", size: 50))
+                .padding(.leading, 2)
                 .padding(.vertical, -10)
             
             ScrollView {
@@ -24,11 +25,15 @@ struct FavorisView: View {
                             CardProduit(titre: "Chemise en lin", prix: 89, photo: "lin", category: "Made in france", type: "Vegan")
                                 .foregroundColor(.black)
                         }
+                            .navigationTitle("")  // Cacher le titre de la navigation bar
+                            .navigationBarTitleDisplayMode(.inline)
+                            
+                            
                     }
                 }
                 .padding()
             }
-        }
+        }.accentColor(.marron)
     }
 }
 

@@ -25,8 +25,8 @@ struct CommandDetailView: View {
     var body: some View {
         NavigationStack {
             VStack (spacing: 16) {
-                Text("Commande n° \(numberOfOrder)")
-                    .font(.custom("Italiana", size: 24))
+                Text("Commande n° \(numberOfOrder)  ")
+                    .font(.custom("Italianno", size: 50))
                 
                 HStack {
                     NavigationLink(destination: DetailProduit()) {
@@ -69,7 +69,7 @@ struct CommandDetailView: View {
                 VStack {
                     Text("Vous souhaitez poser une question au créateur ?")
                         .font(.custom("LibreFranklin", size : 16))
-                    SmallButtonDestination(title: "C'est ici !", destination: AnyView(chatView(chat: chats[0])))
+                    SmallButtonDestination(title: "C'est ici !", destination: AnyView(ChatView(chat: chats[0])))
                             .padding()
                 }.padding(.top)
                 VStack {

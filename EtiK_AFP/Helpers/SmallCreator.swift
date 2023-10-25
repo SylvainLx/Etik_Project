@@ -21,6 +21,7 @@ struct SmallCreator: View {
                     .frame(width: 70, height: 70)
                 Image(img)
                     .resizable()
+                    .scaledToFit()
                     .frame(width: 50, height: 50)
             }
         }

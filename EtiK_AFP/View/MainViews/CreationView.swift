@@ -27,8 +27,9 @@ struct CreationView: View {
                  
                 Spacer()
                 
-                Text("Créations")
+                Text("Créations  ")
                     .font(.custom("Italianno", size: 50))
+                    .padding(.leading, 2)
                 
                 Spacer()
                 
@@ -87,6 +88,24 @@ struct CreationView: View {
                     
                     VStack(alignment: .leading) {
                         
+                        Text("Top créations")
+                            .font(.custom("Italianno", size: 30))
+                            .padding(.bottom, -20)
+                            .padding(.horizontal)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                                CardCollection()
+                                CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                                CardCollection()
+                                CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                                CardCollection()
+                                CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                                CardCollection()
+                            }.padding()
+                        }
+                        
                         Text("Créateurs")
                             .font(.custom("Italianno", size: 30))
                             .padding(.vertical, -1)
@@ -122,19 +141,7 @@ struct CreationView: View {
                             }.scrollTargetLayout()
                                 .padding(.horizontal)
                         }.scrollTargetBehavior(.viewAligned)
-                        
-                        Text("Top 30")
-                            .font(.custom("Italianno", size: 30))
-                            .padding(.vertical, -1)
-                            .padding(.horizontal)
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
-                                CardCollection()
-                                CardCollection()
-                            }.padding()
-                        }
+                         
                     }
                 }
             }

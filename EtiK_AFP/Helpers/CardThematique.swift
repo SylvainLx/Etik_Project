@@ -12,7 +12,7 @@ struct CardThematique: View {
         ZStack {
             Rectangle()
                 .frame(height: 150)
-                .foregroundColor(.black)
+                .foregroundColor(.beige)
             
             ZStack {
                 Image("thematiqueimg2")

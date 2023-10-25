@@ -20,7 +20,7 @@ struct TextFieldProfil: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 30)
                     .stroke(.beige, lineWidth: 2)
-                    .frame(height: 50)
+                    .frame(height: 40)
             ).padding()
         
     }
