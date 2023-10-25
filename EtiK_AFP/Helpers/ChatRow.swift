@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct chatRow: View {
+struct ChatRow: View {
 
     let chat: Chat
 
@@ -60,6 +60,6 @@ struct chatRow: View {
 
 struct chatRow_Previews: PreviewProvider {
     static var previews: some View {
-        chatRow(chat: Chat.sampleChat[1])
+        ChatRow(chat: Chat.sampleChat[1])
     }
 }

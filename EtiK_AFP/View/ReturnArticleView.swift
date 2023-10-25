@@ -11,11 +11,11 @@ struct ReturnArticleView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
+            
                 VStack {
-                    Text("Mes retours articles")
-                        .font(.custom("Italianno", size: 50))
-                        .padding(.vertical, -10)
+                    TitleCard(title: "Mes retours")
+                      
+                    ScrollView {
                     NavigationLink(destination: CommandDetailView(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")) {
                         CommandReturnCard(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")
                     }.foregroundColor(.black)

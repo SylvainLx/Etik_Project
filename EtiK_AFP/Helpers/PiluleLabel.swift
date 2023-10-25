@@ -31,12 +31,12 @@ struct PiluleLabel: View {
             }) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 30)
-                        .foregroundColor(.beige)
+                        .foregroundColor(.darkBeige)
                         .frame(width: 50, height: 30)
                     
-                    Text(label)
+                    Image(systemName: label)
                         .foregroundStyle(.white)
-                        .font(.custom("LibreFranklin", size: 15))
+                        .font(.system(size: 20))
                     
                     
                 }.scaleEffect(isExpanded ? 1.3 : 1.0)
@@ -89,5 +89,5 @@ struct ArrowShape: Shape {
 }
 
 #Preview {
-    PiluleLabel(label: "♥️", labelText: "Coeur", selectedPiluleLabel: .constant("label"))
+    PiluleLabel(label: "leaf", labelText: "Coeur", selectedPiluleLabel: .constant("label"))
 }

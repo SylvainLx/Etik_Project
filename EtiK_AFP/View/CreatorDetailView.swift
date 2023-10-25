@@ -13,9 +13,7 @@ struct CreatorDetailView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                
-           
+             
             VStack {
                 HStack(alignment: .center, spacing: 26) {
                     ZStack {
@@ -44,49 +42,50 @@ struct CreatorDetailView: View {
                     SmallButtonDestination(title: "Contacter")
                     SmallButtonDestination(title: "Rencontrer")
                 }
-                HStack {
-                    Text("Mon Histoire")
-                        .font(.custom("LibreFranklin", size: 18))
-                    Spacer()
-                    NavigationLink(destination: destination) {
-                        Text("En savoir plus")
-                            .font(.system(size: 10))
-                        
-                    }.foregroundColor(.blue)
-                }.padding()
-                Text("Je m'appelle Chloé Schwarz, et j'ai toujours aimé la mode. Cependant, mon amour pour les animaux et l'environnement m'a poussé à devenir créatrice de vêtements vegan. J'ai cherché des matériaux alternatifs, comme le coton biologique et le lin, pour créer des pièces élégantes sans utiliser de produits d'origine animale. J'ai commencé modestement, en exposant mes créations sur des marchés locaux, mais au fil du temps, ma boutique vegan a prospéré...")
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 16)
-                    .font(.custom("LibreFranklin", size: 10))
-                HStack {
-                    Text("Mes Collections")
-                        .font(.custom("LibreFranklin", size: 18))
-                    Spacer()
-                }
-                .padding(.horizontal)
-                .padding(.top)
-                ScrollView(.horizontal) {
+                ScrollView {
                     HStack {
-                        CardCollection()
-                        CardCollection()
-                        CardCollection()
+                        Text("Mon Histoire")
+                            .font(.custom("LibreFranklin", size: 18))
+                        Spacer()
+                        NavigationLink(destination: destination) {
+                            Text("En savoir plus")
+                                .font(.system(size: 10))
+                            
+                        }.foregroundColor(.blue)
+                    }.padding()
+                    Text("Je m'appelle Chloé Schwarz, et j'ai toujours aimé la mode. Cependant, mon amour pour les animaux et l'environnement m'a poussé à devenir créatrice de vêtements vegan. J'ai cherché des matériaux alternatifs, comme le coton biologique et le lin, pour créer des pièces élégantes sans utiliser de produits d'origine animale. J'ai commencé modestement, en exposant mes créations sur des marchés locaux, mais au fil du temps, ma boutique vegan a prospéré...")
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 16)
+                        .font(.custom("LibreFranklin", size: 10))
+                    HStack {
+                        Text("Mes Collections")
+                            .font(.custom("LibreFranklin", size: 18))
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    .padding(.top)
+                    ScrollView(.horizontal) {
+                        HStack {
+                            CardCollection()
+                            CardCollection()
+                            CardCollection()
+                        }.padding()
+                    }
+                    
+                    HStack {
+                        Text("Mes Produits")
+                            .font(.custom("LibreFranklin", size: 18))
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    ScrollView(.horizontal) {
+                        HStack {
+                            CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                            CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                            CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
+                        }.padding()
                     }
                 }
-                .padding()
-                HStack {
-                    Text("Mes Produits")
-                        .font(.custom("LibreFranklin", size: 18))
-                    Spacer()
-                }
-                .padding(.horizontal)
-                ScrollView(.horizontal) {
-                    HStack {
-                        CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
-                        CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
-                        CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
-                    }                }
-                .padding()
-            }
             }
         }
     }

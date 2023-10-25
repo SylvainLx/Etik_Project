@@ -24,18 +24,8 @@ struct CreateurFiltre: View {
                 }
                 .font(.custom("LibreFranklin", size: 16))
                 .fontWeight(.bold)
-                HStack(alignment: .bottom, spacing: 4) {
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star")
-                }
-                .padding(.top, 36)
+                StarView(note: 3)
+                    .padding(.top, 36)
             }
             .foregroundColor(.black)
         }
