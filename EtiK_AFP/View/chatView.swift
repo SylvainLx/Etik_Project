@@ -33,7 +33,7 @@ struct chatView: View {
                         .frame(width: height, height: height)
                         .background(
                         Circle()
-                            .foregroundColor(text.isEmpty ? .gray : .blue)
+                            .foregroundColor(text.isEmpty ? .darkBeige : .marron)
                         )
                 }
                 .disabled(text.isEmpty)
@@ -63,8 +63,7 @@ GeometryReader{ reader in
                 
                 }
             }
-                            .ignoresSafeArea()
-                            .background(LinearGradient(gradient: Gradient(colors: [.cyan, .init(red: 0.067, green: 0.195, blue: 0.427)]), startPoint: .bottom, endPoint: .top))
+                           
             
             toolBarView()
         }
@@ -81,10 +80,10 @@ GeometryReader{ reader in
                     
                       
                         Text(message.text)
-                        .foregroundColor(.white)
+                        .foregroundColor(isReceived ? .black : .white)
                         .padding(.horizontal)
                         .padding(.vertical, 12)
-                        .background(isReceived ? Color.black.opacity(0.2) : .blue.opacity(0.9))
+                        .background(isReceived ? .darkBeige : .marron)
                         .cornerRadius(13)
                     }
                 .frame(width: viewWidth * 0.7, alignment : isReceived ? .leading : .trailing )

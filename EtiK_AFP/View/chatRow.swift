@@ -24,12 +24,12 @@ struct chatRow: View {
                     HStack {
                         Text(chat.person.name)
                             .bold()
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
 
                         Spacer()
 
                         Text(chat.messages.last?.date.descriptiveString() ?? "")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                           
 
                     }
@@ -38,7 +38,7 @@ struct chatRow: View {
 
                         Text(chat.messages.last?.text ?? "")
                             .bold()
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .lineLimit(2)
                             .frame(height: 50, alignment: .top)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -60,6 +60,6 @@ struct chatRow: View {
 
 struct chatRow_Previews: PreviewProvider {
     static var previews: some View {
-        chatRow(chat: Chat.sampleChat[1])
+        chatRow(chat: Chat.sampleChat[2])
     }
 }

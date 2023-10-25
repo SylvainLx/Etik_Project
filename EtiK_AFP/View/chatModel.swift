@@ -47,7 +47,7 @@ extension Chat {
     
     static let sampleChat = [
         
-        Chat(person: Person(name: "Chloé", imgString: "PERSON'"), messages: [
+        Chat(person: Person(name: "Chloé", imgString: "user1"), messages: [
             Message("Bonjour ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3)),
             Message("Merci pour votre abonnement à ma page créateur", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3)),
             Message("N'hesitez pas si vous avez des questions", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3 )),
@@ -57,7 +57,7 @@ extension Chat {
             Message("Si mes clientes sont heureuses, c'est le principal", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 1)),
             Message("Je n'achete pratiquement que vos creations", type: .Received, date: Date()), ], hasUnreadMessage: true),
         
-        Chat(person: Person(name: "Veronique", imgString: "person3"), messages: [
+        Chat(person: Person(name: "Veronique", imgString: "user2"), messages: [
             Message("Bonjour,", type: .Received, date: Date(timeIntervalSinceNow: -86400 * 5)),
             Message("Je me permets de vous contacter car je voudrais savoir si vous proposez la livraison en 48 heures", type: .Received, date: Date(timeIntervalSinceNow: -86400 * 5)),
             Message("C'est pour mon gala de fin d'annee qui a lieu vendredi", type: .Received, date: Date(timeIntervalSinceNow: -86400 * 5)),
@@ -69,7 +69,7 @@ extension Chat {
        
         ]),
         
-        Chat(person: Person(name: "Noela", imgString: "person6"), messages: [
+        Chat(person: Person(name: "Noela", imgString: "user3"), messages: [
             Message("Bonjour", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 2)),
             Message("Votre commande a ete expedie, cordialement", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 2)),
             Message("Bonsoir", type: .Received, date: Date(timeIntervalSinceNow: -86400 * 1)),
