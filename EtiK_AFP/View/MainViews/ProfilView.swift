@@ -57,7 +57,19 @@ struct ProfilView: View {
                     NavigationLink(destination: RGPDView()) {
                         Label("Protection des données", systemImage: "lock.shield")
                     }
+                    
+                    NavigationLink(destination: LangueView()) {
+                        Label("Langue", systemImage: "character.bubble")
+                    }
+                    
+                    NavigationLink(destination: AboutView()) {
+                        Label("A propos", systemImage: "character.bubble")
+                    }
 
+                    NavigationLink(destination: SupportView()) {
+                        Label("Support", systemImage: "character.bubble")
+                    }
+                    
                 }.accentColor(.marron)
                 .navigationBarHidden(true) // Cacher la barre de navigation
                 .listStyle(InsetGroupedListStyle())
