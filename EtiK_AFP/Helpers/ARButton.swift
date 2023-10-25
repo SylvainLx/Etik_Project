@@ -10,14 +10,22 @@ import SwiftUI
 struct ARButton: View {
     var body: some View {
         
-        ZStack {
-            RoundedRectangle(cornerRadius: 30)
-                .frame(width: 75, height: 40)
-            .foregroundColor(.white)
+        
             
-            Text("Tester en AR")
-                .font(.custom("LibreFranklin", size: 10))
-        }
+            Button(action: {
+                
+            }, label: {
+                ZStack {
+                RoundedRectangle(cornerRadius: 30)
+                    .frame(width: 75, height: 40)
+                .foregroundColor(.white)
+                
+                Text("Tester en AR")
+                    .font(.custom("LibreFranklin", size: 10))
+                }
+            }).foregroundColor(.black)
+           
+        
         
         
         
