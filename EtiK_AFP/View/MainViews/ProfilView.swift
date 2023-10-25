@@ -63,11 +63,11 @@ struct ProfilView: View {
                     }
                     
                     NavigationLink(destination: AboutView()) {
-                        Label("A propos", systemImage: "character.bubble")
+                        Label("A propos", systemImage: "questionmark.app")
                     }
 
                     NavigationLink(destination: SupportView()) {
-                        Label("Support", systemImage: "character.bubble")
+                        Label("Support", systemImage: "ellipsis.message")
                     }
                     
                 }.accentColor(.marron)
