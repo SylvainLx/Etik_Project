@@ -13,11 +13,9 @@ struct ParametreView: View {
         
         NavigationStack{
             List{
-                Button{
-                    
-                }label: {
-                    Text("Général")
-                }
+                
+                    NavigationLink("Général", destination: ModifCompteView())
+                
                 Button{
                     
                 }label: {
@@ -53,11 +51,7 @@ struct ParametreView: View {
                 }label: {
                     Text("Information mise à jour")
                 }
-                Button{
-                    
-                }label: {
-                    Text("Langage")
-                }
+                
                 Button{
                     
                 }label: {
