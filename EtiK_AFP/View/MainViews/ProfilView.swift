@@ -43,15 +43,15 @@ struct ProfilView: View {
                     }
 
                     NavigationLink(destination: ModifCompteView()) {
-                        Label("Mes informations", systemImage: "person")
+                        Label("Mes informations", systemImage: "info.circle")
                     }
 
                     NavigationLink(destination: FollowedCreatorView(name: "Chloé Schwarz", entreprise: "Ribambelle", city: "Paris", img: "creatrice")) {
-                        Label("Mes créateurs suivis", systemImage: "person.fill.checkmark")
+                        Label("Mes créateurs suivis", systemImage: "person")
                     }
 
                     NavigationLink(destination: NotifParamView()) {
-                        Label("Mes notifications", systemImage: "bell")
+                        Label("Mes paramètres notifications", systemImage: "bell")
                     }
 
                     NavigationLink(destination: RGPDView()) {
