@@ -10,27 +10,30 @@ import SwiftUI
 struct CatalogueView: View {
     
     @EnvironmentObject var productRequest: ProductsAPIRequest
-
+    var filtre:String?
     
     var body: some View {
         
         
-        Text("Catalogue  ")
-            .font(.custom("Italianno", size: 50))
-            .padding(.vertical, -10)
-            .padding(.leading, 2) 
+        TitleCard(title: "Catalogue  ")
         
         ScrollView(showsIndicators: false) {
             LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
                 ForEach(productRequest.allProducts) { product in
-//                    NavigationLink(destination: DetailProduit()) {
-//                        CardProduit(titre: product.name, prix: product.price, photo: product.photo[0].url, category: product.category[0], type: product.collection[0])
-//                            .foregroundColor(.black)
-//                    }
-//                        .navigationTitle("")  // Cacher le titre de la navigation bar
-//                        .navigationBarTitleDisplayMode(.inline)
+                    
+                    if product.category[0] == filtre {
+                        NavigationLink(destination: DetailProduit(produit: product)) {
+                            CardProduit(produit: product)
+                        }.navigationTitle("")
+                            .navigationBarTitleDisplayMode(.inline) 
                         
+                    } else if product.idFromCreator[0] == filtre {
+                        NavigationLink(destination: DetailProduit(produit: product)) {
+                            CardProduit(produit: product)
+                        }.navigationTitle("")
+                            .navigationBarTitleDisplayMode(.inline)
                         
+                    }
                 }
             }
         }
@@ -39,6 +42,6 @@ struct CatalogueView: View {
 }
 
 #Preview {
-    CatalogueView()
+    CatalogueView(filtre: "Vegan")
         .environmentObject(ProductsAPIRequest())
 }

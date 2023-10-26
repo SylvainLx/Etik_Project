@@ -10,9 +10,10 @@ import SwiftUI
 struct CreationView: View {
     
     @EnvironmentObject var productRequest: ProductsAPIRequest
-    
+    @State private var search = ""
     @State private var currentPage = 0
     let numberOfPages = 3
+    
     var body: some View {
         
         NavigationStack {
@@ -45,11 +46,31 @@ struct CreationView: View {
                     
                 }.padding(.horizontal)
                     .padding(.vertical, -10)
-                
+                 
                 ScrollView(showsIndicators: false) {
-                    
                     ZStack(alignment: .bottom) {
                         VStack(alignment: .leading) {
+                            
+                            Text("Créateurs")
+                                .font(.custom("Italianno", size: 30))
+                                .padding(.vertical, -1)
+                                .padding(.horizontal)
+                            
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach(1...20, id: \.self) { _ in
+                                        SmallCreator(img: "creatrice")
+                                            .scrollTransition(.animated) { content, phase in
+                                                content
+                                                    .opacity(phase.isIdentity ? 1 : 0)
+                                                    .scaleEffect(phase.isIdentity ? 1 : 0.5)
+                                            }
+                                    }
+                                }.scrollTargetLayout()
+                                    .padding(.horizontal)
+                            }.scrollTargetBehavior(.viewAligned)
+                            
                             Text("Thématique")
                                 .font(.custom("Italianno", size: 30))
                                 .padding(.vertical, -1)
@@ -101,34 +122,19 @@ struct CreationView: View {
                                     ForEach(productRequest.allProducts) { product in
                                         NavigationLink(destination: DetailProduit(produit: product)) {
                                             CardProduit(produit: product)
-                                        } .navigationTitle("")
-                                            .navigationBarTitleDisplayMode(.inline)
-                                            .environmentObject(ProductsAPIRequest())
+                                                .foregroundColor(.black)
+                                                .scrollTransition(.animated) { content, phase in
+                                                    content
+                                                        .opacity(phase.isIdentity ? 1 : 0.5)
+                                                }
+                                        }.navigationTitle("")
+                                         .navigationBarTitleDisplayMode(.inline)
                                     }
                                     
-                                }.padding()
-                            }
-                            
-                            Text("Créateurs")
-                                .font(.custom("Italianno", size: 30))
-                                .padding(.vertical, -1)
-                                .padding(.horizontal)
-                            
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack {
-                                    ForEach(1...20, id: \.self) { _ in
-                                        SmallCreator(img: "creatrice")
-                                            .scrollTransition(.animated) { content, phase in
-                                                content
-                                                    .opacity(phase.isIdentity ? 1 : 0)
-                                                    .scaleEffect(phase.isIdentity ? 1 : 0.5)
-                                            }
-                                    }
                                 }.scrollTargetLayout()
-                                    .padding(.horizontal)
+                                .padding()
                             }.scrollTargetBehavior(.viewAligned)
-                            
+                             
                             Text("Catégories")
                                 .font(.custom("Italianno", size: 30))
                                 .padding(.vertical, -1)
@@ -136,12 +142,27 @@ struct CreationView: View {
                             
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
-                                    CardCategorie(categorie: "Vegan", image: "leaf")
-                                    CardCategorie(categorie: "Made in France", image: "flag")
-                                    CardCategorie(categorie: "Fait main", image: "hand.raised")
-                                    CardCategorie(categorie: "Biologique", image: "cloud")
-                                    CardCategorie(categorie: "Upcycling", image: "arrow.3.trianglepath")
-                                }.scrollTargetLayout()
+                                    NavigationLink(destination: CatalogueView(filtre: "Vegan")) {
+                                        CardCategorie(categorie: "Vegan", image: "leaf")
+                                    }
+                                    NavigationLink(destination: CatalogueView(filtre: "Made in France")) {
+                                        CardCategorie(categorie: "Made in France", image: "flag")
+                                    }
+                                    NavigationLink(destination: CatalogueView(filtre: "Fait main")) {
+                                        CardCategorie(categorie: "Fait main", image: "hand.raised")
+                                    }
+                                    NavigationLink(destination: CatalogueView(filtre: "Biologique")) {
+                                        CardCategorie(categorie: "Biologique", image: "cloud")
+                                    }
+                                    NavigationLink(destination: CatalogueView(filtre: "Upcycling")) {
+                                        CardCategorie(categorie: "Upcycling", image: "arrow.3.trianglepath")
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                }.foregroundColor(.black)
+                                    .scrollTargetLayout()
                                     .padding(.horizontal)
                             }.scrollTargetBehavior(.viewAligned)
                             

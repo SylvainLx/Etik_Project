@@ -14,7 +14,6 @@ struct LandingView: View {
       
     var body: some View {
         
-    
             TabView {
                
                 CreationView()
@@ -28,6 +27,7 @@ struct LandingView: View {
                     .tabItem { Label("Panier", systemImage: "basket") }
                 ProfilView()
                     .tabItem { Label("Profil", systemImage: "person") } 
+                    .environmentObject(userRequest)
             }.accentColor(.marron)
                 .onAppear {
                     Task {

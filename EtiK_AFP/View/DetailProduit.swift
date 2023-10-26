@@ -137,8 +137,8 @@ struct DetailProduit: View {
                     
                     
                    Text(produit.description)
-//                        .font(.custom("LibreFranklin", size: 15))
-//                        .foregroundStyle(.gray)
+                        .font(.custom("LibreFranklin", size: 15))
+                        .foregroundStyle(.gray)
                     
                     Spacer()
                     HStack {

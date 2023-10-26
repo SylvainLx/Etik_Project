@@ -48,14 +48,20 @@ struct CardProduit: View {
                      
                 }
                 
-                Text(produit.name)
-                    .font(.custom("Italiana", size: 12))
-                Text(produit.category[0])
-                    .font(.custom("LibreFranklin", size: 8))
-                    .foregroundStyle(.gray)
+                HStack {
+                    Spacer()
+                    VStack {
+                        Text(produit.name)
+                            .font(.custom("Italiana", size: 12))
+                        Text(produit.category[0])
+                            .font(.custom("LibreFranklin", size: 8))
+                            .foregroundStyle(.gray)
+                    }
+                    Spacer()
+                    LikeButton()  
+                }.frame(width: 150, height: 30)
             }
             
-            LikeButton() 
         }
         
     }

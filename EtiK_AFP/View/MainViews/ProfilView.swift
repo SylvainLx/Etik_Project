@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfilView: View {
+    
+    @StateObject var userRequest = UserAPIRequest()
+    
     var body: some View {
         
         NavigationStack {
@@ -15,10 +18,11 @@ struct ProfilView: View {
             VStack {
                 
                 ZStack {
-                    Circle()
-                        .fill(.beige)
-                        .frame(width: 475, height: 475)
-                        .offset(CGSize(width: 0, height: -200))
+                    RadialGradient(stops: [
+                        .init(color: Color(.beige), location: 0.3),
+                        .init(color: Color(.white), location: 0.3),
+                    ], center: .top, startRadius: 100, endRadius: 600)
+                    .ignoresSafeArea()
                     
                     VStack {
                         Text("Profil  ")
@@ -30,6 +34,7 @@ struct ProfilView: View {
                             .scaledToFit()
                             .clipShape(Circle())
                             .frame(width: 150)
+                      
                     }
                 }
                 .frame(width: 400, height: 300)
@@ -47,7 +52,6 @@ struct ProfilView: View {
                     NavigationLink(destination: FollowedCreatorView(name: "Chloé Schwarz", entreprise: "Ribambelle", city: "Paris", img: "creatrice")) {
                         Label("Mes créateurs suivis", systemImage: "person")
                     }
- 
                     NavigationLink(destination: NotifParamView()) {
                         Label("Mes paramètres notifications", systemImage: "bell")
                     }
@@ -62,17 +66,17 @@ struct ProfilView: View {
                     }
                     NavigationLink(destination: SupportView()) {
                         Label("Support", systemImage: "ellipsis.message")
-                    } 
+                    }
                 }.accentColor(.marron)
-                .navigationBarHidden(true) // Cacher la barre de navigation
-                .listStyle(InsetGroupedListStyle())
-                .scrollContentBackground(.hidden)
-                .foregroundColor(.marron)
-                .fontWeight(.bold)
-                .navigationTitle("") // Cacher le titre de la navigation bar
-                .navigationBarTitleDisplayMode(.inline) 
-               
-               
+                    .navigationBarHidden(true) // Cacher la barre de navigation
+                    .listStyle(InsetGroupedListStyle())
+                    .scrollContentBackground(.hidden)
+                    .foregroundColor(.marron)
+                    .fontWeight(.bold)
+                    .navigationTitle("") // Cacher le titre de la navigation bar
+                    .navigationBarTitleDisplayMode(.inline)
+                
+                
             }
         }.accentColor(.marron)
     }
@@ -80,4 +84,5 @@ struct ProfilView: View {
 
 #Preview {
     ProfilView()
+        .environmentObject(UserAPIRequest())
 }
