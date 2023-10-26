@@ -13,7 +13,7 @@ struct LargeButton: View {
     
     var body: some View {
         
-        Button{
+        Button {
             
         } label: {
             ZStack {
@@ -24,10 +24,7 @@ struct LargeButton: View {
                     .foregroundStyle(.white)
                     .font(.custom("Italiana", size: 20))
             }
-        }
-        
-        
-        
+        } 
     }
 }
 

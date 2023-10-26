@@ -15,25 +15,29 @@ struct CardCategorie: View {
     var body: some View {
         VStack {
              
-            ZStack {
-                
-                SmallCard()
+            ZStack { 
+                MiniCard()
                     .foregroundColor(.beige)
                 
                 Image(systemName: image)
-                    .font(.system(size: 50))
+                    .resizable()
+                    .frame(width: 35, height: 30)
                     .foregroundColor(.white)
-                 
             }
             
-            
             Text(categorie)
-                .font(.custom("Italiana", size: 20))
+                .font(.custom("Italiana", size: 15))
+                .frame(width: 70, height: 36)
+                .multilineTextAlignment(.center)
             
         }
     }
 }
 
 #Preview {
-    CardCategorie(categorie: "Vegan", image: "pawprint")
+    HStack {
+        CardCategorie(categorie: "Made in france", image: "leaf")
+        CardCategorie(categorie: "Biologique", image: "cloud")
+    }
+    
 }

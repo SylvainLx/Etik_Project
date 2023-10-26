@@ -8,55 +8,28 @@
 import SwiftUI
 
 struct ReturnArticleView: View {
-    @State var name : String
-    @State var category : String
-    @State var type : String
-    @State var price : Int
-    @State var numberOfOrder : Int
-    @State var productSize : String
 
     var body: some View {
-        VStack {
-            Text("Mes retours articles")
-            HStack (spacing: 16) {
-                ZStack(alignment: .bottom) {
-                    
-                    SmallCard()
-                        .foregroundColor(.beige)
-                    Image("lin")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 100)
-                        .padding(.bottom)
-                        .shadow(radius: 5)
-                }
-               
-                VStack(alignment: .leading) {
-                    Text(name)
-                        .fontWeight(.bold)
-                    Text("\(category) / \(type)")
-                        .font(.footnote)
-                    Text("\(price) €")
-                        .fontWeight(.bold)
-                    Text("n° \(numberOfOrder)")
-                        .font(.footnote)
-                }.padding(.top, 8)
+        NavigationStack {
+            
                 VStack {
-                    Text("Taille")
-                        .fontWeight(.bold)
-                    Text(productSize)
+                    TitleCard(title: "Mes retours")
+                      
+                    ScrollView {
+                    NavigationLink(destination: CommandDetailView(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")) {
+                        CommandReturnCard(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")
+                    }.foregroundColor(.black)
+                    NavigationLink(destination: CommandDetailView(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")) {
+                        CommandReturnCard(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 200, statut: "En cours de livraison...")
+                    }.foregroundColor(.black)
                 }
+                .padding(8)
             }
-            PiluleStatut()
-                .padding(.top, 4)
-            Divider()
-                .padding()
+            Spacer()
         }
-        .padding(8)
-        
     }
 }
 
 #Preview {
-    ReturnArticleView(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS")
+    ReturnArticleView()
 }

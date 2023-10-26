@@ -9,31 +9,36 @@ import SwiftUI
 
 struct DetailProduit: View {
     
-    @State var articleTitle:String = "Chemise en lin"
+    @State var articleTitle:String = "Chemise en lin bio"
     @State var articleDesc:String = "Découvrez notre chemise en lin vegan, fabriquée en France. Confectionnée à partir de lin durable et respectueux de l'environnement, elle est légère, respirante et confortable. Sa coupe élégante ajoute une touche de style à votre tenue. Chaque chemise est fabriquée avec une grande attention aux détails par des artisans français. Opter pour cette chemise, c'est choisir la mode éthique et soutenir l'artisanat local, tout en restant élégant et soucieux de l'environnement."
-    @State var articlePhoto = ["lin", "shirt", "shirt2", "shirt3"]
-    @State var stock:Int = 10
+    @State var articlePhoto = ["lin3", "lin1", "lin2"]
+    @State var stock:Int = 2
     @State var prix:Double = 80.99
     
     var sizes = ["XS", "S", "M", "L", "XL", "XXL"]
     @State private var selectedSize = "XS"
+    @State private var showInfo: Bool = false
+    
+    @State private var selectedPiluleLabel: String?
     
     var body: some View {
         
         VStack {
-            Text(articleTitle)
-                .font(.custom("Italianno", size: 80))
-                .padding(10)
+            
+            TitleCard(title: "Chemise en lin bio")
             
             VStack {
                 
-                ZStack(alignment: .bottom) {
+                ZStack(alignment: .top) {
                     
-                    RoundedRectangle(cornerRadius: 30)
-                        .foregroundColor(.beige)
-                        .frame(width: 350, height: 300)
- 
-                        ScrollView(.horizontal) {
+                    ZStack(alignment: .bottom) {
+                        
+                        RoundedRectangle(cornerRadius: 30)
+                            .foregroundColor(.beige)
+                            .frame(width: 350, height: 300)
+                            
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 10) {
                                 ForEach(articlePhoto, id: \.self) { photo in
                                     Image(photo)
@@ -53,25 +58,40 @@ struct DetailProduit: View {
                                 }
                             }.scrollTargetLayout()
                         }.scrollTargetBehavior(.viewAligned)
- 
-                          
                         
-                    Text("\(prix, specifier: "%.2f") €")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .padding(.bottom, 8)
-                        .foregroundColor(.white)
-                        .shadow(radius: 2)
-                }.frame(width: 350, height: 320)
-                
+                        
+                        
+                        Text("\(prix, specifier: "%.2f") €")
+                            .font(.system(size: 35))
+                            .fontWeight(.bold)
+                            .padding(.bottom, 8)
+                            .foregroundColor(.white)
+                            .shadow(radius: 1)
+                    }.frame(width: 350, height: 320)
+                    
+                    HStack {
+                        ARButton().padding(.leading, 20)
+                        Spacer()
+                        LikeButton().padding(.trailing, 20)
+                        
+                    }.padding(.horizontal)
+                        .padding(.top, 30)
+                    
+                }
+              
                 HStack {
-                    PiluleLabel(label: "🐼")
-                    PiluleLabel(label: "🇫🇷")
-                    PiluleLabel(label: "🌸")
-                    PiluleLabel(label: "🤲🏾")
-                }.padding(.bottom)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            PiluleLabel(label: "leaf", labelText: "Vegan", selectedPiluleLabel: $selectedPiluleLabel)
+                            PiluleLabel(label: "flag", labelText: "Made in France", selectedPiluleLabel: $selectedPiluleLabel)
+                            PiluleLabel(label: "cloud", labelText: "Biologique", selectedPiluleLabel: $selectedPiluleLabel)
+                            PiluleLabel(label: "hand.raised", labelText: "Fait main", selectedPiluleLabel: $selectedPiluleLabel)
+                        }.frame(width: 400,alignment: .center) 
+                    }
+                }.padding(.top)
+                Divider().padding()
                 
-            }.padding(.horizontal)
+            }
             
             
             HStack {
@@ -89,23 +109,24 @@ struct DetailProduit: View {
                     }.accentColor(.white)
                 }
                 
+                if stock == 0 {
+                    Text("Non disponible" )
+                        .font(.custom("LibreFranklin", size: 12))
+                } else {
+                    Text("\(stock) disponible(s)" )
+                        .font(.custom("LibreFranklin", size: 12))
+                }
             }
+             
+            Divider().padding(.top)
             
-            if stock == 0 {
-                Text("Non disponible" )
-                    .font(.custom("LibreFranklin", size: 12))
-            } else {
-                Text("\(stock) disponible(s)" )
-                    .font(.custom("LibreFranklin", size: 12))
-            }
-            
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 Text(articleDesc)
                     .font(.custom("LibreFranklin", size: 15))
                     .foregroundStyle(.gray)
-                    .padding()
                     .multilineTextAlignment(.center)
-            }
+                
+            }.padding()
         }
         
         
