@@ -10,30 +10,29 @@ import SwiftUI
 struct LandingView: View {
     
     @StateObject var userRequest = UserAPIRequest()
+    @StateObject var productRequest = ProductsAPIRequest()
       
     var body: some View {
         
     
             TabView {
+               
                 CreationView()
                     .tabItem { Label("Créations", systemImage: "sun.max") }
-                    .tag(0)
+                    .environmentObject(productRequest)
                 EventView()
                     .tabItem { Label("Évènements", systemImage: "calendar") }
-                    .tag(1) 
                 FavorisView()
                     .tabItem { Label("Favoris", systemImage: "heart") }
-                    .tag(3)
                 PanierView(vide: false, articles: articles)
                     .tabItem { Label("Panier", systemImage: "basket") }
-                    .tag(4)
                 ProfilView()
-                    .tabItem { Label("Profil", systemImage: "person") }
-                    .tag(5)
+                    .tabItem { Label("Profil", systemImage: "person") } 
             }.accentColor(.marron)
                 .onAppear {
                     Task {
                         userRequest.allUser = await userRequest.fetchedUser()
+                        productRequest.allProducts = await productRequest.fetchedProducts()
                     }
                     // correct the transparency bug for Tab bars
                     let tabBarAppearance = UITabBarAppearance()
@@ -41,11 +40,13 @@ struct LandingView: View {
                     UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
                 } 
                 .environmentObject(userRequest)
+                .environmentObject(productRequest) 
     }
 }
 
 #Preview {
     LandingView()
         .environmentObject(UserAPIRequest())
+        .environmentObject(ProductsAPIRequest())
 
 }

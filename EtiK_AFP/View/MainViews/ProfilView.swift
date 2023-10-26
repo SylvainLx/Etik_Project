@@ -41,35 +41,28 @@ struct ProfilView: View {
                     NavigationLink(destination: ReturnArticleView()) {
                         Label("Mes retours", systemImage: "arrow.backward.circle")
                     }
-
                     NavigationLink(destination: ModifCompteView()) {
                         Label("Mes informations", systemImage: "info.circle")
                     }
-
                     NavigationLink(destination: FollowedCreatorView(name: "Chloé Schwarz", entreprise: "Ribambelle", city: "Paris", img: "creatrice")) {
                         Label("Mes créateurs suivis", systemImage: "person")
                     }
-
+ 
                     NavigationLink(destination: NotifParamView()) {
                         Label("Mes paramètres notifications", systemImage: "bell")
                     }
-
                     NavigationLink(destination: RGPDView()) {
                         Label("Protection des données", systemImage: "lock.shield")
                     }
-                    
                     NavigationLink(destination: LangueView()) {
                         Label("Langue", systemImage: "character.bubble")
                     }
-                    
                     NavigationLink(destination: AboutView()) {
                         Label("A propos", systemImage: "questionmark.app")
                     }
-
                     NavigationLink(destination: SupportView()) {
                         Label("Support", systemImage: "ellipsis.message")
-                    }
-                    
+                    } 
                 }.accentColor(.marron)
                 .navigationBarHidden(true) // Cacher la barre de navigation
                 .listStyle(InsetGroupedListStyle())

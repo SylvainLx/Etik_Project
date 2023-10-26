@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct CatalogueView: View {
+    
+    @EnvironmentObject var productRequest: ProductsAPIRequest
+
+    
     var body: some View {
         
         
@@ -18,8 +22,15 @@ struct CatalogueView: View {
         
         ScrollView(showsIndicators: false) {
             LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
-                ForEach(1...7, id: \.self) { _ in
-                    CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin3", category: "Made in France", type: "Vegan")
+                ForEach(productRequest.allProducts) { product in
+//                    NavigationLink(destination: DetailProduit()) {
+//                        CardProduit(titre: product.name, prix: product.price, photo: product.photo[0].url, category: product.category[0], type: product.collection[0])
+//                            .foregroundColor(.black)
+//                    }
+//                        .navigationTitle("")  // Cacher le titre de la navigation bar
+//                        .navigationBarTitleDisplayMode(.inline)
+                        
+                        
                 }
             }
         }
@@ -29,4 +40,5 @@ struct CatalogueView: View {
 
 #Preview {
     CatalogueView()
+        .environmentObject(ProductsAPIRequest())
 }

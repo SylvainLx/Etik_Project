@@ -16,9 +16,9 @@ struct SmallCreator: View {
         NavigationLink(destination: CreatorDetailView()) {
             
             ZStack {
-//                Circle()
-//                    .foregroundColor(.beige)
-//                    .frame(width: 70, height: 70)
+                Circle()
+                    .foregroundColor(.beige)
+                    .frame(width: 70, height: 70)
                 Image(img)
                     .resizable()
                     .scaledToFit()

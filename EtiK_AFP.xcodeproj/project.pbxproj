@@ -191,12 +191,12 @@
 			isa = PBXGroup;
 			children = (
 				A975B2D52AE9442200321AB2 /* UserAPIRequest.swift */,
-				A975B2DD2AE9467D00321AB2 /* local.env.swift */,
-				A975B2DF2AE9505000321AB2 /* TestAPIView.swift */,
 				A975B2E72AE95F4C00321AB2 /* ProductAPIRequest.swift */,
+				A975B2DF2AE9505000321AB2 /* TestAPIView.swift */,
 				A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */,
 				A975B2EB2AE95F6500321AB2 /* EventAPIRequest.swift */,
 				A975B2ED2AE95F7000321AB2 /* TransactionAPIRequest.swift */,
+				A975B2DD2AE9467D00321AB2 /* local.env.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";

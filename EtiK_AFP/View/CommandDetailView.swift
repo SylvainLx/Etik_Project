@@ -29,18 +29,18 @@ struct CommandDetailView: View {
                     .font(.custom("Italianno", size: 50))
                 
                 HStack {
-                    NavigationLink(destination: DetailProduit()) {
-                        ZStack(alignment: .bottom) {
-                            SmallCard()
-                                .foregroundColor(.beige)
-                            Image("lin")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 100)
-                                .padding(.bottom)
-                                .shadow(radius: 5)
-                        }
-                    }
+//                    NavigationLink(destination: DetailProduit()) {
+//                        ZStack(alignment: .bottom) {
+//                            SmallCard()
+//                                .foregroundColor(.beige)
+//                            Image("lin")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(height: 100)
+//                                .padding(.bottom)
+//                                .shadow(radius: 5)
+//                        }
+//                    }
                     VStack(alignment: .leading) {
                         Text(name)
                             .fontWeight(.bold)

@@ -6,14 +6,14 @@
 //
 
 // MARK: - DataBaseImage
-struct DataBaseImage: Codable {
+struct DataBaseImage: Codable, Identifiable {
     let id: String
     let width, height: Int
     let url: String
     let filename: String
     let size: Int
     let type: String
-    let thumbnails: Thumbails
+    let thumbnails: Thumbails?
 }
 
 // MARK: - Thumbnails
