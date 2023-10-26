@@ -69,6 +69,7 @@ struct Page_filtre_Article_Createurs: View {
                                     searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText)
                                 }, id: \.self) { item in
                                     CardProduit(titre: item, prix: 30)
+  
                                         .padding(.top, 20)
                                 }
                             }

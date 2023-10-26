@@ -36,6 +36,7 @@ extension MapView {
         Task {
             let result = try? await MKLocalSearch(request: request).start()
             self.result = result?.mapItems ?? []
+            //print("Results:", result)
         }
     }
 }
@@ -50,7 +51,8 @@ struct MapView: View {
    
     @State private var result = [MKMapItem]() //tableau vide pour nos pts d'intérêts
     @State private var selection: MKMapItem? //Permet de notifier la selection d'un point d'intérêt
-    
+    @State private var filteredPointsOfInterest: [PointOfInterest] = []
+    @State private var isSearching = false
     
     // points d'intérêt pour essayer
     let pointsOfInterest: [PointOfInterest] = [
@@ -67,20 +69,20 @@ struct MapView: View {
             Spacer()
             Map(position: $userLocation, selection: $selection) {
                 
-                //Permet d'afficher le point bleu (notre position)
+                //loop si recherche, affiche le point perso specifique
                 UserAnnotation()
-                
-                //################################################################### A demander explications perso
-                //loop pour afficher les demandes de points d'intérêts specifiques (resto, monuments, etc...)
+                if isSearching{
+                    ForEach(filteredPointsOfInterest, id: \.id) { poi in
+                        Marker(poi.name, coordinate: poi.coordinate)
+                                    }
+                }
+
+                //loop pour afficher les demandes de points d'intérêts generique (resto, monuments, etc...)
                 ForEach(result, id:\.self) { item in
                     let placemark = item.placemark
                     Marker(placemark.name ?? "", coordinate: placemark.coordinate)
                 }
-                //###################################################################
-                ForEach(pointsOfInterest, id: \.id) { poi in
-                    Marker(poi.name, coordinate: poi.coordinate)
-                }
-                
+      
                 
             }
             .overlay(alignment: .bottom, content: {
@@ -95,11 +97,17 @@ struct MapView: View {
             }
             //permet d'effectuer la demande de notre textfield une fois appuyer sur entrée
             .onSubmit(of: .text) {
-                //Notre fonction de demande de points d'intérêts
+                isSearching = true
+                filteredPointsOfInterest = pointsOfInterest.filter { poi in
+                    return poi.name.localizedCaseInsensitiveContains(search)
+                }
+                // Réaliser la demande de points d'intérêt
                 searchPlaces()
             }
-            //Quand la vue apparait on est notifié de la permission
+            
+            //Quand la vue apparait on est notifié de la permission + reinitialisation variable isSearching
             .onAppear(perform: {
+                isSearching = false
                 locationManager.requestLocation()
             })
             Spacer()
@@ -110,3 +118,9 @@ struct MapView: View {
 #Preview {
     MapView()
 }
+
+
+
+
+
+

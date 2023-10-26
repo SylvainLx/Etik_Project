@@ -24,7 +24,7 @@ struct LandingView: View {
                 FavorisView()
                     .tabItem { Label("Favoris", systemImage: "heart") }
                     .tag(3)
-                PanierView(vide: false, articles: articles)
+                PanierView(vide: false)
                     .tabItem { Label("Panier", systemImage: "basket") }
                     .tag(4)
                 ProfilView()

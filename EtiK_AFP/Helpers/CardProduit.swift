@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CardProduit: View {
     
-    @State var titre:String
-    @State var prix:Double
-    @State var photo:String
-    @State var category:String
-    @State var type:String
+    @State var titre:String = ""
+    @State var prix:Double = 0.0
+    @State var photo:String = ""
+    @State var category:String = ""
+    @State var type:String = ""
     
     var body: some View {
         
