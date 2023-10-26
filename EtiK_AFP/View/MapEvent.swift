@@ -15,12 +15,12 @@ import MapKit
 //Ici ma position perso
 extension CLLocationCoordinate2D {
     static let Paris = CLLocationCoordinate2D(
-        latitude: 48.873997, longitude: 2.367753
+        latitude: 46.227638, longitude: 1.213749
     )
 }
 //Le niveau de zoom et le périmètre
 extension MKCoordinateRegion {
-    static let userRegion = MKCoordinateRegion(center: .Paris, latitudinalMeters: 1500, longitudinalMeters: 1500)
+    static let userRegion = MKCoordinateRegion(center: .Paris, latitudinalMeters: 600000, longitudinalMeters: 700000)
 }
 
 //###################################################################
@@ -103,6 +103,12 @@ struct MapView: View {
                 }
                 // Réaliser la demande de points d'intérêt
                 searchPlaces()
+                
+                // Centrer la carte sur le premier point d'intérêt trouvé
+                if let firstMatchingPOI = filteredPointsOfInterest.first {
+                    let region = MKCoordinateRegion(center: firstMatchingPOI.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                        userLocation = .region(region)
+                    }
             }
             
             //Quand la vue apparait on est notifié de la permission + reinitialisation variable isSearching
