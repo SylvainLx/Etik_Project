@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct AboutView: View {
+    
     var body: some View {
-        Text("About")
+        
+        NavigationStack {
+            
+            List {
+                
+                NavigationLink("Termes d'utilisation", destination: TermsOfServiceView())
+                
+                NavigationLink("Régulations EU", destination: EURegulationView())
+                
+                NavigationLink("Version de l'application", destination: AppVersionView())
+                
+            }
+            .navigationTitle("A propos")
+        }
+        
     }
 }
 
