@@ -11,7 +11,16 @@ struct AppVersionView: View {
     
     var body: some View {
         
-        Text("App version")
+        VStack (spacing : 16){
+            
+            TitleCard(title: "Version d'application")
+            ScrollView{
+                
+                Text("Version 1.001")
+                
+            }
+            
+        }
         
     }
 }
