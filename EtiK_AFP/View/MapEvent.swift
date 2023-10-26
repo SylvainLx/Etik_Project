@@ -63,44 +63,47 @@ struct MapView: View {
     
     
     var body: some View {
-        
-        Map(position: $userLocation, selection: $selection) {
-            
-            //Permet d'afficher le point bleu (notre position)
-            UserAnnotation()
-
-//################################################################### A demander explications perso
-            //loop pour afficher les demandes de points d'intérêts specifiques (resto, monuments, etc...)
-            ForEach(result, id:\.self) { item in
-                let placemark = item.placemark
-                Marker(placemark.name ?? "", coordinate: placemark.coordinate)
+        VStack{
+            Spacer()
+            Map(position: $userLocation, selection: $selection) {
+                
+                //Permet d'afficher le point bleu (notre position)
+                UserAnnotation()
+                
+                //################################################################### A demander explications perso
+                //loop pour afficher les demandes de points d'intérêts specifiques (resto, monuments, etc...)
+                ForEach(result, id:\.self) { item in
+                    let placemark = item.placemark
+                    Marker(placemark.name ?? "", coordinate: placemark.coordinate)
+                }
+                //###################################################################
+                ForEach(pointsOfInterest, id: \.id) { poi in
+                    Marker(poi.name, coordinate: poi.coordinate)
+                }
+                
+                
             }
-//###################################################################
-            ForEach(pointsOfInterest, id: \.id) { poi in
-                Marker(poi.name, coordinate: poi.coordinate)
+            .overlay(alignment: .bottom, content: {
+                TextField("Recherche", text: $search)
+                    .padding(12)
+                    .background(.white)
+                    .padding()
+            })
+            .mapControls {
+                MapPitchToggle() //Bouton 3D/2D
+                MapUserLocationButton() //recentre sur notre localisation
             }
-            
-            
+            //permet d'effectuer la demande de notre textfield une fois appuyer sur entrée
+            .onSubmit(of: .text) {
+                //Notre fonction de demande de points d'intérêts
+                searchPlaces()
+            }
+            //Quand la vue apparait on est notifié de la permission
+            .onAppear(perform: {
+                locationManager.requestLocation()
+            })
+            Spacer()
         }
-        .overlay(alignment: .bottom, content: {
-            TextField("Recherche", text: $search)
-                .padding(12)
-                .background(.white)
-                .padding()
-        })
-        .mapControls {
-            MapPitchToggle() //Bouton 3D/2D
-            MapUserLocationButton() //recentre sur notre localisation
-        }
-        //permet d'effectuer la demande de notre textfield une fois appuyer sur entrée
-        .onSubmit(of: .text) {
-            //Notre fonction de demande de points d'intérêts
-            searchPlaces()
-        }
-        //Quand la vue apparait on est notifié de la permission
-        .onAppear(perform: {
-            locationManager.requestLocation()
-        })
     }
 }
 
