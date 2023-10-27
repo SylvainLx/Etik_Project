@@ -79,6 +79,8 @@
 		EB30B1A22AE2A14000B75A21 /* CardCategorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1A12AE2A14000B75A21 /* CardCategorie.swift */; };
 		EB30B1A42AE2A14E00B75A21 /* CardThematique.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1A32AE2A14E00B75A21 /* CardThematique.swift */; };
 		EB30B1A62AE2AC3900B75A21 /* CatalogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30B1A52AE2AC3900B75A21 /* CatalogueView.swift */; };
+		EB8F07732AEBBDD60051E619 /* FidelityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8F07722AEBBDD60051E619 /* FidelityView.swift */; };
+		EB8F07752AEBDB290051E619 /* FidelityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8F07742AEBDB290051E619 /* FidelityCard.swift */; };
 		EBA511342AE2CD1200210517 /* MiniCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA511332AE2CD1200210517 /* MiniCard.swift */; };
 		EBA511362AE65A9F00210517 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA511352AE65A9F00210517 /* StarView.swift */; };
 		EBA511382AE65B0500210517 /* AvisCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA511372AE65B0500210517 /* AvisCard.swift */; };
@@ -161,6 +163,8 @@
 		EB30B1A12AE2A14000B75A21 /* CardCategorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCategorie.swift; sourceTree = "<group>"; };
 		EB30B1A32AE2A14E00B75A21 /* CardThematique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardThematique.swift; sourceTree = "<group>"; };
 		EB30B1A52AE2AC3900B75A21 /* CatalogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueView.swift; sourceTree = "<group>"; };
+		EB8F07722AEBBDD60051E619 /* FidelityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidelityView.swift; sourceTree = "<group>"; };
+		EB8F07742AEBDB290051E619 /* FidelityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidelityCard.swift; sourceTree = "<group>"; };
 		EBA511332AE2CD1200210517 /* MiniCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCard.swift; sourceTree = "<group>"; };
 		EBA511352AE65A9F00210517 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		EBA511372AE65B0500210517 /* AvisCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvisCard.swift; sourceTree = "<group>"; };
@@ -194,13 +198,11 @@
 			children = (
 				A975B2D52AE9442200321AB2 /* UserAPIRequest.swift */,
 				A975B2EF2AE9658C00321AB2 /* local.env.swift */,
-				A975B2DF2AE9505000321AB2 /* TestAPIView.swift */,
 				A975B2E72AE95F4C00321AB2 /* ProductAPIRequest.swift */,
 				A975B2DF2AE9505000321AB2 /* TestAPIView.swift */,
 				A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */,
 				A975B2EB2AE95F6500321AB2 /* EventAPIRequest.swift */,
 				A975B2ED2AE95F7000321AB2 /* TransactionAPIRequest.swift */,
-				A975B2DD2AE9467D00321AB2 /* local.env.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -327,6 +329,7 @@
 				EB2E07FD2AE81C9C0078373A /* ARButton.swift */,
 				EB2E08032AE90F170078373A /* TitleCard.swift */,
 				EB2E08052AE91CF10078373A /* PopUp.swift */,
+				EB8F07742AEBDB290051E619 /* FidelityCard.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				A913A09E2AE65C7900F8ACBE /* NotifParamView.swift */,
 				A9D954D72AE2A2B800C6933D /* ReturnArticleView.swift */,
 				A913A0A02AE6602500F8ACBE /* MyCommandsView.swift */,
+				EB8F07722AEBBDD60051E619 /* FidelityView.swift */,
 			);
 			path = ProfilParams;
 			sourceTree = "<group>";
@@ -453,6 +457,7 @@
 				67B1858A2AE93A9800E9822B /* SupportView.swift in Sources */,
 				A9D565662AE2828000085CE2 /* DetailProduit.swift in Sources */,
 				EB30B1932AE285DB00B75A21 /* PiluleStatut.swift in Sources */,
+				EB8F07752AEBDB290051E619 /* FidelityCard.swift in Sources */,
 				A9D565582AE2826300085CE2 /* LandingView.swift in Sources */,
 				A9D565792AE285ED00085CE2 /* SmallButtonDestination.swift in Sources */,
 				67B185862AE9384800E9822B /* LangueView.swift in Sources */,
@@ -482,6 +487,7 @@
 				EB30B1A62AE2AC3900B75A21 /* CatalogueView.swift in Sources */,
 				A9D565672AE2828000085CE2 /* CreationView.swift in Sources */,
 				A975B2E62AE95E7100321AB2 /* TransactionAPIModel.swift in Sources */,
+				EB8F07732AEBBDD60051E619 /* FidelityView.swift in Sources */,
 				A975B2F02AE9658C00321AB2 /* local.env.swift in Sources */,
 				A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */,
 				CACC4EB02AE2BB0900DCBDCA /* ChatView.swift in Sources */,

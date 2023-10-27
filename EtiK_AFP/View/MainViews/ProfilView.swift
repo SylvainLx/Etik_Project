@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+
 struct ProfilView: View {
-        
+    
     @EnvironmentObject var data: UserObservable
+    @State private var isCardViewPresented = false
+    
     
     var body: some View {
         
@@ -24,11 +27,17 @@ struct ProfilView: View {
                     ], center: .top, startRadius: 100, endRadius: 600)
                     .ignoresSafeArea()
                     
-                    VStack {
-                        Text("Profil : ")
-                            .font(.custom("Italianno", size: 50))
-                            .padding(-10)
+                    VStack(spacing: 0) {
+                        Text("Bonjour")
+                            .font(.custom("Italiana", size: 20))
                         
+                        if data.user.avatar.isEmpty == false {
+                            Text(data.user.firstName + data.user.lastName)
+                                .font(.custom("Italianno", size: 50))
+                        } else {
+                            Text("Emma White")
+                                .font(.custom("Italianno", size: 50))
+                        }
                         
                         if data.user.avatar.isEmpty == false {
                             AsyncImage(url: URL(string: String(data.user.avatar[0].url))) { image in
@@ -44,14 +53,30 @@ struct ProfilView: View {
                             .frame(width: 150)
                         } else {
                             Image("profil")
-                               .resizable()
-                               .scaledToFit()
-                               .clipShape(Circle())
-                               .frame(width: 150)
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .frame(width: 150)
                         }
                     }
                 }
                 .frame(width: 400, height: 300)
+                
+                 
+                Button {
+                    isCardViewPresented.toggle()
+                } label: {
+                    VStack {
+                        Image(systemName: "creditcard.fill")
+                            .font(.system(size: 30))
+                        Text("Carte de fidélité")
+                            .font(.custom("Libre Franklin", size: 15))
+                    }
+                   
+                }
+                .sheet(isPresented: $isCardViewPresented) { 
+                    FidelityView()
+                }.padding(.vertical, 1)
                 
                 List {
                     NavigationLink(destination: MyCommandsView()) {
@@ -89,13 +114,14 @@ struct ProfilView: View {
                     .fontWeight(.bold)
                     .navigationTitle("") // Cacher le titre de la navigation bar
                     .navigationBarTitleDisplayMode(.inline)
+                    .font(.custom("Libre Franklin", size: 15))
                 
                 
             }
         }.accentColor(.marron)
             .environmentObject(data)
     }
-       
+    
 }
 
 #Preview {
