@@ -11,6 +11,7 @@ struct LandingView: View {
     
     @StateObject var userRequest = UserAPIRequest()
       
+    
     var body: some View {
         
     
@@ -27,7 +28,7 @@ struct LandingView: View {
                 PanierView(vide: false, articles: articles)
                     .tabItem { Label("Panier", systemImage: "basket") }
                     .tag(4)
-                ProfilView()
+                CheckLogView()
                     .tabItem { Label("Profil", systemImage: "person") }
                     .tag(5)
             }.accentColor(.marron)

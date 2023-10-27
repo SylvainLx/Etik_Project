@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfilView: View {
+        
+    @EnvironmentObject var user: UserObservable
+    
     var body: some View {
         
         NavigationStack {
@@ -21,7 +24,7 @@ struct ProfilView: View {
                         .offset(CGSize(width: 0, height: -200))
                     
                     VStack {
-                        Text("Profil  ")
+                        Text("Profil : \(user.user.email) ")
                             .font(.custom("Italianno", size: 50))
                             .padding(-10)
                         
@@ -83,8 +86,11 @@ struct ProfilView: View {
             }
         }.accentColor(.marron)
     }
+        
 }
 
 #Preview {
     ProfilView()
+        .environmentObject(UserAPIRequest())
+        .environmentObject(UserObservable(user: User(firstName: "", id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "")))
 }

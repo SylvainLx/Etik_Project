@@ -5,7 +5,6 @@ import Foundation
 // MARK: - TransactionRequest
 struct TransactionRequest: Codable {
     let records: [TransactionRecord]
-    let offset: String
 }
 
 // MARK: - Record
