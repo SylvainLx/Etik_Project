@@ -41,6 +41,10 @@
 		A975B2FC2AEBBA6600321AB2 /* Thematiquecard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FB2AEBBA6600321AB2 /* Thematiquecard2.swift */; };
 		A975B2FE2AEBBA6B00321AB2 /* Thematiquecard3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FD2AEBBA6B00321AB2 /* Thematiquecard3.swift */; };
 		A975B3002AEBFF3700321AB2 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FF2AEBFF3700321AB2 /* local.env.swift */; };
+		A975B3022AEC009000321AB2 /* FidelityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3012AEC009000321AB2 /* FidelityView.swift */; };
+		A975B3042AEC014F00321AB2 /* FidelityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3032AEC014E00321AB2 /* FidelityCard.swift */; };
+		A975B3062AEC021400321AB2 /* DatasNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3052AEC021400321AB2 /* DatasNotifications.swift */; };
+		A975B3082AEC023100321AB2 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3072AEC023100321AB2 /* NotificationView.swift */; };
 		A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */; };
 		A9D565492AE2814300085CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D565482AE2814300085CE2 /* Assets.xcassets */; };
 		A9D5654C2AE2814300085CE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D5654B2AE2814300085CE2 /* Preview Assets.xcassets */; };
@@ -128,6 +132,10 @@
 		A975B2FB2AEBBA6600321AB2 /* Thematiquecard2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thematiquecard2.swift; sourceTree = "<group>"; };
 		A975B2FD2AEBBA6B00321AB2 /* Thematiquecard3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thematiquecard3.swift; sourceTree = "<group>"; };
 		A975B2FF2AEBFF3700321AB2 /* local.env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
+		A975B3012AEC009000321AB2 /* FidelityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FidelityView.swift; sourceTree = "<group>"; };
+		A975B3032AEC014E00321AB2 /* FidelityCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FidelityCard.swift; sourceTree = "<group>"; };
+		A975B3052AEC021400321AB2 /* DatasNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatasNotifications.swift; sourceTree = "<group>"; };
+		A975B3072AEC023100321AB2 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		A9D565412AE2814100085CE2 /* EtiK_AFP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtiK_AFP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtiK_AFPApp.swift; sourceTree = "<group>"; };
 		A9D565482AE2814300085CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -272,8 +280,10 @@
 				67B1857F2AE7A81A00E9822B /* DetailEventView.swift */,
 				67B185832AE7B12D00E9822B /* EventScreenView.swift */,
 				A9D5657B2AE285F800085CE2 /* CreatorDetailView.swift */,
+				A975B3052AEC021400321AB2 /* DatasNotifications.swift */,
 				CACC4EAF2AE2BB0900DCBDCA /* ChatView.swift */,
 				67B1856F2AE2883500E9822B /* LoginView.swift */,
+				A975B3072AEC023100321AB2 /* NotificationView.swift */,
 				A913A0A42AE6667300F8ACBE /* CommandDetailView.swift */,
 				EBA511392AE65F6100210517 /* AvisView.swift */,
 				EBE760AB2AEA9D5800A4D2E3 /* ProfilParams */,
@@ -324,6 +334,7 @@
 				EB30B1A12AE2A14000B75A21 /* CardCategorie.swift */,
 				A9D565722AE285EC00085CE2 /* CreateurFiltre.swift */,
 				CACC4EB12AE2BB3500DCBDCA /* Date+Helpers.swift */,
+				A975B3032AEC014E00321AB2 /* FidelityCard.swift */,
 				A9D565592AE2827E00085CE2 /* LargeButton.swift */,
 				A9D5655B2AE2827F00085CE2 /* PiluleLabel.swift */,
 				EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */,
@@ -374,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				67B185812AE7A83100E9822B /* ParametreView.swift */,
+				A975B3012AEC009000321AB2 /* FidelityView.swift */,
 				67B185712AE28CE200E9822B /* ModifCompteView.swift */,
 				A9D5657A2AE285F800085CE2 /* FollowedCreatorView.swift */,
 				A9D954D52AE29EB800C6933D /* RGPDView.swift */,
@@ -471,6 +483,7 @@
 				67B1858A2AE93A9800E9822B /* SupportView.swift in Sources */,
 				A9D565662AE2828000085CE2 /* DetailProduit.swift in Sources */,
 				EB30B1932AE285DB00B75A21 /* PiluleStatut.swift in Sources */,
+				A975B3042AEC014F00321AB2 /* FidelityCard.swift in Sources */,
 				A9D565582AE2826300085CE2 /* LandingView.swift in Sources */,
 				A9D565792AE285ED00085CE2 /* SmallButtonDestination.swift in Sources */,
 				67B185862AE9384800E9822B /* LangueView.swift in Sources */,
@@ -478,6 +491,7 @@
 				EBA5113C2AE670A000210517 /* ArticlePanierCard.swift in Sources */,
 				A9D565782AE285EC00085CE2 /* SmallCreator.swift in Sources */,
 				EBA511382AE65B0500210517 /* AvisCard.swift in Sources */,
+				A975B3022AEC009000321AB2 /* FidelityView.swift in Sources */,
 				A913A0A52AE6667300F8ACBE /* CommandDetailView.swift in Sources */,
 				A975B3002AEBFF3700321AB2 /* local.env.swift in Sources */,
 				EB2E07FB2AE804B20078373A /* LikeButton.swift in Sources */,
@@ -508,6 +522,7 @@
 				A9D565642AE2828000085CE2 /* FavorisView.swift in Sources */,
 				A913A0A32AE6641D00F8ACBE /* CommandReturnCard.swift in Sources */,
 				CACC4EB42AE2BBB000DCBDCA /* ChatModel.swift in Sources */,
+				A975B3062AEC021400321AB2 /* DatasNotifications.swift in Sources */,
 				CACC4EB22AE2BB3500DCBDCA /* Date+Helpers.swift in Sources */,
 				EBA5113A2AE65F6100210517 /* AvisView.swift in Sources */,
 				CACC4EAE2AE2BAD800DCBDCA /* ChatRow.swift in Sources */,
@@ -531,6 +546,7 @@
 				A975B2FC2AEBBA6600321AB2 /* Thematiquecard2.swift in Sources */,
 				EB30B1A42AE2A14E00B75A21 /* CardThematique.swift in Sources */,
 				EB2E08062AE91CF10078373A /* PopUp.swift in Sources */,
+				A975B3082AEC023100321AB2 /* NotificationView.swift in Sources */,
 				EB30B19D2AE2860800B75A21 /* CardProduit.swift in Sources */,
 				EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */,
 				A9D5657C2AE285F800085CE2 /* FollowedCreatorView.swift in Sources */,

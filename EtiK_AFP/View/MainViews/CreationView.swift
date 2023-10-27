@@ -158,10 +158,6 @@ struct CreationView: View {
                                     NavigationLink(destination: CatalogueView(filtre: "Upcycling")) {
                                         CardCategorie(categorie: "Upcycling", image: "arrow.3.trianglepath")
                                     }
-                                    
-                                    
-                                    
-                                    
                                 }
                                 .foregroundColor(.black)
                                 .scrollTargetLayout()
