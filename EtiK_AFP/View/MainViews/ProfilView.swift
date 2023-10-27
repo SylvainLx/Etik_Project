@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProfilView: View {
-    
-    @StateObject var userRequest = UserAPIRequest()
+        
+    @EnvironmentObject var data: UserObservable
     
     var body: some View {
         
@@ -25,16 +25,30 @@ struct ProfilView: View {
                     .ignoresSafeArea()
                     
                     VStack {
-                        Text("Profil  ")
+                        Text("Profil : ")
                             .font(.custom("Italianno", size: 50))
                             .padding(-10)
                         
-                        Image("profil")
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(Circle())
+                        
+                        if data.user.avatar.isEmpty == false {
+                            AsyncImage(url: URL(string: String(data.user.avatar[0].url))) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .scaledToFit()
+                                    .clipShape(Circle())
+                                
+                            } placeholder: {
+                                Color.gray
+                            }
                             .frame(width: 150)
-                      
+                        } else {
+                            Image("profil")
+                               .resizable()
+                               .scaledToFit()
+                               .clipShape(Circle())
+                               .frame(width: 150)
+                        }
                     }
                 }
                 .frame(width: 400, height: 300)
@@ -79,10 +93,13 @@ struct ProfilView: View {
                 
             }
         }.accentColor(.marron)
+            .environmentObject(data)
     }
+       
 }
 
 #Preview {
     ProfilView()
         .environmentObject(UserAPIRequest())
+        .environmentObject(UserObservable(user: User(firstName: "", id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "")))
 }

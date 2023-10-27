@@ -25,7 +25,6 @@
 		A975B2D82AE944F500321AB2 /* UserAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2D72AE944F500321AB2 /* UserAPIModel.swift */; };
 		A975B2DA2AE9455500321AB2 /* CreatorAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2D92AE9455500321AB2 /* CreatorAPIModel.swift */; };
 		A975B2DC2AE9462600321AB2 /* DataBaseImageAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2DB2AE9462600321AB2 /* DataBaseImageAPIModel.swift */; };
-		A975B2DE2AE9467D00321AB2 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2DD2AE9467D00321AB2 /* local.env.swift */; };
 		A975B2E02AE9505000321AB2 /* TestAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2DF2AE9505000321AB2 /* TestAPIView.swift */; };
 		A975B2E22AE95D3F00321AB2 /* EventAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2E12AE95D3F00321AB2 /* EventAPIModel.swift */; };
 		A975B2E42AE95DE800321AB2 /* ProductAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2E32AE95DE800321AB2 /* ProductAPIModel.swift */; };
@@ -34,6 +33,8 @@
 		A975B2EA2AE95F5900321AB2 /* CreatorAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */; };
 		A975B2EC2AE95F6500321AB2 /* EventAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2EB2AE95F6500321AB2 /* EventAPIRequest.swift */; };
 		A975B2EE2AE95F7000321AB2 /* TransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2ED2AE95F7000321AB2 /* TransactionAPIRequest.swift */; };
+		A975B2F02AE9658C00321AB2 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2EF2AE9658C00321AB2 /* local.env.swift */; };
+		A975B2F22AEA8A4D00321AB2 /* CheckLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2F12AEA8A4D00321AB2 /* CheckLogView.swift */; };
 		A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */; };
 		A9D565492AE2814300085CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D565482AE2814300085CE2 /* Assets.xcassets */; };
 		A9D5654C2AE2814300085CE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D5654B2AE2814300085CE2 /* Preview Assets.xcassets */; };
@@ -105,7 +106,6 @@
 		A975B2D72AE944F500321AB2 /* UserAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIModel.swift; sourceTree = "<group>"; };
 		A975B2D92AE9455500321AB2 /* CreatorAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorAPIModel.swift; sourceTree = "<group>"; };
 		A975B2DB2AE9462600321AB2 /* DataBaseImageAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseImageAPIModel.swift; sourceTree = "<group>"; };
-		A975B2DD2AE9467D00321AB2 /* local.env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
 		A975B2DF2AE9505000321AB2 /* TestAPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPIView.swift; sourceTree = "<group>"; };
 		A975B2E12AE95D3F00321AB2 /* EventAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAPIModel.swift; sourceTree = "<group>"; };
 		A975B2E32AE95DE800321AB2 /* ProductAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPIModel.swift; sourceTree = "<group>"; };
@@ -114,6 +114,8 @@
 		A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorAPIRequest.swift; sourceTree = "<group>"; };
 		A975B2EB2AE95F6500321AB2 /* EventAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAPIRequest.swift; sourceTree = "<group>"; };
 		A975B2ED2AE95F7000321AB2 /* TransactionAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAPIRequest.swift; sourceTree = "<group>"; };
+		A975B2EF2AE9658C00321AB2 /* local.env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
+		A975B2F12AEA8A4D00321AB2 /* CheckLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLogView.swift; sourceTree = "<group>"; };
 		A9D565412AE2814100085CE2 /* EtiK_AFP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtiK_AFP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtiK_AFPApp.swift; sourceTree = "<group>"; };
 		A9D565482AE2814300085CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				A975B2D52AE9442200321AB2 /* UserAPIRequest.swift */,
+				A975B2EF2AE9658C00321AB2 /* local.env.swift */,
+				A975B2DF2AE9505000321AB2 /* TestAPIView.swift */,
 				A975B2E72AE95F4C00321AB2 /* ProductAPIRequest.swift */,
 				A975B2DF2AE9505000321AB2 /* TestAPIView.swift */,
 				A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */,
@@ -345,6 +349,7 @@
 				A9D5655C2AE2827F00085CE2 /* FavorisView.swift */,
 				A9D5655A2AE2827F00085CE2 /* PanierView.swift */,
 				A9D565602AE2827F00085CE2 /* ProfilView.swift */,
+				A975B2F12AEA8A4D00321AB2 /* CheckLogView.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -475,9 +480,9 @@
 				EB2E08042AE90F170078373A /* TitleCard.swift in Sources */,
 				A9D565762AE285EC00085CE2 /* CreateurFiltre.swift in Sources */,
 				EB30B1A62AE2AC3900B75A21 /* CatalogueView.swift in Sources */,
-				A975B2DE2AE9467D00321AB2 /* local.env.swift in Sources */,
 				A9D565672AE2828000085CE2 /* CreationView.swift in Sources */,
 				A975B2E62AE95E7100321AB2 /* TransactionAPIModel.swift in Sources */,
+				A975B2F02AE9658C00321AB2 /* local.env.swift in Sources */,
 				A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */,
 				CACC4EB02AE2BB0900DCBDCA /* ChatView.swift in Sources */,
 				A975B2D62AE9442200321AB2 /* UserAPIRequest.swift in Sources */,
@@ -496,6 +501,7 @@
 				A975B2DC2AE9462600321AB2 /* DataBaseImageAPIModel.swift in Sources */,
 				67B185722AE28CE200E9822B /* ModifCompteView.swift in Sources */,
 				EB30B1992AE285F800B75A21 /* TextFieldProfil.swift in Sources */,
+				A975B2F22AEA8A4D00321AB2 /* CheckLogView.swift in Sources */,
 				67B185822AE7A83100E9822B /* ParametreView.swift in Sources */,
 				EB30B1952AE285ED00B75A21 /* SmallButton.swift in Sources */,
 				A913A0A12AE6602500F8ACBE /* MyCommandsView.swift in Sources */,
