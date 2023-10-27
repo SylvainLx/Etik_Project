@@ -17,6 +17,7 @@
 		67B1858C2AEA669D00E9822B /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B1858B2AEA669D00E9822B /* TermsOfServiceView.swift */; };
 		67B1858E2AEA67B600E9822B /* EURegulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B1858D2AEA67B600E9822B /* EURegulationView.swift */; };
 		67B185902AEA684900E9822B /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B1858F2AEA684900E9822B /* AppVersionView.swift */; };
+		67B185932AEBFB8800E9822B /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B185922AEBFB8800E9822B /* local.env.swift */; };
 		A913A09F2AE65C7900F8ACBE /* NotifParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913A09E2AE65C7900F8ACBE /* NotifParamView.swift */; };
 		A913A0A12AE6602500F8ACBE /* MyCommandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913A0A02AE6602500F8ACBE /* MyCommandsView.swift */; };
 		A913A0A32AE6641D00F8ACBE /* CommandReturnCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913A0A22AE6641D00F8ACBE /* CommandReturnCard.swift */; };
@@ -86,6 +87,7 @@
 		67B1858B2AEA669D00E9822B /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
 		67B1858D2AEA67B600E9822B /* EURegulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EURegulationView.swift; sourceTree = "<group>"; };
 		67B1858F2AEA684900E9822B /* AppVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionView.swift; sourceTree = "<group>"; };
+		67B185922AEBFB8800E9822B /* local.env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
 		A913A09E2AE65C7900F8ACBE /* NotifParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifParamView.swift; sourceTree = "<group>"; };
 		A913A0A02AE6602500F8ACBE /* MyCommandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommandsView.swift; sourceTree = "<group>"; };
 		A913A0A22AE6641D00F8ACBE /* CommandReturnCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandReturnCard.swift; sourceTree = "<group>"; };
@@ -156,6 +158,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67B185912AEBFB4800E9822B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				67B185922AEBFB8800E9822B /* local.env.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		A913A0AC2AE6AE5000F8ACBE /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +271,7 @@
 		A9D565562AE2822B00085CE2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				67B185912AEBFB4800E9822B /* API */,
 				A913A0AC2AE6AE5000F8ACBE /* Notification */,
 				C382A4052AE286B700AA4C48 /* CategorieCard.swift */,
 				CACC4EAD2AE2BAD800DCBDCA /* ChatRow.swift */,
@@ -434,6 +445,7 @@
 				CACC4EB22AE2BB3500DCBDCA /* Date+Helpers.swift in Sources */,
 				EBA5113A2AE65F6100210517 /* AvisView.swift in Sources */,
 				CACC4EAE2AE2BAD800DCBDCA /* ChatRow.swift in Sources */,
+				67B185932AEBFB8800E9822B /* local.env.swift in Sources */,
 				67B185702AE2883500E9822B /* LoginView.swift in Sources */,
 				A913A09F2AE65C7900F8ACBE /* NotifParamView.swift in Sources */,
 				A9D565632AE2828000085CE2 /* PiluleLabel.swift in Sources */,
