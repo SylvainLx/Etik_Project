@@ -10,6 +10,8 @@ import SwiftUI
 struct CheckLogView: View {
     
     @EnvironmentObject var userRequest: UserAPIRequest
+    @EnvironmentObject var transactionsRequest: TransactionAPIRequest
+
 
     @State private var isLogged: Bool = false
     @State private var pseudo = ""
@@ -17,6 +19,9 @@ struct CheckLogView: View {
     
     @StateObject var userRef: UserObservable = UserObservable(user: User(firstName: "", avatar: [DataBaseImage](), id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "", transactions: [String]()))
     
+    @StateObject var transactionRef: TransactionObservable = TransactionObservable(transaction: Transaction(id: "", user: [String](), products: [String](), retour: "", statutCommande: [String](), statutRetour: [String](), creator: [String](), idProduitFromProducts: [String](), idFromCreator: [String](), idFromUser: [String]()))
+    
+    @State var toto = [String]()
     
     var body: some View {
         NavigationStack {
@@ -27,15 +32,20 @@ struct CheckLogView: View {
                     }
         }
         .environmentObject(userRef)
+        .environmentObject(transactionRef)
     }
     
     func isLog() {
         let users = userRequest.allUser
-        
+        let transactions = transactionsRequest.allTransaction
+
         if let user = users.first(where: { $0.email == pseudo.lowercased() && $0.password == mdp.lowercased() }) {
             isLogged = true
             userRef.user = user
-            print(user)
+            let userTransactions = transactions.filter { $0.idFromUser.first == user.id }
+                        if let transaction = userTransactions.first {
+                        transactionRef.transaction = transaction
+                    }
         }
     }
 }
@@ -43,4 +53,5 @@ struct CheckLogView: View {
 #Preview {
     CheckLogView()
         .environmentObject(UserAPIRequest())
+        .environmentObject(TransactionAPIRequest())
 }
