@@ -40,6 +40,11 @@ struct FavorisView: View {
                 .padding()
             }
         }.accentColor(.marron)
+            .onAppear {
+                Task {
+                    productRequest.allProducts = await productRequest.fetchedProducts()
+                }
+            } 
     }
 }
 
