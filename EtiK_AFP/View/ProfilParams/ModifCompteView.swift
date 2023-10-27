@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct ModifCompteView: View {
-    @State private var firstName: String = ""
-    @State private var lastName: String = ""
-    @State private var email: String = ""
-    @State private var passWord: String = ""
-    @State private var adresse: String = ""
-    @State private var postalCode: Int = 0000
-    @State private var ville: String = ""
+    
+    @EnvironmentObject var data: UserObservable
+
     
     var body: some View {
         
@@ -35,44 +31,44 @@ struct ModifCompteView: View {
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                     }
                     
-                    TextField("Nouveau Prénom", text: $firstName)
+                    TextField("Nouveau Prénom", text: $data.user.firstName)
                         .frame(width: 300)
                         .textFieldStyle(.roundedBorder)
                         .multilineTextAlignment(.center)
                         .padding(.top, 8)
                     
-                    TextField("Nouveau Nom", text: $lastName)
+                    TextField("Nouveau Nom", text: $data.user.lastName)
                         .frame(width: 300)
                         .textFieldStyle(.roundedBorder)
                         .multilineTextAlignment(.center)
                         .padding(.top, 8)
                     
-                    TextField("Nouvelle adresse mail", text: $email)
+                    TextField("Nouvelle adresse mail", text: $data.user.email)
                         .frame(width: 300)
                         .textFieldStyle(.roundedBorder)
                         .multilineTextAlignment(.center)
                         .padding(.top, 8)
                     
-                    TextField("Nouveau mot de passe", text: $passWord)
+                    SecureField("Nouveau mot de passe", text: $data.user.password)
                         .frame(width: 300)
                         .textFieldStyle(.roundedBorder)
                         .multilineTextAlignment(.center)
                         .padding(.top, 8)
                     
-                    TextField("Nouvelle adresse", text: $adresse)
+                    TextField("Nouvelle adresse", text: $data.user.adress)
                         .frame(width: 300)
                         .textFieldStyle(.roundedBorder)
                         .multilineTextAlignment(.center)
                         .padding(.top, 8)
                     
                     HStack{
-                        TextField("Code postal", value: $postalCode, formatter: NumberFormatter())
+                        TextField("Code postal", value: $data.user.postalCode, formatter: NumberFormatter())
                             .frame(width: 146)
                             .textFieldStyle(.roundedBorder)
                             .multilineTextAlignment(.center)
                             .padding([.top, .leading], 8)
                         
-                        TextField("Nouvelle ville", text: $ville)
+                        TextField("Nouvelle ville", text: $data.user.city)
                             .frame(width: 146)
                             .textFieldStyle(.roundedBorder)
                             .multilineTextAlignment(.center)
@@ -111,9 +107,12 @@ struct ModifCompteView: View {
             }
             .padding(.top, 100.0)
         }
+        .environmentObject(data)
     }
 }
 
 #Preview {
     ModifCompteView()
+        .environmentObject(UserAPIRequest())
+        .environmentObject(UserObservable(user: User(firstName: "", avatar: [DataBaseImage](), id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "", transactions: [String]())))
 }

@@ -11,7 +11,7 @@ struct LandingView: View {
     
     @StateObject var userRequest = UserAPIRequest()
     @StateObject var productRequest = ProductsAPIRequest()
-      
+    @StateObject var transactionRequest = TransactionAPIRequest()
     
     var body: some View {
         
@@ -30,11 +30,14 @@ struct LandingView: View {
                 CheckLogView()
                     .tabItem { Label("Profil", systemImage: "person") }
                     .tag(5)
+                    .environmentObject(userRequest)
+                    .environmentObject(transactionRequest)
             }.accentColor(.marron)
                 .onAppear {
                     Task {
                         userRequest.allUser = await userRequest.fetchedUser()
                         productRequest.allProducts = await productRequest.fetchedProducts()
+                        transactionRequest.allTransaction = await transactionRequest.fetchedTransaction()
                     }
                     // correct the transparency bug for Tab bars
                     let tabBarAppearance = UITabBarAppearance()
@@ -48,5 +51,6 @@ struct LandingView: View {
     LandingView()
         .environmentObject(UserAPIRequest())
         .environmentObject(ProductsAPIRequest())
+        .environmentObject(TransactionAPIRequest())
 
 }

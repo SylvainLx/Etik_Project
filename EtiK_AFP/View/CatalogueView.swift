@@ -48,7 +48,7 @@ struct CatalogueView: View {
             Task {
                 productRequest.allProducts = await productRequest.fetchedProducts()
             }
-        } 
+        }
         .padding()
     }
 }

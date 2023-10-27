@@ -14,19 +14,36 @@ struct TransactionRecord: Codable {
 }
 
 // MARK: - Transaction
-struct Transaction: Codable {
-    let id: String
-    let user, products: [String]
-    let retour: String
-    let statutCommande, statutRetour, idFromIDCréateurFromProducts, idCréateurFromProducts: [String]
-    let idProduitFromProducts: [Int]
+struct Transaction: Codable, Identifiable {
+    var id: String
+    var user: [String]
+    var products: [String]
+    var retour: String
+    var statutCommande: [String]
+    var statutRetour: [String]
+    var creator: [String]
+    var idProduitFromProducts: [String]
+    var idFromCreator: [String]
+    var idFromUser: [String]
 
-    enum CodingKeys: String, CodingKey {
-        case id, user
-        case products = "Products"
-        case retour, statutCommande, statutRetour
-        case idFromIDCréateurFromProducts = "id (from ID Créateur) (from Products)"
-        case idCréateurFromProducts = "ID Créateur (from Products)"
-        case idProduitFromProducts = "ID Produit (from Products)"
+
+       enum CodingKeys: String, CodingKey {
+           case id, user
+           case products = "Products"
+           case retour, statutCommande, statutRetour
+           case creator = "Creator"
+           case idProduitFromProducts = "ID Produit (from Products)"
+           case idFromCreator = "id (from Creator)"
+           case idFromUser = "id (from user)"
+
+       }
+}
+
+class TransactionObservable: ObservableObject {
+    @Published var transaction: Transaction
+    
+    init(transaction: Transaction) {
+        self.transaction = transaction
     }
 }
+

@@ -33,8 +33,18 @@
 		A975B2EA2AE95F5900321AB2 /* CreatorAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */; };
 		A975B2EC2AE95F6500321AB2 /* EventAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2EB2AE95F6500321AB2 /* EventAPIRequest.swift */; };
 		A975B2EE2AE95F7000321AB2 /* TransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2ED2AE95F7000321AB2 /* TransactionAPIRequest.swift */; };
-		A975B2F02AE9658C00321AB2 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2EF2AE9658C00321AB2 /* local.env.swift */; };
 		A975B2F22AEA8A4D00321AB2 /* CheckLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2F12AEA8A4D00321AB2 /* CheckLogView.swift */; };
+		A975B2F42AEBB86B00321AB2 /* MapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2F32AEBB86B00321AB2 /* MapEvent.swift */; };
+		A975B2F62AEBB88500321AB2 /* Map_struc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2F52AEBB88500321AB2 /* Map_struc.swift */; };
+		A975B2F82AEBB8B100321AB2 /* Page filtre Article-Createurs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2F72AEBB8B000321AB2 /* Page filtre Article-Createurs.swift */; };
+		A975B2FA2AEBBA6100321AB2 /* Thematiquecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2F92AEBBA6100321AB2 /* Thematiquecard.swift */; };
+		A975B2FC2AEBBA6600321AB2 /* Thematiquecard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FB2AEBBA6600321AB2 /* Thematiquecard2.swift */; };
+		A975B2FE2AEBBA6B00321AB2 /* Thematiquecard3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FD2AEBBA6B00321AB2 /* Thematiquecard3.swift */; };
+		A975B3002AEBFF3700321AB2 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FF2AEBFF3700321AB2 /* local.env.swift */; };
+		A975B3022AEC009000321AB2 /* FidelityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3012AEC009000321AB2 /* FidelityView.swift */; };
+		A975B3042AEC014F00321AB2 /* FidelityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3032AEC014E00321AB2 /* FidelityCard.swift */; };
+		A975B3062AEC021400321AB2 /* DatasNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3052AEC021400321AB2 /* DatasNotifications.swift */; };
+		A975B3082AEC023100321AB2 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3072AEC023100321AB2 /* NotificationView.swift */; };
 		A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */; };
 		A9D565492AE2814300085CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D565482AE2814300085CE2 /* Assets.xcassets */; };
 		A9D5654C2AE2814300085CE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D5654B2AE2814300085CE2 /* Preview Assets.xcassets */; };
@@ -116,8 +126,18 @@
 		A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorAPIRequest.swift; sourceTree = "<group>"; };
 		A975B2EB2AE95F6500321AB2 /* EventAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAPIRequest.swift; sourceTree = "<group>"; };
 		A975B2ED2AE95F7000321AB2 /* TransactionAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAPIRequest.swift; sourceTree = "<group>"; };
-		A975B2EF2AE9658C00321AB2 /* local.env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
 		A975B2F12AEA8A4D00321AB2 /* CheckLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLogView.swift; sourceTree = "<group>"; };
+		A975B2F32AEBB86B00321AB2 /* MapEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEvent.swift; sourceTree = "<group>"; };
+		A975B2F52AEBB88500321AB2 /* Map_struc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map_struc.swift; sourceTree = "<group>"; };
+		A975B2F72AEBB8B000321AB2 /* Page filtre Article-Createurs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page filtre Article-Createurs.swift"; sourceTree = "<group>"; };
+		A975B2F92AEBBA6100321AB2 /* Thematiquecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thematiquecard.swift; sourceTree = "<group>"; };
+		A975B2FB2AEBBA6600321AB2 /* Thematiquecard2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thematiquecard2.swift; sourceTree = "<group>"; };
+		A975B2FD2AEBBA6B00321AB2 /* Thematiquecard3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thematiquecard3.swift; sourceTree = "<group>"; };
+		A975B2FF2AEBFF3700321AB2 /* local.env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
+		A975B3012AEC009000321AB2 /* FidelityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FidelityView.swift; sourceTree = "<group>"; };
+		A975B3032AEC014E00321AB2 /* FidelityCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FidelityCard.swift; sourceTree = "<group>"; };
+		A975B3052AEC021400321AB2 /* DatasNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatasNotifications.swift; sourceTree = "<group>"; };
+		A975B3072AEC023100321AB2 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		A9D565412AE2814100085CE2 /* EtiK_AFP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtiK_AFP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtiK_AFPApp.swift; sourceTree = "<group>"; };
 		A9D565482AE2814300085CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -203,6 +223,7 @@
 				A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */,
 				A975B2EB2AE95F6500321AB2 /* EventAPIRequest.swift */,
 				A975B2ED2AE95F7000321AB2 /* TransactionAPIRequest.swift */,
+				A975B2FF2AEBFF3700321AB2 /* local.env.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -264,11 +285,19 @@
 				67B1857F2AE7A81A00E9822B /* DetailEventView.swift */,
 				67B185832AE7B12D00E9822B /* EventScreenView.swift */,
 				A9D5657B2AE285F800085CE2 /* CreatorDetailView.swift */,
+				A975B3052AEC021400321AB2 /* DatasNotifications.swift */,
 				CACC4EAF2AE2BB0900DCBDCA /* ChatView.swift */,
 				67B1856F2AE2883500E9822B /* LoginView.swift */,
+				A975B3072AEC023100321AB2 /* NotificationView.swift */,
 				A913A0A42AE6667300F8ACBE /* CommandDetailView.swift */,
 				EBA511392AE65F6100210517 /* AvisView.swift */,
 				EBE760AB2AEA9D5800A4D2E3 /* ProfilParams */,
+				A975B2F32AEBB86B00321AB2 /* MapEvent.swift */,
+				A975B2F92AEBBA6100321AB2 /* Thematiquecard.swift */,
+				A975B2FD2AEBBA6B00321AB2 /* Thematiquecard3.swift */,
+				A975B2F72AEBB8B000321AB2 /* Page filtre Article-Createurs.swift */,
+				A975B2FB2AEBBA6600321AB2 /* Thematiquecard2.swift */,
+				A975B2F52AEBB88500321AB2 /* Map_struc.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +339,7 @@
 				EB30B1A12AE2A14000B75A21 /* CardCategorie.swift */,
 				A9D565722AE285EC00085CE2 /* CreateurFiltre.swift */,
 				CACC4EB12AE2BB3500DCBDCA /* Date+Helpers.swift */,
+				A975B3032AEC014E00321AB2 /* FidelityCard.swift */,
 				A9D565592AE2827E00085CE2 /* LargeButton.swift */,
 				A9D5655B2AE2827F00085CE2 /* PiluleLabel.swift */,
 				EB30B1922AE285DB00B75A21 /* PiluleStatut.swift */,
@@ -361,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				67B185812AE7A83100E9822B /* ParametreView.swift */,
+				A975B3012AEC009000321AB2 /* FidelityView.swift */,
 				67B185712AE28CE200E9822B /* ModifCompteView.swift */,
 				A9D5657A2AE285F800085CE2 /* FollowedCreatorView.swift */,
 				A9D954D52AE29EB800C6933D /* RGPDView.swift */,
@@ -449,6 +480,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A975B2EC2AE95F6500321AB2 /* EventAPIRequest.swift in Sources */,
+				A975B2F42AEBB86B00321AB2 /* MapEvent.swift in Sources */,
+				A975B2FA2AEBBA6100321AB2 /* Thematiquecard.swift in Sources */,
 				EB2E07FE2AE81C9C0078373A /* ARButton.swift in Sources */,
 				A9D5657D2AE285F800085CE2 /* CreatorDetailView.swift in Sources */,
 				EBA5113E2AE6791400210517 /* ArticleModel.swift in Sources */,
@@ -465,12 +498,15 @@
 				EBA5113C2AE670A000210517 /* ArticlePanierCard.swift in Sources */,
 				A9D565782AE285EC00085CE2 /* SmallCreator.swift in Sources */,
 				EBA511382AE65B0500210517 /* AvisCard.swift in Sources */,
+				A975B3022AEC009000321AB2 /* FidelityView.swift in Sources */,
 				A913A0A52AE6667300F8ACBE /* CommandDetailView.swift in Sources */,
+				A975B3002AEBFF3700321AB2 /* local.env.swift in Sources */,
 				EB2E07FB2AE804B20078373A /* LikeButton.swift in Sources */,
 				EB2E07F92AE7EB1F0078373A /* LocationManager.swift in Sources */,
 				C382A4062AE286B700AA4C48 /* CategorieCard.swift in Sources */,
 				A975B2E02AE9505000321AB2 /* TestAPIView.swift in Sources */,
 				A975B2EA2AE95F5900321AB2 /* CreatorAPIRequest.swift in Sources */,
+				A975B2FE2AEBBA6B00321AB2 /* Thematiquecard3.swift in Sources */,
 				A9D565652AE2828000085CE2 /* EventView.swift in Sources */,
 				A9D565622AE2828000085CE2 /* PanierView.swift in Sources */,
 				A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */,
@@ -495,6 +531,7 @@
 				A9D565642AE2828000085CE2 /* FavorisView.swift in Sources */,
 				A913A0A32AE6641D00F8ACBE /* CommandReturnCard.swift in Sources */,
 				CACC4EB42AE2BBB000DCBDCA /* ChatModel.swift in Sources */,
+				A975B3062AEC021400321AB2 /* DatasNotifications.swift in Sources */,
 				CACC4EB22AE2BB3500DCBDCA /* Date+Helpers.swift in Sources */,
 				EBA5113A2AE65F6100210517 /* AvisView.swift in Sources */,
 				CACC4EAE2AE2BAD800DCBDCA /* ChatRow.swift in Sources */,
@@ -505,16 +542,20 @@
 				A975B2EE2AE95F7000321AB2 /* TransactionAPIRequest.swift in Sources */,
 				67B185842AE7B12D00E9822B /* EventScreenView.swift in Sources */,
 				A975B2DC2AE9462600321AB2 /* DataBaseImageAPIModel.swift in Sources */,
+				A975B2F82AEBB8B100321AB2 /* Page filtre Article-Createurs.swift in Sources */,
 				67B185722AE28CE200E9822B /* ModifCompteView.swift in Sources */,
 				EB30B1992AE285F800B75A21 /* TextFieldProfil.swift in Sources */,
 				A975B2F22AEA8A4D00321AB2 /* CheckLogView.swift in Sources */,
 				67B185822AE7A83100E9822B /* ParametreView.swift in Sources */,
 				EB30B1952AE285ED00B75A21 /* SmallButton.swift in Sources */,
 				A913A0A12AE6602500F8ACBE /* MyCommandsView.swift in Sources */,
+				A975B2F62AEBB88500321AB2 /* Map_struc.swift in Sources */,
 				A9D565632AE2828000085CE2 /* PiluleLabel.swift in Sources */,
 				EB30B1A22AE2A14000B75A21 /* CardCategorie.swift in Sources */,
+				A975B2FC2AEBBA6600321AB2 /* Thematiquecard2.swift in Sources */,
 				EB30B1A42AE2A14E00B75A21 /* CardThematique.swift in Sources */,
 				EB2E08062AE91CF10078373A /* PopUp.swift in Sources */,
+				A975B3082AEC023100321AB2 /* NotificationView.swift in Sources */,
 				EB30B19D2AE2860800B75A21 /* CardProduit.swift in Sources */,
 				EB30B1972AE285F300B75A21 /* SmallCard.swift in Sources */,
 				A9D5657C2AE285F800085CE2 /* FollowedCreatorView.swift in Sources */,

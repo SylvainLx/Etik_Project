@@ -17,9 +17,7 @@ struct ProfilView: View {
     var body: some View {
         
         NavigationStack {
-            
             VStack {
-                
                 ZStack {
                     RadialGradient(stops: [
                         .init(color: Color(.beige), location: 0.3),
@@ -118,8 +116,9 @@ struct ProfilView: View {
                 
                 
             }
-        }.accentColor(.marron)
+            .accentColor(.marron)
             .environmentObject(data)
+        }
     }
     
 }
@@ -127,5 +126,5 @@ struct ProfilView: View {
 #Preview {
     ProfilView()
         .environmentObject(UserAPIRequest())
-        .environmentObject(UserObservable(user: User(firstName: "", id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "")))
+        .environmentObject(UserObservable(user: User(firstName: "", avatar: [DataBaseImage](), id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "", transactions: [String]())))
 }

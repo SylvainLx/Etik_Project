@@ -2,9 +2,9 @@
 //  local.env.swift
 //  EtiK_AFP
 //
-//  Created by Sylvain Leguay on 25/10/2023.
+//  Created by Sylvain Leguay on 27/10/2023.
 //
 
 import Foundation
 
-let apiKey = "patjAE8c7TE1PgO9D.5f5372ab8169b4244a1c1a5d39f4bd56d6af7f90ba4963f9aaab56ef7ca0f5fe"
+let apiKey = "patqAU8wkyv8GOO7a.95c0cad319fb20f43f7d41ded3b460310692f183afe1cd74697b639d777a7831"
