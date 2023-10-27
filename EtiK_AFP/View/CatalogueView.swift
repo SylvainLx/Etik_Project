@@ -30,13 +30,18 @@ struct CatalogueView: View {
                     } else if product.idFromCreator[0] == filtre {
                         NavigationLink(destination: DetailProduit(produit: product)) {
                             CardProduit(produit: product)
-                        }.navigationTitle("")
+                        }
+                            .navigationTitle("")
                             .navigationBarTitleDisplayMode(.inline)
                         
                     }
-                }
+                }.foregroundColor(.black)
             }
-        }
+        }.onAppear {
+            Task {
+                productRequest.allProducts = await productRequest.fetchedProducts()
+            }
+        } 
         .padding()
     }
 }

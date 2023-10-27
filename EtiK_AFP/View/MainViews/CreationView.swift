@@ -46,7 +46,7 @@ struct CreationView: View {
                     
                 }.padding(.horizontal)
                     .padding(.vertical, -10)
-                 
+                
                 ScrollView(showsIndicators: false) {
                     ZStack(alignment: .bottom) {
                         VStack(alignment: .leading) {
@@ -127,14 +127,15 @@ struct CreationView: View {
                                                     content
                                                         .opacity(phase.isIdentity ? 1 : 0.5)
                                                 }
-                                        }.navigationTitle("")
-                                         .navigationBarTitleDisplayMode(.inline)
+                                        }
+                                        .navigationTitle("")
+                                        .navigationBarTitleDisplayMode(.inline)
                                     }
                                     
                                 }.scrollTargetLayout()
-                                .padding()
+                                    .padding()
                             }.scrollTargetBehavior(.viewAligned)
-                             
+                            
                             Text("Catégories")
                                 .font(.custom("Italianno", size: 30))
                                 .padding(.vertical, -1)
@@ -161,14 +162,19 @@ struct CreationView: View {
                                     
                                     
                                     
-                                }.foregroundColor(.black)
-                                    .scrollTargetLayout()
-                                    .padding(.horizontal)
-                            }.scrollTargetBehavior(.viewAligned)
-                            
+                                }
+                                .foregroundColor(.black)
+                                .scrollTargetLayout()
+                                .padding(.horizontal)
+                            }
+                            .scrollTargetBehavior(.viewAligned)
                         }
                     }
                 }
+            }
+        }.onAppear {
+            Task {
+                productRequest.allProducts = await productRequest.fetchedProducts()
             }
         }
         

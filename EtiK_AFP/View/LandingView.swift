@@ -38,9 +38,7 @@ struct LandingView: View {
                     let tabBarAppearance = UITabBarAppearance()
                     tabBarAppearance.configureWithOpaqueBackground()
                     UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-                } 
-                .environmentObject(userRequest)
-                .environmentObject(productRequest) 
+                }  
     }
 }
 

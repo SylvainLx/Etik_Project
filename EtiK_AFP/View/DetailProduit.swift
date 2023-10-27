@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DetailProduit: View {
-     
+    
     @State var produit: Product
-  
+     
     @State private var selectedSize = "XS"
     @State private var showInfo: Bool = false
     @State private var selectedPiluleLabel: String?
@@ -136,7 +136,7 @@ struct DetailProduit: View {
                     }
                     
                     
-                   Text(produit.description)
+                    Text(produit.description)
                         .font(.custom("LibreFranklin", size: 15))
                         .foregroundStyle(.gray)
                     
@@ -167,9 +167,54 @@ struct DetailProduit: View {
     }
 }
 
+
+   
 //#Preview {
 //
-//    DetailProduit()
-//        .environmentObject(UserAPIRequest())
-//        .environmentObject(ProductsAPIRequest())
+//    @StateObject var productRequest = ProductsAPIRequest()
+//
+//    Task {
+//        do {
+//            // Récupérez les produits à partir de l'API
+//            let products = try await productRequest.fetchedProducts()
+//
+//            if let firstProduct = products.first {
+//                print("OKOKOKOKOKOK") // Assurez-vous que les données sont disponibles
+//            } else {
+//                print("Aucun produit disponible")
+//            }
+//        } catch {
+//            print("Erreur lors de la récupération des produits : \(error)")
+//        }
+//    }
+//
+//    // Utilisez le premier produit s'il est disponible
+//    if let firstProduct = productRequest.allProducts.first {
+//        return DetailProduit(produit: firstProduct)
+//            .environmentObject(productRequest)
+//
+//    } else {
+//        return Text("Aucun produit disponible")
+//    }
 //}
+
+#Preview {
+   
+let sampleProduct = Product(
+         id: "1",
+         name: "T shirt en Lin",
+         photo: [],
+         description: "Sample Description",
+         category: ["Sample Category"],
+         price: 10.0,
+         sizes: ["XS", "S", "M", "L"],
+         quantity: 5,
+         collection: [],
+         transactions2: [],
+         creator: [],
+         idFromCreator: []
+     )
+     
+     return DetailProduit(produit: sampleProduct)
+         .environmentObject(ProductsAPIRequest())
+ }
