@@ -33,7 +33,6 @@
 		A975B2EA2AE95F5900321AB2 /* CreatorAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */; };
 		A975B2EC2AE95F6500321AB2 /* EventAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2EB2AE95F6500321AB2 /* EventAPIRequest.swift */; };
 		A975B2EE2AE95F7000321AB2 /* TransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2ED2AE95F7000321AB2 /* TransactionAPIRequest.swift */; };
-		A975B2F02AE9658C00321AB2 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2EF2AE9658C00321AB2 /* local.env.swift */; };
 		A975B2F22AEA8A4D00321AB2 /* CheckLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2F12AEA8A4D00321AB2 /* CheckLogView.swift */; };
 		A975B2F42AEBB86B00321AB2 /* MapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2F32AEBB86B00321AB2 /* MapEvent.swift */; };
 		A975B2F62AEBB88500321AB2 /* Map_struc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2F52AEBB88500321AB2 /* Map_struc.swift */; };
@@ -41,6 +40,7 @@
 		A975B2FA2AEBBA6100321AB2 /* Thematiquecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2F92AEBBA6100321AB2 /* Thematiquecard.swift */; };
 		A975B2FC2AEBBA6600321AB2 /* Thematiquecard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FB2AEBBA6600321AB2 /* Thematiquecard2.swift */; };
 		A975B2FE2AEBBA6B00321AB2 /* Thematiquecard3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FD2AEBBA6B00321AB2 /* Thematiquecard3.swift */; };
+		A975B3002AEBFF3700321AB2 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FF2AEBFF3700321AB2 /* local.env.swift */; };
 		A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */; };
 		A9D565492AE2814300085CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D565482AE2814300085CE2 /* Assets.xcassets */; };
 		A9D5654C2AE2814300085CE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D5654B2AE2814300085CE2 /* Preview Assets.xcassets */; };
@@ -120,7 +120,6 @@
 		A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorAPIRequest.swift; sourceTree = "<group>"; };
 		A975B2EB2AE95F6500321AB2 /* EventAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAPIRequest.swift; sourceTree = "<group>"; };
 		A975B2ED2AE95F7000321AB2 /* TransactionAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAPIRequest.swift; sourceTree = "<group>"; };
-		A975B2EF2AE9658C00321AB2 /* local.env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
 		A975B2F12AEA8A4D00321AB2 /* CheckLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLogView.swift; sourceTree = "<group>"; };
 		A975B2F32AEBB86B00321AB2 /* MapEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEvent.swift; sourceTree = "<group>"; };
 		A975B2F52AEBB88500321AB2 /* Map_struc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map_struc.swift; sourceTree = "<group>"; };
@@ -128,6 +127,7 @@
 		A975B2F92AEBBA6100321AB2 /* Thematiquecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thematiquecard.swift; sourceTree = "<group>"; };
 		A975B2FB2AEBBA6600321AB2 /* Thematiquecard2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thematiquecard2.swift; sourceTree = "<group>"; };
 		A975B2FD2AEBBA6B00321AB2 /* Thematiquecard3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thematiquecard3.swift; sourceTree = "<group>"; };
+		A975B2FF2AEBFF3700321AB2 /* local.env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
 		A9D565412AE2814100085CE2 /* EtiK_AFP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtiK_AFP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtiK_AFPApp.swift; sourceTree = "<group>"; };
 		A9D565482AE2814300085CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,12 +205,12 @@
 			isa = PBXGroup;
 			children = (
 				A975B2D52AE9442200321AB2 /* UserAPIRequest.swift */,
-				A975B2EF2AE9658C00321AB2 /* local.env.swift */,
 				A975B2E72AE95F4C00321AB2 /* ProductAPIRequest.swift */,
 				A975B2DF2AE9505000321AB2 /* TestAPIView.swift */,
 				A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */,
 				A975B2EB2AE95F6500321AB2 /* EventAPIRequest.swift */,
 				A975B2ED2AE95F7000321AB2 /* TransactionAPIRequest.swift */,
+				A975B2FF2AEBFF3700321AB2 /* local.env.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -479,6 +479,7 @@
 				A9D565782AE285EC00085CE2 /* SmallCreator.swift in Sources */,
 				EBA511382AE65B0500210517 /* AvisCard.swift in Sources */,
 				A913A0A52AE6667300F8ACBE /* CommandDetailView.swift in Sources */,
+				A975B3002AEBFF3700321AB2 /* local.env.swift in Sources */,
 				EB2E07FB2AE804B20078373A /* LikeButton.swift in Sources */,
 				EB2E07F92AE7EB1F0078373A /* LocationManager.swift in Sources */,
 				C382A4062AE286B700AA4C48 /* CategorieCard.swift in Sources */,
@@ -501,7 +502,6 @@
 				EB30B1A62AE2AC3900B75A21 /* CatalogueView.swift in Sources */,
 				A9D565672AE2828000085CE2 /* CreationView.swift in Sources */,
 				A975B2E62AE95E7100321AB2 /* TransactionAPIModel.swift in Sources */,
-				A975B2F02AE9658C00321AB2 /* local.env.swift in Sources */,
 				A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */,
 				CACC4EB02AE2BB0900DCBDCA /* ChatView.swift in Sources */,
 				A975B2D62AE9442200321AB2 /* UserAPIRequest.swift in Sources */,
