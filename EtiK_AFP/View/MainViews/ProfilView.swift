@@ -14,9 +14,7 @@ struct ProfilView: View {
     var body: some View {
         
         NavigationStack {
-            
             VStack {
-                
                 ZStack {
                     RadialGradient(stops: [
                         .init(color: Color(.beige), location: 0.3),
@@ -25,29 +23,30 @@ struct ProfilView: View {
                     .ignoresSafeArea()
                     
                     VStack {
-                        Text("Profil : ")
+                        Text("Bonjour \(data.user.firstName),")
                             .font(.custom("Italianno", size: 50))
                             .padding(-10)
                         
-                        
-                        if data.user.avatar.isEmpty == false {
-                            AsyncImage(url: URL(string: String(data.user.avatar[0].url))) { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .scaledToFit()
-                                    .clipShape(Circle())
-                                
-                            } placeholder: {
-                                Color.gray
+                        if let imageFound = data.user.avatar.first {
+                            AsyncImage(url: URL(string: imageFound.url)) { phase in
+                                if let image = phase.image {
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .scaledToFit()
+                                        .clipShape(Circle())
+                                } else if phase.error != nil {
+                                    Image("profil")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .clipShape(Circle())
+                                        .frame(width: 150)
+                                } else {
+                                    ProgressView()
+                                }
                             }
                             .frame(width: 150)
-                        } else {
-                            Image("profil")
-                               .resizable()
-                               .scaledToFit()
-                               .clipShape(Circle())
-                               .frame(width: 150)
+                        }
                         }
                     }
                 }
@@ -92,14 +91,15 @@ struct ProfilView: View {
                 
                 
             }
-        }.accentColor(.marron)
+            .accentColor(.marron)
             .environmentObject(data)
+        }
     }
        
-}
+
 
 #Preview {
     ProfilView()
         .environmentObject(UserAPIRequest())
-        .environmentObject(UserObservable(user: User(firstName: "", id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "")))
+        .environmentObject(UserObservable(user: User(firstName: "", avatar: [DataBaseImage](), id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "", transactions: [String]())))
 }

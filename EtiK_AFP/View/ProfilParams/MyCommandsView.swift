@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MyCommandsView: View {
     
-    
     var body: some View {
         NavigationStack {
             

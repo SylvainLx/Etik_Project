@@ -30,6 +30,7 @@ struct LandingView: View {
                 CheckLogView()
                     .tabItem { Label("Profil", systemImage: "person") }
                     .tag(5)
+                    .environmentObject(userRequest)
             }.accentColor(.marron)
                 .onAppear {
                     Task {

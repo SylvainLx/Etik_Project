@@ -15,7 +15,7 @@ struct CheckLogView: View {
     @State private var pseudo = ""
     @State private var mdp = ""
     
-    @StateObject var userRef: UserObservable = UserObservable(user: User(firstName: "", id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: ""))
+    @StateObject var userRef: UserObservable = UserObservable(user: User(firstName: "", avatar: [DataBaseImage](), id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "", transactions: [String]()))
     
     
     var body: some View {
@@ -35,6 +35,7 @@ struct CheckLogView: View {
         if let user = users.first(where: { $0.email == pseudo.lowercased() && $0.password == mdp.lowercased() }) {
             isLogged = true
             userRef.user = user
+            print(user)
         }
     }
 }
