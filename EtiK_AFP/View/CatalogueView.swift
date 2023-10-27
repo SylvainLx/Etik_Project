@@ -21,13 +21,20 @@ struct CatalogueView: View {
             LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
                 ForEach(productRequest.allProducts) { product in
                     
-                    if product.category[0] == filtre {
+                    if product.category.first == filtre {
                         NavigationLink(destination: DetailProduit(produit: product)) {
                             CardProduit(produit: product)
                         }.navigationTitle("")
                             .navigationBarTitleDisplayMode(.inline) 
                         
-                    } else if product.idFromCreator[0] == filtre {
+                    } else if product.idFromCreator.first == filtre {
+                        NavigationLink(destination: DetailProduit(produit: product)) {
+                            CardProduit(produit: product)
+                        }
+                            .navigationTitle("")
+                            .navigationBarTitleDisplayMode(.inline)
+                        
+                    } else if product.collection.first == filtre {
                         NavigationLink(destination: DetailProduit(produit: product)) {
                             CardProduit(produit: product)
                         }

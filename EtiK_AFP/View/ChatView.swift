@@ -32,8 +32,8 @@ struct ChatView: View {
                         .foregroundColor(.white)
                         .frame(width: height, height: height)
                         .background(
-                        Circle()
-                            .foregroundColor(text.isEmpty ? .gray : .blue)
+                            Circle()
+                                .foregroundColor(text.isEmpty ? .gray : .marron)
                         )
                 }
                 .disabled(text.isEmpty)
@@ -54,17 +54,17 @@ struct ChatView: View {
     var body: some View {
         VStack(spacing: 0) {
             
-GeometryReader{ reader in
+            GeometryReader{ reader in
                 ScrollView{
-                
+                    
                     getMessagesView(viewWidth: reader.size.width)
                         .padding(.horizontal)
                         .padding(.top, 90)
-                
+                    
                 }
             }
-                            .ignoresSafeArea()
-                            .background(LinearGradient(gradient: Gradient(colors: [.cyan, .init(red: 0.067, green: 0.195, blue: 0.427)]), startPoint: .bottom, endPoint: .top))
+            .ignoresSafeArea()
+            .background(LinearGradient(gradient: Gradient(colors: [.cyan, .init(red: 0.067, green: 0.195, blue: 0.427)]), startPoint: .bottom, endPoint: .top))
             
             toolBarView()
         }
@@ -76,30 +76,30 @@ GeometryReader{ reader in
             ForEach(chat.messages) { message in
                 let isReceived = message.type == .Received
                 HStack {
-                   
-                ZStack {
                     
-                      
+                    ZStack {
+                        
+                        
                         Text(message.text)
-                        .foregroundColor(.white)
-                        .padding(.horizontal)
-                        .padding(.vertical, 12)
-                        .background(isReceived ? Color.black.opacity(0.2) : .blue.opacity(0.9))
-                        .cornerRadius(13)
+                            .foregroundColor(.white)
+                            .padding(.horizontal)
+                            .padding(.vertical, 12)
+                            .background(isReceived ? Color.black.opacity(0.2) : .blue.opacity(0.9))
+                            .cornerRadius(13)
                     }
-                .frame(width: viewWidth * 0.7, alignment : isReceived ? .leading : .trailing )
-                .padding(.vertical)
-            
-               
+                    .frame(width: viewWidth * 0.7, alignment : isReceived ? .leading : .trailing )
+                    .padding(.vertical)
+                    
+                    
                     
                 }
                 .frame(maxWidth: .infinity, alignment: isReceived ? .leading : .trailing)
-        
+                
             }
         }
-    
+        
     }
-   
+    
 }
 
 struct chatView_Previews: PreviewProvider {

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct FidelityView: View {
     
-   
+    @State private var degrees: Double = 0
+    @State private var flipped: Bool = false
+    
     var body: some View {
         // Carte de fidélité
         VStack(spacing: 45) {
@@ -18,7 +20,28 @@ struct FidelityView: View {
                 .frame(width: 100, height: 3)
                 .foregroundColor(.marron)
             
-            FidelityCard()
+            FidelityCard {
+                
+                VStack {
+                    Group {
+                        if flipped {
+                            FidelityCardBack()
+                        } else {
+                            FidelityCardFront()
+                        }
+                    }
+                }.rotation3DEffect(
+                    .degrees(degrees),
+                    axis: (x: 0.0, y: 1.0, z: 0.0)
+                )
+                
+            }
+            .onTapGesture {
+                withAnimation {
+                    degrees += 180
+                    flipped.toggle()
+                }
+            }
             
             List {
                 HStack {
@@ -36,7 +59,7 @@ struct FidelityView: View {
                 HStack {
                     Image(systemName: "checkmark.circle")
                     VStack(alignment: .leading) {
-                        Text("20 points gagnés")
+                        Text("5 points gagnés")
                         Text("Commentaire")
                             .font(.caption)
                             .foregroundColor(.gray)
@@ -48,7 +71,7 @@ struct FidelityView: View {
                 HStack {
                     Image(systemName: "checkmark.circle")
                     VStack(alignment: .leading) {
-                        Text("20 points gagnés")
+                        Text("5 points gagnés")
                         Text("Inscription")
                             .font(.caption)
                             .foregroundColor(.gray)

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CardCollection: View {
+    
+    @State var produit: Product
+    
     var body: some View {
          
             VStack {
@@ -28,14 +31,14 @@ struct CardCollection: View {
                 
                 Text("Collection")
                     .font(.custom("Italiana", size: 20))
-                Text("Vegan")
-                    .font(.custom("LibreFranklin", size: 10))
+                Text(produit.collection[0])
+                    .font(.custom("LibreFranklin", size: 8))
                     .foregroundStyle(.gray)
             }
          
     }
 }
 
-#Preview {
-    CardCollection()
-}
+//#Preview {
+//    CardCollection()
+//}

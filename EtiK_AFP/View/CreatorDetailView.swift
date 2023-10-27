@@ -12,7 +12,7 @@ struct CreatorDetailView: View {
     @EnvironmentObject var productRequest: ProductsAPIRequest
     
     @State var destination:AnyView?
-    @State var creatorId = "573"
+    @State var creatorId = "912"
     
     var body: some View {
         NavigationStack {
@@ -78,13 +78,15 @@ struct CreatorDetailView: View {
                     ScrollView(.horizontal) {
                         HStack {
                             NavigationLink(destination: CatalogueView(filtre: creatorId)) {
-                                CardCollection()
+                                ForEach(productRequest.allProducts) { product in
+                                    if product.idFromCreator.first == creatorId {
+                                        CardCollection(produit: product)
+                                    }
+                                }
                             }.foregroundColor(.black)
                                 .navigationTitle("")
                                 .navigationBarTitleDisplayMode(.inline)
-                            
-                            CardCollection()
-                            CardCollection()
+                             
                         }.padding()
                     }
                     
@@ -100,7 +102,7 @@ struct CreatorDetailView: View {
                         HStack {
                             
                             ForEach(productRequest.allProducts) { product in
-                                if product.idFromCreator[0] == creatorId {
+                                if product.idFromCreator.first == creatorId {
                                     NavigationLink(destination: DetailProduit(produit: product)) {
                                         CardProduit(produit: product)
                                     }.navigationTitle("")
@@ -114,6 +116,10 @@ struct CreatorDetailView: View {
                     }.scrollTargetBehavior(.viewAligned)
                     
                 }
+            }
+        }.onAppear {
+            Task {
+                productRequest.allProducts = await productRequest.fetchedProducts() 
             }
         }
     }
