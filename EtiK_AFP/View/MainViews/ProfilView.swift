@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfilView: View {
         
-    @EnvironmentObject var user: UserObservable
+    @EnvironmentObject var data: UserObservable
     
     var body: some View {
         
@@ -24,15 +24,30 @@ struct ProfilView: View {
                         .offset(CGSize(width: 0, height: -200))
                     
                     VStack {
-                        Text("Profil : \(user.user.email) ")
+                        Text("Profil : ")
                             .font(.custom("Italianno", size: 50))
                             .padding(-10)
                         
-                        Image("profil")
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(Circle())
+                        
+                        if data.user.avatar.isEmpty == false {
+                            AsyncImage(url: URL(string: String(data.user.avatar[0].url))) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .scaledToFit()
+                                    .clipShape(Circle())
+                                
+                            } placeholder: {
+                                Color.gray
+                            }
                             .frame(width: 150)
+                        } else {
+                            Image("profil")
+                               .resizable()
+                               .scaledToFit()
+                               .clipShape(Circle())
+                               .frame(width: 150)
+                        }
                     }
                 }
                 .frame(width: 400, height: 300)
@@ -85,8 +100,9 @@ struct ProfilView: View {
                
             }
         }.accentColor(.marron)
+            .environmentObject(data)
     }
-        
+       
 }
 
 #Preview {
