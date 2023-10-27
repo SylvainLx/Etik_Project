@@ -11,6 +11,8 @@ struct SupportView: View {
     
     let chatSupport = Chat.sampleChat
     let chatContent: Chat = Chat.sampleChat[1]
+    @State var myChat = ""
+    let placeHolderText = "Entrez votre question"
     
     var body: some View {
         
@@ -62,6 +64,11 @@ struct SupportView: View {
                      }
                      .frame(height: 80 )
                     Spacer()
+                    
+                    TextField(placeHolderText, text: $myChat)
+                                                .keyboardType(.asciiCapable)
+                                                .textFieldStyle(.roundedBorder)
+                                                .padding(24)
                 }
                 
                 
