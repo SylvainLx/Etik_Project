@@ -67,6 +67,7 @@ struct MapView: View {
     var body: some View {
         VStack{
             Spacer()
+            
             Map(position: $userLocation, selection: $selection) {
                 
                 //loop si recherche, affiche le point perso specifique
@@ -74,7 +75,7 @@ struct MapView: View {
                 if isSearching{
                     ForEach(filteredPointsOfInterest, id: \.id) { poi in
                         Marker(poi.name, coordinate: poi.coordinate)
-                                    }
+                    }
                 }
 
                 //loop pour afficher les demandes de points d'intérêts generique (resto, monuments, etc...)
@@ -82,8 +83,6 @@ struct MapView: View {
                     let placemark = item.placemark
                     Marker(placemark.name ?? "", coordinate: placemark.coordinate)
                 }
-      
-                
             }
             .overlay(alignment: .bottom, content: {
                 TextField("Recherche", text: $search)
