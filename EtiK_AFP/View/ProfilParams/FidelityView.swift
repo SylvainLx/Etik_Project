@@ -9,6 +9,9 @@ import SwiftUI
 
 struct FidelityView: View {
     
+    @State var firstName:String
+    @State var lastName:String
+    
     @State private var degrees: Double = 0
     @State private var flipped: Bool = false
     
@@ -25,9 +28,9 @@ struct FidelityView: View {
                 VStack {
                     Group {
                         if flipped {
-                            FidelityCardBack()
+                            FidelityCardBack(firstName: firstName, lastName: lastName)
                         } else {
-                            FidelityCardFront()
+                            FidelityCardFront(firstName: firstName, lastName: lastName)
                         }
                     }
                 }.rotation3DEffect(
@@ -93,5 +96,5 @@ struct FidelityView: View {
 }
 
 #Preview {
-    FidelityView()
+    FidelityView(firstName: "Emilien", lastName: "Giraud")
 }

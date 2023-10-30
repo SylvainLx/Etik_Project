@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PanierView: View {
     
-    @State var vide: Bool
+    @Binding var panierVide:Bool
     @State var price: Double = 200
     @State var frais: Double = 2.99
     @State var articles: [Article]
@@ -24,7 +24,8 @@ struct PanierView: View {
                 .padding(.vertical, -10)
                 .padding(.leading, 2)
             
-            if vide {
+            
+            if articles.isEmpty {
                 
                 Image("kraft")
                     .resizable()
@@ -42,7 +43,7 @@ struct PanierView: View {
                     List {
                         ForEach(articles) { article in
                             ArticlePanierCard(article: article)
-                        } .onDelete(perform: deleteArticle)
+                        }.onDelete(perform: deleteArticle)
                     }
                     .scrollContentBackground(.hidden)
                     .listStyle(PlainListStyle())
@@ -66,7 +67,7 @@ struct PanierView: View {
                     }.padding(.horizontal)
                     
                     HStack {
-                         
+                        
                         VStack(alignment: .trailing) {
                             Text("Sous total : ")
                             Text("Frais de port : ")
@@ -85,9 +86,11 @@ struct PanierView: View {
                     LargeButton(labelButton: "Paiement")
                         .padding()
                     
+                   
                 }
             }
         }
+        
     }
     
     func deleteArticle(at offsets: IndexSet) {
@@ -97,6 +100,6 @@ struct PanierView: View {
 }
 
 #Preview {
-    PanierView(vide: false, articles: articles)
+    PanierView(panierVide: .constant(false), articles: articles)
 }
 

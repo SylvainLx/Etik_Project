@@ -21,7 +21,7 @@ struct CardCategorie: View {
                 
                 Image(systemName: image)
                     .resizable()
-                    .frame(width: 35, height: 25)
+                    .frame(width: 35, height: 30)
                     .foregroundColor(.white)
             }
             

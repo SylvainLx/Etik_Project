@@ -160,10 +160,24 @@ struct DetailProduit: View {
                 
             }
         }
+         
+//        LargeButton(labelButton: "Ajouter au panier")
+//            .padding(.bottom)
         
-        
-        LargeButton(labelButton: "Ajouter au panier")
-            .padding(.bottom)
+        Button {
+            articles.append(Article(name: produit.name, category: "", collection: "", price: produit.price, productSize: selectedSize))
+            
+            print("article ajouté")
+        } label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 30)
+                    .foregroundColor(.marron)
+                    .frame(width: 300, height: 50)
+                Text("Ajouter au panier")
+                    .foregroundStyle(.white)
+                    .font(.custom("Italiana", size: 20))
+            }
+        }
     }
 }
 
@@ -215,6 +229,6 @@ let sampleProduct = Product(
          idFromCreator: []
      )
      
-     return DetailProduit(produit: sampleProduct)
+    return DetailProduit(produit: sampleProduct)
          .environmentObject(ProductsAPIRequest())
  }

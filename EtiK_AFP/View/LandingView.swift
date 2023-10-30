@@ -13,19 +13,21 @@ struct LandingView: View {
     @StateObject var productRequest = ProductsAPIRequest()
     @StateObject var transactionRequest = TransactionAPIRequest()
     
+    @State private var panierVide:Bool = true 
+    
     var body: some View {
         
             TabView {
                
-                CreationView()
+                CreationView() 
                     .tabItem { Label("Créations", systemImage: "sun.max") }
                     .environmentObject(productRequest)
                 EventView()
                     .tabItem { Label("Évènements", systemImage: "calendar") }
                 FavorisView()
                     .tabItem { Label("Favoris", systemImage: "heart") }
-                PanierView(vide: false, articles: articles)
-                    .tabItem { Label("Panier", systemImage: "basket") }
+                PanierView(panierVide: $panierVide, articles: articles)
+                    .tabItem { Label("Panier", systemImage: panierVide ? "basket" : "person") }
                     .tag(4)
                 CheckLogView()
                     .tabItem { Label("Profil", systemImage: "person") }
@@ -51,6 +53,6 @@ struct LandingView: View {
     LandingView()
         .environmentObject(UserAPIRequest())
         .environmentObject(ProductsAPIRequest())
-        .environmentObject(TransactionAPIRequest())
+        .environmentObject(TransactionAPIRequest()) 
 
 }

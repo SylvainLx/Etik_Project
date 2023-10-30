@@ -30,7 +30,7 @@ struct ArticlePanierCard: View {
             VStack(alignment: .leading) {
                 Text(article.name)
                     .fontWeight(.bold)
-                Text("\(article.category) / \(article.type)")
+                Text("\(article.category) / \(article.collection)")
                     .font(.footnote)
                 Text("\(article.price, specifier: "%.2f") €")
                     .fontWeight(.bold)
@@ -47,5 +47,5 @@ struct ArticlePanierCard: View {
 }
 
 #Preview {
-    ArticlePanierCard(article: Article(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, productSize: "XS"))
+    ArticlePanierCard(article: Article(name: "Chemise en Lin", category: "Made in France", collection: "Vegan", price: 100, productSize: "XS"))
 }

@@ -30,7 +30,7 @@ struct ProfilView: View {
                             .font(.custom("Italiana", size: 20))
                         
                         if data.user.avatar.isEmpty == false {
-                            Text(data.user.firstName + data.user.lastName)
+                            Text(data.user.firstName + " " + data.user.lastName + " ")
                                 .font(.custom("Italianno", size: 50))
                         } else {
                             Text("Emma White")
@@ -46,8 +46,7 @@ struct ProfilView: View {
                                     .clipShape(Circle())
                                 
                             } placeholder: {
-                                Color.gray
-                            }
+                                ProgressView()                            }
                             .frame(width: 150)
                         } else {
                             Image("profil")
@@ -73,7 +72,7 @@ struct ProfilView: View {
                    
                 }
                 .sheet(isPresented: $isCardViewPresented) { 
-                    FidelityView()
+                    FidelityView(firstName: data.user.firstName, lastName: data.user.lastName)
                 }.padding(.vertical, 1)
                 
                 List {

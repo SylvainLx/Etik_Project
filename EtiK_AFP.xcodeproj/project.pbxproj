@@ -42,7 +42,6 @@
 		A975B2FE2AEBBA6B00321AB2 /* Thematiquecard3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FD2AEBBA6B00321AB2 /* Thematiquecard3.swift */; };
 		A975B3002AEBFF3700321AB2 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B2FF2AEBFF3700321AB2 /* local.env.swift */; };
 		A975B3022AEC009000321AB2 /* FidelityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3012AEC009000321AB2 /* FidelityView.swift */; };
-		A975B3042AEC014F00321AB2 /* FidelityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3032AEC014E00321AB2 /* FidelityCard.swift */; };
 		A975B3062AEC021400321AB2 /* DatasNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3052AEC021400321AB2 /* DatasNotifications.swift */; };
 		A975B3082AEC023100321AB2 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A975B3072AEC023100321AB2 /* NotificationView.swift */; };
 		A9D565452AE2814100085CE2 /* EtiK_AFPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D565442AE2814100085CE2 /* EtiK_AFPApp.swift */; };
@@ -217,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				A975B2D52AE9442200321AB2 /* UserAPIRequest.swift */,
-				A975B2EF2AE9658C00321AB2 /* local.env.swift */,
 				A975B2E72AE95F4C00321AB2 /* ProductAPIRequest.swift */,
 				A975B2DF2AE9505000321AB2 /* TestAPIView.swift */,
 				A975B2E92AE95F5900321AB2 /* CreatorAPIRequest.swift */,
@@ -335,6 +333,7 @@
 				C382A4032AE2865C00AA4C48 /* Searchtab.swift */,
 				EB30B1A32AE2A14E00B75A21 /* CardThematique.swift */,
 				EB30B19C2AE2860800B75A21 /* CardProduit.swift */,
+				EBA5113B2AE670A000210517 /* ArticlePanierCard.swift */,
 				EB30B19A2AE2860200B75A21 /* CardCollection.swift */,
 				EB30B1A12AE2A14000B75A21 /* CardCategorie.swift */,
 				A9D565722AE285EC00085CE2 /* CreateurFiltre.swift */,
@@ -353,7 +352,6 @@
 				EB30B1982AE285F800B75A21 /* TextFieldProfil.swift */,
 				EBA511352AE65A9F00210517 /* StarView.swift */,
 				EBA511372AE65B0500210517 /* AvisCard.swift */,
-				EBA5113B2AE670A000210517 /* ArticlePanierCard.swift */,
 				EB2E07F82AE7EB1F0078373A /* LocationManager.swift */,
 				EB2E07FA2AE804B20078373A /* LikeButton.swift */,
 				EB2E07FD2AE81C9C0078373A /* ARButton.swift */,
@@ -524,7 +522,6 @@
 				A9D565672AE2828000085CE2 /* CreationView.swift in Sources */,
 				A975B2E62AE95E7100321AB2 /* TransactionAPIModel.swift in Sources */,
 				EB8F07732AEBBDD60051E619 /* FidelityView.swift in Sources */,
-				A975B2F02AE9658C00321AB2 /* local.env.swift in Sources */,
 				A9D565682AE2828000085CE2 /* ProfilView.swift in Sources */,
 				CACC4EB02AE2BB0900DCBDCA /* ChatView.swift in Sources */,
 				A975B2D62AE9442200321AB2 /* UserAPIRequest.swift in Sources */,
@@ -699,6 +696,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EtiK_AFP/Preview Content\"";
+				DEVELOPMENT_TEAM = DC46U66DZ3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EtiK-AFP-Info.plist";
@@ -713,7 +711,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "me.leguay.sylvain.EtiK-AFP";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emilien;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -729,6 +727,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EtiK_AFP/Preview Content\"";
+				DEVELOPMENT_TEAM = DC46U66DZ3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EtiK-AFP-Info.plist";
@@ -743,7 +742,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "me.leguay.sylvain.EtiK-AFP";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emilien;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
