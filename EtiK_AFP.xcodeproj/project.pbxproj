@@ -18,6 +18,7 @@
 		67B1858E2AEA67B600E9822B /* EURegulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B1858D2AEA67B600E9822B /* EURegulationView.swift */; };
 		67B185902AEA684900E9822B /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B1858F2AEA684900E9822B /* AppVersionView.swift */; };
 		67B185932AEBFB8800E9822B /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B185922AEBFB8800E9822B /* local.env.swift */; };
+		67B185952AEF9E7200E9822B /* ViewModel in Resources */ = {isa = PBXBuildFile; fileRef = 67B185942AEF9E7200E9822B /* ViewModel */; };
 		A913A09F2AE65C7900F8ACBE /* NotifParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913A09E2AE65C7900F8ACBE /* NotifParamView.swift */; };
 		A913A0A12AE6602500F8ACBE /* MyCommandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913A0A02AE6602500F8ACBE /* MyCommandsView.swift */; };
 		A913A0A32AE6641D00F8ACBE /* CommandReturnCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913A0A22AE6641D00F8ACBE /* CommandReturnCard.swift */; };
@@ -88,6 +89,7 @@
 		67B1858D2AEA67B600E9822B /* EURegulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EURegulationView.swift; sourceTree = "<group>"; };
 		67B1858F2AEA684900E9822B /* AppVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionView.swift; sourceTree = "<group>"; };
 		67B185922AEBFB8800E9822B /* local.env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
+		67B185942AEF9E7200E9822B /* ViewModel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ViewModel; path = EtiK_AFP/ViewModel; sourceTree = SOURCE_ROOT; };
 		A913A09E2AE65C7900F8ACBE /* NotifParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifParamView.swift; sourceTree = "<group>"; };
 		A913A0A02AE6602500F8ACBE /* MyCommandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommandsView.swift; sourceTree = "<group>"; };
 		A913A0A22AE6641D00F8ACBE /* CommandReturnCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandReturnCard.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				EB2E07FD2AE81C9C0078373A /* ARButton.swift */,
 				EB2E08032AE90F170078373A /* TitleCard.swift */,
 				EB2E08052AE91CF10078373A /* PopUp.swift */,
+				67B185942AEF9E7200E9822B /* ViewModel */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				A9D5654C2AE2814300085CE2 /* Preview Assets.xcassets in Resources */,
 				A9D5656D2AE2829200085CE2 /* Italiana.ttf in Resources */,
 				A9D565492AE2814300085CE2 /* Assets.xcassets in Resources */,
+				67B185952AEF9E7200E9822B /* ViewModel in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
