@@ -39,7 +39,6 @@ class TransactionAPIRequest: ObservableObject {
                 resultTransactions.append(record.fields)
             }
             
-            print(resultTransactions)
             return resultTransactions
             
         } catch let error {

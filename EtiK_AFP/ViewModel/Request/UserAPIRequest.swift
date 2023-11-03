@@ -41,7 +41,6 @@ class UserAPIRequest: ObservableObject {
                 resultUser.append(record.fields)
             }
             
-            print(resultUser)
             return resultUser
             
         } catch let error {

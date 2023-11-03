@@ -22,7 +22,7 @@ struct SmallButton: View {
                     .frame(width: 120, height: 40)
                 Text(labelButton)
                     .foregroundStyle(.white)
-                    .font(.custom("Italiana", size: 20))
+                    .font(.custom("Libre Franklin", size: 16))
             }
         }
     }

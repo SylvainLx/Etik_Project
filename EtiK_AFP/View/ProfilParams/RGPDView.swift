@@ -16,7 +16,7 @@ struct RGPDView: View {
             TitleCard(title: "Protection des données")
             ScrollView {
                 Text("""
-                Chez Créations, nous nous soucions profondément de la protection de vos données personnelles. Cette politique de protection des données explique comment nous collectons, utilisons, partageons et protégeons vos informations personnelles lorsque vous utilisez notre application. Veuillez prendre le temps de lire attentivement cette politique afin de comprendre comment nous traitons vos données.
+                Chez EtiK, nous nous soucions profondément de la protection de vos données personnelles. Cette politique de protection des données explique comment nous collectons, utilisons, partageons et protégeons vos informations personnelles lorsque vous utilisez notre application. Veuillez prendre le temps de lire attentivement cette politique afin de comprendre comment nous traitons vos données.
                     
                     Collecte de Données
                 Nous collectons certaines informations personnelles lorsque vous utilisez notre application, telles que :
@@ -49,7 +49,7 @@ struct RGPDView: View {
                 Merci de nous avoir choisi. Votre confiance est précieuse pour nous, et nous nous engageons à protéger vos données personnelles et à vous offrir une expérience de shopping sécurisée et agréable.
                 """)
                 .padding()
-                .font(.custom("LibreFranklin", size: 16))
+                .font(.custom("Libre Franklin", size: 16))
                 
             }
         }

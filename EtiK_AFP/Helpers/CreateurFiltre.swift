@@ -9,20 +9,20 @@ import SwiftUI
 
 struct CreateurFiltre: View {
     
-    @State var destination:AnyView?
-    @State var name:String = "Chloé"
-    @State var firstName:String = "Swhwarz"
-    @State var city:String = "Paris"
-
+    @EnvironmentObject var dataFilter: DataFilterModel
     
+    @State var creator: Creator
+    
+    @State var destination:AnyView?
+   
     var body: some View {
         NavigationLink(destination: destination) {
             HStack(alignment: .center, spacing: 24) {
-                SmallCreator(img: "profil")
+                SmallCreator(creator: creator)
                 VStack(alignment: .leading) {
-                    Text(name)
-                    Text(firstName)
-                    Text(city)
+                    Text(creator.lastName)
+                    Text(creator.firstName)
+                    Text(creator.ville)
                 }
                 .font(.custom("LibreFranklin", size: 16))
                 .fontWeight(.bold)
@@ -35,5 +35,6 @@ struct CreateurFiltre: View {
 }
 
 #Preview {
-    CreateurFiltre()
+    CreateurFiltre(creator: Creator(id: "", firstName: "", lastName: "", society: "", picture: [DataBaseImage](), email: "", password: "", role: "", biography: "", vegan: "", bio: "", madeInFrance: "", handMade: "", natural: "", upcycling: "", ville: "", adress: "", postalCode: "", events: "", products: "", transactions: "", products2: [String](), transactions2: [String](), events2: [String]()))
+        .environmentObject(DataFilterModel())
 }

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MyCommandsView: View {
-    
-    @EnvironmentObject var data: TransactionObservable
+
+    @EnvironmentObject var dataFilter: DataFilterModel
 
     
     var body: some View {
@@ -18,27 +18,22 @@ struct MyCommandsView: View {
             VStack {
                TitleCard(title: "Mes commandes")
                 ScrollView {
-                    NavigationLink(destination: CommandDetailView(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")) {
-                        CommandReturnCard(name:"Chemise", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")
-                    }.foregroundColor(.black)
-                    NavigationLink(destination: CommandDetailView(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")) {
-                        CommandReturnCard(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 200, statut: "En cours de livraison...")
-                    }.foregroundColor(.black)
-                    Text(data.transaction.products[0])
-                  //  Text(data.transaction.creator[0])
+                         ForEach(dataFilter.productsTransactionRef.transactionToProducts) { product in
+                            NavigationLink(destination: CommandDetailView(name: product.name, category: product.category[0], type: product.collection[0], price: Int(product.price), numberOfOrder: Int(dataFilter.transactionRef.transaction[0].id) ?? 123456, productSize: "XS", progress: 100, statut: "En cours de traitement...", imgUrl: product.photo[0].url)) {
+                                CommandReturnCard(name: product.name, category: product.category[0], type: product.collection[0], price: Int(product.price), numberOfOrder: Int(dataFilter.transactionRef.transaction[0].id) ?? 123456, productSize: "XS", progress: 100, statut: dataFilter.transactionRef.transaction[0].statutCommande[0], imgUrl: product.photo[0].url)
+                            }.foregroundColor(.black)
+                    }
+                    
                 }
                 .padding(8)
-                
             }
             Spacer()
-        } .navigationBarTitleDisplayMode(.inline) 
-            .environmentObject(data)
+        }
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
     MyCommandsView()
-        .environmentObject(TransactionAPIRequest())
-        .environmentObject(UserAPIRequest())
-        .environmentObject(UserObservable(user: User(firstName: "", avatar: [DataBaseImage](), id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "", transactions: [String]())))
+        .environmentObject(DataFilterModel())
 }

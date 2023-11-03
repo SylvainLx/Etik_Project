@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct CatalogueView: View {
-    
-    @EnvironmentObject var productRequest: ProductsAPIRequest
+        
+    @EnvironmentObject var dataFilter: DataFilterModel
+
     var filtre:String?
     
     var body: some View {
@@ -19,7 +20,7 @@ struct CatalogueView: View {
         
         ScrollView(showsIndicators: false) {
             LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
-                ForEach(productRequest.allProducts) { product in
+                ForEach(dataFilter.productsRequest.allProducts) { product in
                     
                     if product.category.first == filtre {
                         NavigationLink(destination: DetailProduit(produit: product)) {
@@ -46,7 +47,7 @@ struct CatalogueView: View {
             }
         }.onAppear {
             Task {
-                productRequest.allProducts = await productRequest.fetchedProducts()
+                dataFilter.productsRequest.allProducts = await dataFilter.productsRequest.fetchedProducts()
             }
         }
         .padding()
@@ -55,5 +56,5 @@ struct CatalogueView: View {
 
 #Preview {
     CatalogueView(filtre: "Vegan")
-        .environmentObject(ProductsAPIRequest())
+        .environmentObject(DataFilterModel())
 }

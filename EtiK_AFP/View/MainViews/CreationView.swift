@@ -9,11 +9,15 @@ import SwiftUI
 
 struct CreationView: View {
     
-    @EnvironmentObject var productRequest: ProductsAPIRequest
+    @EnvironmentObject var dataFilter: DataFilterModel
+
     @State private var search = ""
     @State private var currentPage = 0
     let numberOfPages = 3
     
+    let cards: [AnyView] = [AnyView(Thematiquecard()), AnyView(Thematiquecard2()), AnyView(Thematiquecard3())]
+    
+    @State var searchText = ""
     var body: some View {
         
         NavigationStack {
@@ -21,12 +25,10 @@ struct CreationView: View {
                 
                 HStack {
                     
-                    Button{
-                        
-                    } label: {
-                        Image(systemName: "paperplane")
-                            .font(.custom("Italianno", size: 20))
-                    }.foregroundColor(.black)
+                    NavigationLink(destination: Chatbase()) {
+                                           Image(systemName: "paperplane")
+                                               .font(.custom("Italianno", size: 20))
+                                       }.foregroundColor(.black)
                     
                     Spacer()
                     
@@ -36,16 +38,32 @@ struct CreationView: View {
                     
                     Spacer()
                     
-                    Button{
-                        
-                    } label: {
-                        Image(systemName: "bell")
-                            .font(.custom("Italianno", size: 20))
-                    }.foregroundColor(.black)
+                    NavigationLink(destination: NotificationView()) {
+                                            Image(systemName: "bell")
+                                                .font(.custom("Italianno", size: 20))
+                                        }.foregroundColor(.black)
                     
                     
                 }.padding(.horizontal)
                     .padding(.vertical, -10)
+                
+                NavigationLink(destination: Page_filtre_Article_Createurs()) {
+                    ZStack {
+                        Rectangle()
+                        .cornerRadius(10)
+                        .frame(width: 370, height: 30)
+                        .foregroundColor(Color(.sRGB, red: 0.7, green: 0.7, blue: 0.7, opacity: 0.3))
+                        HStack {
+                            Text("Rechercher")
+                                .foregroundColor(.black)
+                            Spacer()
+                            Image(systemName: "magnifyingglass")
+                        }.padding(.horizontal, 30)
+                    }
+                    .navigationTitle("")
+                        .navigationBarTitleDisplayMode(.inline)
+                }
+
                 
                 ScrollView(showsIndicators: false) {
                     ZStack(alignment: .bottom) {
@@ -59,29 +77,33 @@ struct CreationView: View {
                             
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
-                                    ForEach(1...20, id: \.self) { _ in
-                                        SmallCreator(img: "creatrice")
+                                    ForEach(dataFilter.creatorRequest.allCreator) { createur in
+                                        SmallCreator(creator: createur)
                                             .scrollTransition(.animated) { content, phase in
                                                 content
                                                     .opacity(phase.isIdentity ? 1 : 0)
                                                     .scaleEffect(phase.isIdentity ? 1 : 0.5)
                                             }
                                     }
-                                }.scrollTargetLayout()
+                                }
+                                    .scrollTargetLayout()
                                     .padding(.horizontal)
-                            }.scrollTargetBehavior(.viewAligned)
+                            }
+                            .scrollTargetBehavior(.viewAligned)
                             
-                            Text("Thématique")
+                            
+                            Text("Thématiques")
                                 .font(.custom("Italianno", size: 30))
-                                .padding(.vertical, -1)
+                                .padding(.bottom, -1)
                                 .padding(.horizontal)
                             
                             
                             ScrollViewReader { proxy in
                                 ScrollView(.horizontal) {
-                                    HStack(spacing: 0) {
-                                        ForEach(0..<numberOfPages, id: \.self) { page in
-                                            CardThematique()
+                                    HStack() {
+                                        ForEach(0..<numberOfPages, id: \.self) { index in
+                                            cards[index]
+                                                .frame(width: UIScreen.main.bounds.width, height: 150)
                                         }
                                     }
                                     .onChange(of: currentPage) { newPage in
@@ -119,7 +141,7 @@ struct CreationView: View {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
                                     
-                                    ForEach(productRequest.allProducts) { product in
+                                    ForEach(dataFilter.productsRequest.allProducts) { product in
                                         NavigationLink(destination: DetailProduit(produit: product)) {
                                             CardProduit(produit: product)
                                                 .foregroundColor(.black)
@@ -158,6 +180,9 @@ struct CreationView: View {
                                     NavigationLink(destination: CatalogueView(filtre: "Upcycling")) {
                                         CardCategorie(categorie: "Upcycling", image: "arrow.3.trianglepath")
                                     }
+                                    NavigationLink(destination: CatalogueView(filtre: "Naturel")) {
+                                        CardCategorie(categorie: "Naturel", image: "tree")
+                                    }
                                 }
                                 .foregroundColor(.black)
                                 .scrollTargetLayout()
@@ -168,11 +193,12 @@ struct CreationView: View {
                     }
                 }
             }
-        }.onAppear {
-            Task {
-                productRequest.allProducts = await productRequest.fetchedProducts()
-            }
         }
+//        .onAppear {
+//            Task {
+//                productRequest.allProducts = await productRequest.fetchedProducts()
+//            }
+//        }
         
         
     }
@@ -189,6 +215,6 @@ struct CreationView: View {
 #Preview {
     
     CreationView()
-        .environmentObject(ProductsAPIRequest())
+        .environmentObject(DataFilterModel())
     
 }

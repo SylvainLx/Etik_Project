@@ -52,16 +52,21 @@ struct MapView: View {
     @State private var result = [MKMapItem]() //tableau vide pour nos pts d'intérêts
     @State private var selection: MKMapItem? //Permet de notifier la selection d'un point d'intérêt
     @State private var filteredPointsOfInterest: [PointOfInterest] = []
+
     @State private var isSearching = false
     
-    // points d'intérêt pour essayer
-    let pointsOfInterest: [PointOfInterest] = [
-        PointOfInterest(id: 1, name: "Point 1", coordinate: CLLocationCoordinate2D(latitude: 48.879855, longitude: 2.369416)),
-        PointOfInterest(id: 2, name: "Point 2", coordinate: CLLocationCoordinate2D(latitude: 48.878660, longitude: 2.372326)),
-        PointOfInterest(id: 3, name: "Point 3", coordinate: CLLocationCoordinate2D(latitude: 48.878951, longitude: 2.375177)),
-        PointOfInterest(id: 4, name: "Point 4", coordinate: CLLocationCoordinate2D(latitude: 48.877870, longitude: 2.368411)),
-        PointOfInterest(id: 5, name: "Point 5", coordinate: CLLocationCoordinate2D(latitude: 48.876518, longitude: 2.371679))
-    ]
+    @EnvironmentObject var dataFilter : DataFilterModel
+    @State private var filteredEvents: [Event] = []
+    
+    
+//    // points d'intérêt pour essayer
+//    let pointsOfInterest: [PointOfInterest] = [
+//        PointOfInterest(id: 1, name: "Point 1", coordinate: CLLocationCoordinate2D(latitude: 48.879855, longitude: 2.369416)),
+//        PointOfInterest(id: 2, name: "Point 2", coordinate: CLLocationCoordinate2D(latitude: 48.878660, longitude: 2.372326)),
+//        PointOfInterest(id: 3, name: "Point 3", coordinate: CLLocationCoordinate2D(latitude: 48.878951, longitude: 2.375177)),
+//        PointOfInterest(id: 4, name: "Point 4", coordinate: CLLocationCoordinate2D(latitude: 48.877870, longitude: 2.368411)),
+//        PointOfInterest(id: 5, name: "Point 5", coordinate: CLLocationCoordinate2D(latitude: 48.876518, longitude: 2.371679))
+//    ]
     
     
     var body: some View {
@@ -72,17 +77,22 @@ struct MapView: View {
                 
                 //loop si recherche, affiche le point perso specifique
                 UserAnnotation()
-                if isSearching{
-                    ForEach(filteredPointsOfInterest, id: \.id) { poi in
-                        Marker(poi.name, coordinate: poi.coordinate)
+//                if isSearching{ //carte vierge sans les points
+                ForEach(dataFilter.eventRequest.allEvents) { event in
+                        if let coordinate = event.coordinate{
+                            Marker(event.name, coordinate: coordinate)
+                        }
                     }
-                }
+ //           }
+
 
                 //loop pour afficher les demandes de points d'intérêts generique (resto, monuments, etc...)
-                ForEach(result, id:\.self) { item in
-                    let placemark = item.placemark
-                    Marker(placemark.name ?? "", coordinate: placemark.coordinate)
-                }
+//                ForEach(result, id:\.self) { item in
+//                    let placemark = item.placemark
+//                    Marker(placemark.name ?? "", coordinate: placemark.coordinate)
+//                }
+                
+                
             }
             .overlay(alignment: .bottom, content: {
                 TextField("Recherche", text: $search)
@@ -97,17 +107,19 @@ struct MapView: View {
             //permet d'effectuer la demande de notre textfield une fois appuyer sur entrée
             .onSubmit(of: .text) {
                 isSearching = true
-                filteredPointsOfInterest = pointsOfInterest.filter { poi in
-                    return poi.name.localizedCaseInsensitiveContains(search)
+                filteredEvents = dataFilter.eventRequest.allEvents.filter { event in
+                    return event.name.localizedCaseInsensitiveContains(search)
                 }
                 // Réaliser la demande de points d'intérêt
                 searchPlaces()
                 
                 // Centrer la carte sur le premier point d'intérêt trouvé
-                if let firstMatchingPOI = filteredPointsOfInterest.first {
-                    let region = MKCoordinateRegion(center: firstMatchingPOI.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                if let firstMatchingEvent = filteredEvents.first {
+                    if let coordinate = firstMatchingEvent.coordinate {
+                        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
                         userLocation = .region(region)
                     }
+                }
             }
             
             //Quand la vue apparait on est notifié de la permission + reinitialisation variable isSearching
@@ -117,11 +129,18 @@ struct MapView: View {
             })
             Spacer()
         }
+        .onAppear {
+            Task {
+                dataFilter.eventRequest.allEvents = await dataFilter.eventRequest.fetchedEvent()
+                
+            }
+        }
     }
 }
 
 #Preview {
     MapView()
+        .environmentObject(DataFilterModel())
 }
 
 

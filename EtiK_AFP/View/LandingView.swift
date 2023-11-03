@@ -9,48 +9,59 @@ import SwiftUI
 
 struct LandingView: View {
     
-    @StateObject var userRequest = UserAPIRequest()
-    @StateObject var productRequest = ProductsAPIRequest()
-    @StateObject var transactionRequest = TransactionAPIRequest()
+    @StateObject var dataFilter = DataFilterModel()
+    @StateObject var panier = Panier()
+        
+    @State var selection = 1
     
+    @State var badgeManager = AppAlertBadgeManager(application: UIApplication.shared)
+
     var body: some View {
         
-            TabView {
-               
-                CreationView()
-                    .tabItem { Label("Créations", systemImage: "sun.max") }
-                    .environmentObject(productRequest)
-                EventView()
-                    .tabItem { Label("Évènements", systemImage: "calendar") }
-                FavorisView()
-                    .tabItem { Label("Favoris", systemImage: "heart") }
-                PanierView(vide: false, articles: articles)
-                    .tabItem { Label("Panier", systemImage: "basket") }
-                    .tag(4)
-                CheckLogView()
-                    .tabItem { Label("Profil", systemImage: "person") }
-                    .tag(5)
-                    .environmentObject(userRequest)
-                    .environmentObject(transactionRequest)
-            }.accentColor(.marron)
-                .onAppear {
-                    Task {
-                        userRequest.allUser = await userRequest.fetchedUser()
-                        productRequest.allProducts = await productRequest.fetchedProducts()
-                        transactionRequest.allTransaction = await transactionRequest.fetchedTransaction()
-                    }
-                    // correct the transparency bug for Tab bars
-                    let tabBarAppearance = UITabBarAppearance()
-                    tabBarAppearance.configureWithOpaqueBackground()
-                    UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-                }  
+        TabView(selection: $selection) {
+            CreationView()
+                .tabItem { Label("Créations", systemImage: "sun.max") }
+                .tag(1)
+            EventView()
+                .tabItem { Label("Évènements", systemImage: "calendar") }
+                .tag(2)
+            FavorisView()
+                .tabItem { Label("Favoris", systemImage: "heart") }
+                .tag(3)
+            PanierView(tab: $selection)
+                .tabItem { Label("Panier", systemImage: "basket") }
+                .badge(panier.Panier.count)
+                .tag(4)
+            CheckLogView()
+                .tabItem { Label("Profil", systemImage: "person") }
+                .tag(5)
+        }.accentColor(.marron)
+            .environmentObject(dataFilter)
+            .environmentObject(panier)
+
+            .onAppear {
+                Task {
+                    dataFilter.userRequest.allUser = await dataFilter.userRequest.fetchedUser()
+                    dataFilter.productsRequest.allProducts = await dataFilter.productsRequest.fetchedProducts()
+                    dataFilter.transactionsRequest.allTransaction = await dataFilter.transactionsRequest.fetchedTransaction()
+                    dataFilter.eventRequest.allEvents = await dataFilter.eventRequest.fetchedEvent()
+                    dataFilter.creatorRequest.allCreator = await dataFilter.creatorRequest.fetchedCreator()
+                }
+                // correct the transparency bug for Tab bars
+                let tabBarAppearance = UITabBarAppearance()
+                tabBarAppearance.configureWithOpaqueBackground()
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+                
+                badgeManager.setAlertBadge(number: 4)
+                //notification badge AppIcon
+                UNUserNotificationCenter.current().requestAuthorization(options: .badge) // Mark 1
+                                 { (_, _) in }
+            }
     }
 }
 
 #Preview {
     LandingView()
-        .environmentObject(UserAPIRequest())
-        .environmentObject(ProductsAPIRequest())
-        .environmentObject(TransactionAPIRequest())
-
+        .environmentObject(DataFilterModel())
+        .environmentObject(Panier())
 }

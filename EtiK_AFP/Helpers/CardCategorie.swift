@@ -15,15 +15,14 @@ struct CardCategorie: View {
     var body: some View {
         VStack {
              
-            ZStack { 
+            ZStack {
                 MiniCard()
                     .foregroundColor(.beige)
                 
                 Image(systemName: image)
-                    .resizable()
-                    .frame(width: 35, height: 25)
+                    .font(.system(size: 30))
                     .foregroundColor(.white)
-            }
+            }.frame(width: 30, height: 70)
             
             Text(categorie)
                 .font(.custom("Italiana", size: 15))
@@ -33,6 +32,7 @@ struct CardCategorie: View {
         }
     }
 }
+
 
 #Preview {
     HStack {

@@ -35,7 +35,7 @@ struct FollowedCreatorView: View {
                         Text(name)
                         Text(entreprise)
                         Text(city)
-                            .font(.custom("LibreFranklin", size : 16))
+                            .font(.custom("Libre Franklin", size : 16))
                     }
                 }
                 .padding(.vertical, 8)

@@ -10,15 +10,22 @@ import Foundation
 struct Article: Identifiable {
     var id = UUID()
     var name: String
+    var photo: [DataBaseImage]
     var category: String
-    var type: String
+    var collection: String
     var price: Double
     var productSize: String
 }
 
 var articles = [
-    Article(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, productSize: "XS"),
-    Article(name: "Chemise en coton bio", category: "Made in France", type: "Bio", price: 58.99, productSize: "S"),
-    Article(name: "Chemise casual", category: "Made in France", type: "", price: 39.99, productSize: "XS")
-
+    Article(name: "Chemise en Lin", photo: [], category: "Made in France", collection: "Vegan", price: 100, productSize: "XS")
 ]
+
+
+class Panier: ObservableObject {
+    @Published var Panier: [Article]
+    init() {
+        self.Panier = [
+           ]
+    }
+}

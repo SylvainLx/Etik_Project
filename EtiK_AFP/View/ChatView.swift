@@ -1,5 +1,5 @@
 //
-//  ChatView.swift
+//  chatView.swift
 //  EtiK_AFP
 //
 //  Created by Iris Gourvil on 20/10/2023.
@@ -32,8 +32,8 @@ struct ChatView: View {
                         .foregroundColor(.white)
                         .frame(width: height, height: height)
                         .background(
-                            Circle()
-                                .foregroundColor(text.isEmpty ? .gray : .marron)
+                        Circle()
+                            .foregroundColor(text.isEmpty ? .darkBeige : .marron)
                         )
                 }
                 .disabled(text.isEmpty)
@@ -54,17 +54,16 @@ struct ChatView: View {
     var body: some View {
         VStack(spacing: 0) {
             
-            GeometryReader{ reader in
+GeometryReader{ reader in
                 ScrollView{
-                    
+                
                     getMessagesView(viewWidth: reader.size.width)
                         .padding(.horizontal)
                         .padding(.top, 90)
-                    
+                
                 }
             }
-            .ignoresSafeArea()
-            .background(LinearGradient(gradient: Gradient(colors: [.cyan, .init(red: 0.067, green: 0.195, blue: 0.427)]), startPoint: .bottom, endPoint: .top))
+                           
             
             toolBarView()
         }
@@ -76,33 +75,33 @@ struct ChatView: View {
             ForEach(chat.messages) { message in
                 let isReceived = message.type == .Received
                 HStack {
+                   
+                ZStack {
                     
-                    ZStack {
-                        
-                        
+                      
                         Text(message.text)
-                            .foregroundColor(.white)
-                            .padding(.horizontal)
-                            .padding(.vertical, 12)
-                            .background(isReceived ? Color.black.opacity(0.2) : .blue.opacity(0.9))
-                            .cornerRadius(13)
+                        .foregroundColor(isReceived ? .black : .white)
+                        .padding(.horizontal)
+                        .padding(.vertical, 12)
+                        .background(isReceived ? .darkBeige : .marron)
+                        .cornerRadius(13)
                     }
-                    .frame(width: viewWidth * 0.7, alignment : isReceived ? .leading : .trailing )
-                    .padding(.vertical)
-                    
-                    
+                .frame(width: viewWidth * 0.7, alignment : isReceived ? .leading : .trailing )
+                .padding(.vertical)
+            
+               
                     
                 }
                 .frame(maxWidth: .infinity, alignment: isReceived ? .leading : .trailing)
-                
+        
             }
         }
-        
-    }
     
+    }
+   
 }
 
-struct chatView_Previews: PreviewProvider {
+struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView(chat: Chat.sampleChat[1])
     }

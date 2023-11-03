@@ -45,7 +45,6 @@ class ProductsAPIRequest: ObservableObject {
                 $0.id < $1.id
             }
             
-            print(resultProducts)
             return resultProducts
             
         } catch let error {
@@ -55,4 +54,47 @@ class ProductsAPIRequest: ObservableObject {
         return resultProducts
     }
     
+    func postProducts(product: Product) async -> String {
+
+            var requestResult = ""
+
+            let airTableJSON: [String: Product] = ["fields": product]
+
+            print(airTableJSON)
+
+            guard let encoded = try? JSONEncoder().encode(airTableJSON) else {
+                print("failed to encode data")
+                requestResult = "We are sorry, your custom drink couldn't be processed. Please try at another time."
+                return requestResult
+            }
+
+            print(encoded)
+
+            guard let url = URL(string: "https://api.airtable.com/v0/appmXQklmnHQ3735X/Products") else {
+                print("Invalid URL")
+                requestResult = "We are sorry, your custom drink couldn't be processed. Please try at another time."
+                return requestResult
+            }
+
+            var request = URLRequest(url: url)
+            request.setValue("Bearer (apiKey)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "POST"
+
+            do {
+                let (_, response) = try await URLSession.shared.upload(for: request, from: encoded)
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    print("Failed request (response.debugDescription)")
+                    requestResult = "We are sorry, your custom drink couldn't be processed. Please try at another time."
+                    return requestResult
+                }
+
+                requestResult = "Thank you, your request has been registered and will be treated shortly."
+            } catch let error {
+                print("ERROR: (error)")
+            }
+            return requestResult
+
+        }
 }
+

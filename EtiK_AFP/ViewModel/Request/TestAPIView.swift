@@ -12,23 +12,24 @@ import SwiftUI
 
 struct TestAPIView: View {
     
-    @EnvironmentObject var userRequest: UserAPIRequest
+    @EnvironmentObject var dataFilter: DataFilterModel
     
     
     var body: some View {
         NavigationStack {
             LazyVStack {
-                ForEach(userRequest.allUser) { user in
-                    Text(user.lastName)
-                    Text(user.firstName)
+                ForEach(dataFilter.creatorRequest.allCreator) { creator in
+                    Text(creator.lastName)
+                    Text(creator.firstName)
                 }
                 Text("okokok")
             }
         }
+        .environmentObject(dataFilter)
     }
 }
 
 #Preview {
     TestAPIView()
-        .environmentObject(UserAPIRequest())
+        .environmentObject(DataFilterModel())
 }

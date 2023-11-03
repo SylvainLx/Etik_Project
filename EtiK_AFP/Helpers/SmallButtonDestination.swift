@@ -21,7 +21,7 @@ struct SmallButtonDestination: View {
                     .foregroundColor(.marron)
                 Text(title)
                     .foregroundColor(.white)
-                    .font(.custom("Italiana", size: 20))
+                    .font(.custom("Libre Franklin", size: 16))
             }
         }
     }

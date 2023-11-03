@@ -9,7 +9,9 @@ import SwiftUI
 
 struct CreatorDetailView: View {
     
-    @EnvironmentObject var productRequest: ProductsAPIRequest
+    @EnvironmentObject var dataFilter: DataFilterModel
+    @State var createur : Creator
+    
     
     @State var destination:AnyView?
     @State var creatorId = "912"
@@ -23,15 +25,24 @@ struct CreatorDetailView: View {
                         Circle()
                             .stroke(.beige, lineWidth: 5)
                             .frame(width: 100, height:100)
-                        Image("creatrice")
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(Circle())
-                            .frame(width: 80)
+                        AsyncImage(url: URL(string: createur.picture[0].url)) { phase in
+                            if let image = phase.image {
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                            } else if phase.error != nil {
+                                Text("No Image")
+                            } else {
+                                ProgressView()
+                            }
+                            
+                        }
+                        .clipShape(Circle())
+                        .frame(width: 80)
                     }
                     VStack {
-                        Text("Chloé")
-                        Text("Schwartz")
+                        Text(createur.firstName)
+                        Text(createur.lastName)
                     }.font(.custom("Italiana", size : 32))
                     VStack(spacing: 4) {
                         StarView(note: 4.6)
@@ -61,8 +72,8 @@ struct CreatorDetailView: View {
                             
                         }.foregroundColor(.blue)
                     }.padding()
-                    Text("Je m'appelle Chloé Schwarz, et j'ai toujours aimé la mode. Cependant, mon amour pour les animaux et l'environnement m'a poussé à devenir créatrice de vêtements vegan. J'ai cherché des matériaux alternatifs, comme le coton biologique et le lin, pour créer des pièces élégantes sans utiliser de produits d'origine animale. J'ai commencé modestement, en exposant mes créations sur des marchés locaux, mais au fil du temps, ma boutique vegan a prospéré...")
-                        .font(.custom("LibreFranklin", size: 15))
+                    Text(createur.biography)
+                        .font(.custom("Libre Franklin", size: 16))
                         .foregroundStyle(.gray)
                         .padding(.horizontal)
                         .multilineTextAlignment(.center)
@@ -70,7 +81,8 @@ struct CreatorDetailView: View {
                     HStack {
                         Text("Mes Collections")
                             .font(.custom("Italianno", size: 30))
-                            .padding(.vertical, -1)
+                            .padding(.top)
+                            .padding(.bottom, -10)
                         Spacer()
                     }
                     .padding(.horizontal)
@@ -78,7 +90,7 @@ struct CreatorDetailView: View {
                     ScrollView(.horizontal) {
                         HStack {
                             NavigationLink(destination: CatalogueView(filtre: creatorId)) {
-                                ForEach(productRequest.allProducts) { product in
+                                ForEach(dataFilter.productsRequest.allProducts) { product in
                                     if product.idFromCreator.first == creatorId {
                                         CardCollection(produit: product)
                                     }
@@ -86,14 +98,15 @@ struct CreatorDetailView: View {
                             }.foregroundColor(.black)
                                 .navigationTitle("")
                                 .navigationBarTitleDisplayMode(.inline)
-                             
+                            
                         }.padding()
                     }
                     
                     HStack {
                         Text("Mes Produits")
                             .font(.custom("Italianno", size: 30))
-                            .padding(.vertical, -1)
+                            .padding(.top)
+                            .padding(.bottom, -10)
                         Spacer()
                     }
                     .padding(.horizontal)
@@ -101,7 +114,7 @@ struct CreatorDetailView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             
-                            ForEach(productRequest.allProducts) { product in
+                            ForEach(dataFilter.productsRequest.allProducts) { product in
                                 if product.idFromCreator.first == creatorId {
                                     NavigationLink(destination: DetailProduit(produit: product)) {
                                         CardProduit(produit: product)
@@ -119,14 +132,14 @@ struct CreatorDetailView: View {
             }
         }.onAppear {
             Task {
-                productRequest.allProducts = await productRequest.fetchedProducts()
+                dataFilter.productsRequest.allProducts = await dataFilter.productsRequest.fetchedProducts()
             }
         }
     }
 }
 
 
-#Preview {
-    CreatorDetailView()
-        .environmentObject(ProductsAPIRequest())
-}
+//#Preview {
+//    CreatorDetailView()
+//        .environmentObject(DataFilterModel())
+//}

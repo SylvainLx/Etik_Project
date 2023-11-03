@@ -16,29 +16,26 @@ struct ChatRow: View {
 
        Image(chat.person.imgString)
                 .resizable()
-               .frame(width: 70, height: 70)
                 .clipShape(Circle())
+                .scaledToFill()
+                .frame(width: 70, height: 70)
+                
 
             ZStack {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {
                         Text(chat.person.name)
                             .bold()
-                            .foregroundColor(.white)
-
+                            .font(.custom("Italiana", size: 24))
                         Spacer()
 
                         Text(chat.messages.last?.date.descriptiveString() ?? "")
-                            .foregroundColor(.white)
-                          
-
                     }
 
                     HStack {
 
                         Text(chat.messages.last?.text ?? "")
-                            .bold()
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .lineLimit(2)
                             .frame(height: 50, alignment: .top)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -58,7 +55,7 @@ struct ChatRow: View {
     }
 }
 
-struct chatRow_Previews: PreviewProvider {
+struct ChatRow_Previews: PreviewProvider {
     static var previews: some View {
         ChatRow(chat: Chat.sampleChat[1])
     }

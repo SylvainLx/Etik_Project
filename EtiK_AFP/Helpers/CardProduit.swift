@@ -8,62 +8,65 @@
 import SwiftUI
 
 struct CardProduit: View {
+    @EnvironmentObject var dataFilter: DataFilterModel
     
     @State var produit: Product
     
-    var body: some View {
-        
-        ZStack(alignment: .topTrailing) {
-            VStack {
-                
-                ZStack(alignment: .bottom) {
-                    
-                    SmallCard()
-                        .foregroundColor(.beige)
-                    
-                    Text("\(produit.price, specifier: "%.2f") €")
-                        .font(.system(size: 10))
-                        .fontWeight(.bold)
-                        .padding(.bottom, 8)
-                        .foregroundColor(.white)
-                        .shadow(radius: 5)
-                     
-                    AsyncImage(url: URL(string: produit.photo[0].url)) { phase in
-                                    if let image = phase.image {
-                                        image
-                                            .resizable()
-                                            .scaledToFit()
-                                    } else if phase.error != nil {
-                                        Text("No Image")
-                                    } else {
-                                        ProgressView()
-                                    }
-                                    
-                                }
-                                .frame(width: 100, height: 100)
-                                .clipped()
-                                .cornerRadius(30)
-                                .padding(.bottom, 30)
+   // @State var destination:AnyView?
 
-                     
+    
+    var body: some View {
+            ZStack(alignment: .topTrailing) {
+                VStack {
+                    
+                    ZStack(alignment: .bottom) {
+                        
+                        SmallCard()
+                            .foregroundColor(.beige)
+                        
+                        Text("\(produit.price, specifier: "%.2f") €")
+                            .font(.system(size: 10))
+                            .fontWeight(.bold)
+                            .padding(.bottom, 8)
+                            .foregroundColor(.white)
+                            .shadow(radius: 5)
+                        
+                        AsyncImage(url: URL(string: produit.photo[0].url)) { phase in
+                            if let image = phase.image {
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                            } else if phase.error != nil {
+                                Text("No Image")
+                            } else {
+                                ProgressView()
+                            }
+                            
+                        }
+                        .frame(width: 100, height: 100)
+                        .clipped()
+                        .cornerRadius(30)
+                        .padding(.bottom, 30)
+                        
+                        
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Text(produit.name)
+                                .font(.custom("Italiana", size: 12))
+                            Text(produit.category[0] + " / " + produit.collection[0])
+                                .font(.custom("LibreFranklin", size: 8))
+                                .foregroundStyle(.gray)
+                        }
+                        Spacer()
+                        LikeButton()
+                    }.frame(width: 150, height: 30)
                 }
                 
-                HStack {
-                    Spacer()
-                    VStack {
-                        Text(produit.name)
-                            .font(.custom("Italiana", size: 12))
-                        Text(produit.category[0])
-                            .font(.custom("LibreFranklin", size: 8))
-                            .foregroundStyle(.gray)
-                    }
-                    Spacer()
-                    LikeButton()  
-                }.frame(width: 150, height: 30)
-            }
             
         }
-        
     }
 }
 

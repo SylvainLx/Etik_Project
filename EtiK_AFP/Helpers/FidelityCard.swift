@@ -21,7 +21,8 @@ struct FidelityCard<Content>: View where Content: View {
 struct FidelityCardFront: View {
     
     @State private var showQRCode = false
-    
+    @State var firstName:String
+    @State var lastName:String
     
     var body: some View {
         
@@ -39,7 +40,7 @@ struct FidelityCardFront: View {
                         Text("EtiK fidelity card")
                             .font(.custom("Italiana", size: 20))
                         Spacer()
-                        Text("Emma White")
+                        Text(firstName + " " + lastName)
                             .font(.custom("Italianno", size: 20))
                     }.padding(.horizontal)
                 }
@@ -101,7 +102,8 @@ struct FidelityCardFront: View {
 struct FidelityCardBack: View {
     
     @State private var showQRCode = false
-    
+    @State var firstName:String
+    @State var lastName:String
     
     var body: some View {
         
@@ -119,7 +121,7 @@ struct FidelityCardBack: View {
                         Text("EtiK fidelity card")
                             .font(.custom("Italiana", size: 20))
                         Spacer()
-                        Text("Emma White")
+                        Text(firstName + " " + lastName)
                             .font(.custom("Italianno", size: 20))
                     }.padding(.horizontal)
                 }
@@ -159,5 +161,5 @@ extension Color {
 }
 
 #Preview {
-    FidelityCard<FidelityCardFront>(content: { FidelityCardFront() })
+    FidelityCard<FidelityCardFront>(content: { FidelityCardFront(firstName: "Emilien", lastName: "Giraud") })
 }

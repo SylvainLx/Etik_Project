@@ -8,26 +8,36 @@
 import SwiftUI
 
 struct LargeButton: View {
+    var labelButton: String
+    var colorSelect: Color
+    var destination: AnyView?
     
-    @State var labelButton:String
+    @State private var isActive = false
     
     var body: some View {
         
-        Button {
+        VStack {
+            NavigationLink("", destination: destination, isActive: $isActive)
+                .opacity(0)
             
-        } label: {
-            ZStack {
-                RoundedRectangle(cornerRadius: 30)
-                    .foregroundColor(.marron)
-                    .frame(width: 300, height: 50)
-                Text(labelButton)
-                    .foregroundStyle(.white)
-                    .font(.custom("Italiana", size: 20))
+            
+            Button(action: {
+                isActive = true
+            }) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 30)
+                        .foregroundColor(colorSelect)
+                        .frame(width: 300, height: 50)
+                    Text(labelButton)
+                        .foregroundColor(.white)
+                        .font(.custom("Libre Franklin", size: 16))
+                }
             }
-        } 
+        }
     }
 }
 
+
 #Preview {
-    LargeButton(labelButton: "Ajouter au panier")
+    LargeButton(labelButton: "Ajouter au panier", colorSelect: .marron, destination: AnyView(PayView()))
 }

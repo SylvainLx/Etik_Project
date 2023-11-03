@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FavorisView: View {
     
-    @EnvironmentObject var productRequest: ProductsAPIRequest
+    @EnvironmentObject var dataFilter: DataFilterModel
     //    @State var produit: Product
     
     var body: some View {
@@ -23,8 +23,8 @@ struct FavorisView: View {
             
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                    ForEach(productRequest.allProducts) { product in
-                        ForEach(productRequest.allProducts) { product in
+                    ForEach(dataFilter.productsRequest.allProducts) { product in
+                        ForEach(dataFilter.productsRequest.allProducts) { product in
                             NavigationLink(destination: DetailProduit(produit: product)) {
                                 CardProduit(produit: product)
                                     .scrollTransition(.animated) { content, phase in
@@ -42,7 +42,7 @@ struct FavorisView: View {
         }.accentColor(.marron)
             .onAppear {
                 Task {
-                    productRequest.allProducts = await productRequest.fetchedProducts()
+                    dataFilter.productsRequest.allProducts = await dataFilter.productsRequest.fetchedProducts()
                 }
             }
     }
@@ -50,5 +50,5 @@ struct FavorisView: View {
 
 #Preview {
     FavorisView()
-        .environmentObject(ProductsAPIRequest())
+        .environmentObject(DataFilterModel())
 }

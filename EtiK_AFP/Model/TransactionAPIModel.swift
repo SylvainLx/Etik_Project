@@ -40,9 +40,9 @@ struct Transaction: Codable, Identifiable {
 }
 
 class TransactionObservable: ObservableObject {
-    @Published var transaction: Transaction
+    @Published var transaction: [Transaction]
     
-    init(transaction: Transaction) {
+    init(transaction: [Transaction]) {
         self.transaction = transaction
     }
 }

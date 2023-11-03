@@ -20,7 +20,7 @@ struct SmallButtonToggle: View {
                     .foregroundColor(isPresented ? .beige : .marron)
                 Text(isPresented ? "Suivi" : "Suivre")
                     .foregroundColor(.white)
-                    .font(.custom("Italiana", size: 20))
+                    .font(.custom("Libre Franklin", size: 16))
             }
         })
     }

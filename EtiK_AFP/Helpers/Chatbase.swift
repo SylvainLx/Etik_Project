@@ -13,44 +13,32 @@ struct Chatbase: View {
         
         NavigationStack {
             ZStack {
-                
-                
-                
                 VStack{
-                    ForEach (chats) { chat in
-                        
-                        NavigationLink(destination: {
-                            ChatView(chat: chat)
-                        }) {
-                            ChatRow(chat: chat)
-                            
-                            
+                    TitleCard(title: "Mes messages")
+                    ScrollView {
+                        ForEach (chats) { chat in
+                            NavigationLink(destination: {
+                                ChatView(chat: chat)
+                            }) {
+                                ChatRow(chat: chat)
+                                    .toolbar(.hidden, for: .tabBar)
+                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
-                        
-                        
                     }
                     Spacer()
                 }
-                
-                
-                .navigationTitle("Mes messages")
+                .navigationTitle("")
                 .navigationBarItems(trailing: Button(action: {}) {
                     Image(systemName: "square.and.pencil")
                 })
-                
-                
-                
             }
-        }
-        
-        
+        }.foregroundColor(.black)
     }
-    
-    struct chatbase_Previews: PreviewProvider {
-        static var previews: some View {
-            Chatbase()
-        }
+}
+
+struct chatbase_Previews: PreviewProvider {
+    static var previews: some View {
+        Chatbase()
     }
-    
 }

@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct DetailProduit: View {
+    @EnvironmentObject var dataFilter: DataFilterModel
+    
+    @EnvironmentObject var panier:Panier
     
     @State var produit: Product
-     
+    
     @State private var selectedSize = "XS"
     @State private var showInfo: Bool = false
     @State private var selectedPiluleLabel: String?
+    
+    @State private var creator: Creator?
     
     var body: some View {
         
@@ -87,10 +92,9 @@ struct DetailProduit: View {
                     HStack {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {
-                                PiluleLabel(label: "leaf", labelText: "Vegan", selectedPiluleLabel: $selectedPiluleLabel)
-                                PiluleLabel(label: "flag", labelText: "Made in France", selectedPiluleLabel: $selectedPiluleLabel)
-                                PiluleLabel(label: "cloud", labelText: "Biologique", selectedPiluleLabel: $selectedPiluleLabel)
-                                PiluleLabel(label: "hand.raised", labelText: "Fait main", selectedPiluleLabel: $selectedPiluleLabel)
+                                ForEach(produit.category, id: \.self) { category in
+                                    PiluleLabel( labelText: category, selectedPiluleLabel: $selectedPiluleLabel)
+                                }
                             }.frame(width: 400,alignment: .center)
                         }
                     }.padding(.top)
@@ -128,12 +132,15 @@ struct DetailProduit: View {
                 
                 
                 VStack(alignment: .leading) {
-                    HStack {
-                        Text("Chloé Schwarz")
-                            .font(.custom("Italiana", size: 25))
-                        Spacer()
-                        SmallCreator(img: "creatrice")
+                    if let creator = dataFilter.creatorRequest.allCreator.first(where: { $0.id == produit.idFromCreator[0] }) {
+                        HStack {
+                            Text("\(creator.firstName) \(creator.lastName)")
+                                .font(.custom("Italiana", size: 25))
+                            Spacer()
+                            SmallCreator(creator: creator)
+                        }
                     }
+                   
                     
                     
                     Text(produit.description)
@@ -146,12 +153,12 @@ struct DetailProduit: View {
                             .font(.custom("Italiana", size: 25))
                             .padding(.bottom)
                         Spacer()
-                        Button {
+                        NavigationLink (destination: CatalogueView(filtre: produit.category[0])) {
                             
-                        } label: {
                             Image(systemName: "chevron.forward.circle.fill")
                                 .foregroundColor(.beige)
                                 .font(.system(size: 30))
+                            
                         }.padding(.bottom)
                             .padding(.trailing, 8)
                     }
@@ -161,14 +168,28 @@ struct DetailProduit: View {
             }
         }
         
-        
-        LargeButton(labelButton: "Ajouter au panier")
-            .padding(.bottom)
+        Button {
+            panier.Panier.append(Article(name: produit.name, photo: produit.photo, category: produit.category[0], collection: "", price: produit.price, productSize: selectedSize))
+            print("article ajouté")
+            print(panier.Panier.count)
+            
+        } label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 30)
+                    .foregroundColor(.marron)
+                    .frame(width: 300, height: 50)
+                Text("Ajouter au panier")
+                    .foregroundStyle(.white)
+                    .font(.custom("Libre Franklin", size: 16))
+            }
+        }.padding(.bottom)
     }
+    
 }
 
 
-   
+
+
 //#Preview {
 //
 //    @StateObject var productRequest = ProductsAPIRequest()
@@ -199,22 +220,25 @@ struct DetailProduit: View {
 //}
 
 #Preview {
-   
-let sampleProduct = Product(
-         id: "1",
-         name: "T shirt en Lin",
-         photo: [],
-         description: "Sample Description",
-         category: ["Sample Category"],
-         price: 10.0,
-         sizes: ["XS", "S", "M", "L"],
-         quantity: 5,
-         collection: [],
-         transactions2: [],
-         creator: [],
-         idFromCreator: []
-     )
-     
-     return DetailProduit(produit: sampleProduct)
-         .environmentObject(ProductsAPIRequest())
- }
+    
+    let sampleProduct = Product(
+        id: "1",
+        name: "T shirt en Lin",
+        photo: [],
+        description: "Sample Description",
+        category: ["Sample Category"],
+        price: 10.0,
+        sizes: ["XS", "S", "M", "L"],
+        quantity: 5,
+        collection: [],
+        transactions2: [],
+        creator: [],
+        idFromCreator: [],
+        url: ""
+    )
+    
+    return DetailProduit(produit: sampleProduct)
+        .environmentObject(DataFilterModel())
+        .environmentObject(ProductsAPIRequest())
+        .environmentObject(Panier())
+}

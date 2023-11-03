@@ -8,34 +8,26 @@
 import SwiftUI
 
 struct CardCollection: View {
-    
+
     @State var produit: Product
-    
+
     var body: some View {
-         
-            VStack {
-                 
-                ZStack(alignment: .bottom) {
-                    
+
+                ZStack() {
+
                     SmallCard()
                         .foregroundColor(.darkBeige)
-                    
-                    Image("shirt")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 100)
-                        .padding(.bottom, 30)
-                        .shadow(radius: 5)
+                    VStack {
+                        Text("Collection")
+                            .font(.custom("Libre Franklin", size: 12))
+                            .foregroundColor(.white)
+                        Text(produit.collection[0])
+                            .font(.custom("Italiana", size: 20))
+                            .foregroundColor(.white)
+                    }
                 }
-                
-                
-                Text("Collection")
-                    .font(.custom("Italiana", size: 20))
-                Text(produit.collection[0])
-                    .font(.custom("LibreFranklin", size: 8))
-                    .foregroundStyle(.gray)
-            }
-         
+
+
     }
 }
 

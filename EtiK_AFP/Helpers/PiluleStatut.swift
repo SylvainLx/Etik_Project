@@ -27,7 +27,7 @@ struct PiluleStatut: View {
             
             Text(statut)
                 .shadow(radius: 10)
-                .font(.custom("LibreFranklin", size: 12))
+                .font(.custom("Libre Franklin", size: 12))
         }
     }
 }

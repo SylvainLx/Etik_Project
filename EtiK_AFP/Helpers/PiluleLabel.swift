@@ -7,11 +7,20 @@
 
 import SwiftUI
 
-
-
 struct PiluleLabel: View {
     
-    var label: String
+    var label: String {
+        
+        switch labelText {
+        case "Naturel" : "tree"
+        case "Vegan" : "leaf"
+        case "Biologique" : "cloud"
+        case "Upcycling" : "arrow.3.trianglepath"
+        case "Fait main" : "hand.raised.fingers.spread"
+        case "Made in France" : "flag"
+        default: " "
+        }
+    }
     @State var labelText:String
     
     @Binding var selectedPiluleLabel: String?
@@ -55,7 +64,7 @@ struct BubbleView: View {
     
     var body: some View {
         ZStack {
-             
+            
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color.white)
                 .frame(width: 100, height: 25)
@@ -69,7 +78,7 @@ struct BubbleView: View {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color.white)
                 .frame(width: 100, height: 25)
-                .padding(5) 
+                .padding(5)
             Text(text)
                 .font(.custom("LibreFranklin", size: 12))
                 .multilineTextAlignment(.center)
@@ -89,5 +98,5 @@ struct ArrowShape: Shape {
 }
 
 #Preview {
-    PiluleLabel(label: "leaf", labelText: "Coeur", selectedPiluleLabel: .constant("label"))
+    PiluleLabel(labelText: "Made in France", selectedPiluleLabel: .constant("label"))
 }

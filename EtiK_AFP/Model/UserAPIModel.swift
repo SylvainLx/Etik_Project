@@ -26,10 +26,12 @@ struct User: Codable, Identifiable {
     var city: String
     var password: String
     var transactions: [String]
-
+    let role: String
+    
     enum CodingKeys: String, CodingKey {
         case firstName, avatar, id, lastName, email, phone, adress, postalCode, city, password
         case transactions = "Transactions"
+        case role
     }
 }
 

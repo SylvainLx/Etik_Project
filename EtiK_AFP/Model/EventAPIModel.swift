@@ -1,6 +1,7 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 
 import Foundation
+import MapKit
 
 // MARK: - Welcome
 struct EventRequest: Codable {
@@ -14,18 +15,34 @@ struct EventRecord: Codable {
 }
 
 // MARK: - Event
-struct Event: Codable {
+struct Event: Codable, Identifiable {
     let id, name, description: String
-    let picture: [DataBaseImage]
-    let adress, ville, latitude, longitude: String
-    let idCreateur: [String]
-    let postalCode, participants, date: String
-    let idFromIDCreateur: [String]
+      let picture: [DataBaseImage]
+      let adress, ville, latitude, longitude: String
+      let postalCode, participants, date: String
+      let creator, idFromCreator: [String]
+    var selectionEvent : Bool?
 
-    enum CodingKeys: String, CodingKey {
-        case id, name, description, picture, adress, ville, latitude, longitude
-        case idCreateur = "id createur"
-        case postalCode, participants, date
-        case idFromIDCreateur = "id (from id createur)"
+    var coordinate: CLLocationCoordinate2D? {
+        if let lat = Double(latitude), let lon = Double(longitude){
+            return CLLocationCoordinate2D(latitude:lat, longitude:lon)
+        }else{
+            return nil
+        }
+    }
+
+      enum CodingKeys: String, CodingKey {
+          case id, name, description, picture, adress, ville, latitude, longitude, postalCode, participants, date
+          case creator = "Creator"
+          case idFromCreator = "id (from Creator)"
+      }
+}
+
+class EventObservable: ObservableObject {
+
+    @Published var event: [Event]
+    
+    init(event: [Event]) {
+        self.event = event
     }
 }

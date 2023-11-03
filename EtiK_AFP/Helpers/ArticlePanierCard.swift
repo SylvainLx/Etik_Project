@@ -10,6 +10,8 @@ import SwiftUI
 struct ArticlePanierCard: View {
     
     @State var article:Article
+    var showDetail:Bool
+    
     
     var body: some View {
          
@@ -19,33 +21,46 @@ struct ArticlePanierCard: View {
                 
                 SmallCard()
                     .foregroundColor(.beige)
-                Image("lin")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 100)
-                    .padding(.bottom)
-                    .shadow(radius: 5)
-            }
-           
-            VStack(alignment: .leading) {
-                Text(article.name)
-                    .fontWeight(.bold)
-                Text("\(article.category) / \(article.type)")
-                    .font(.footnote)
-                Text("\(article.price, specifier: "%.2f") €")
-                    .fontWeight(.bold)
-            }.padding(.top, 8)
-            
-            VStack {
-                Text("Taille")
-                    .fontWeight(.bold)
-                Text(article.productSize)
+                
+                AsyncImage(url: URL(string: article.photo[0].url)) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    } else if phase.error != nil {
+                        Text("No Image")
+                    } else {
+                        ProgressView()
+                    }
+                    
+                }
+                .frame(width: 100, height: 100)
+                .clipped()
+                .cornerRadius(30)
+                .padding(.bottom, 30)
             }
             
+            if showDetail {
+                VStack(alignment: .leading) {
+                    Text(article.name)
+                        .fontWeight(.bold)
+                    Text("\(article.category) / \(article.collection)")
+                        .font(.footnote)
+                    Text("\(article.price, specifier: "%.2f") €")
+                        .fontWeight(.bold)
+                }.padding(.top, 8)
+                
+                VStack {
+                    Text("Taille")
+                        .fontWeight(.bold)
+                    Text(article.productSize)
+                }
+            }
         }
+         
     }
 }
 
-#Preview {
-    ArticlePanierCard(article: Article(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, productSize: "XS"))
-}
+//#Preview {
+//    ArticlePanierCard(article: Article(name: "Chemise en Lin", photo: ["http://image.png"], category: "Made in France", collection: "Vegan", price: 100, productSize: "XS"))
+//}

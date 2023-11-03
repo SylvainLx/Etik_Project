@@ -8,111 +8,144 @@
 import SwiftUI
 
 struct ModifCompteView: View {
-    
-    @EnvironmentObject var data: UserObservable
+        
+    @EnvironmentObject var dataFilter: DataFilterModel
 
     
     var body: some View {
         
         VStack {
-            TitleCard(title: "Modifier mes informations")
-            ZStack{
-                RoundedRectangle(cornerRadius: 30)
-                    .fill(.beige)
-                    .padding()
+            ZStack {
+                RadialGradient(stops: [
+                    .init(color: Color(.beige), location: 0.3),
+                    .init(color: Color(.white), location: 0.3),
+                ], center: .top, startRadius: 100, endRadius: 600)
+                .ignoresSafeArea()
                 
+                VStack {
+                    TitleCard(title: "Mes informations")
+                    
+                    Spacer()
+                    
+                    ZStack(alignment: .bottomTrailing) {
+                        if let imageFound = dataFilter.userRef.user.avatar.first {
+                            AsyncImage(url: URL(string: imageFound.url)) { phase in
+                                if let image = phase.image {
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .scaledToFill()
+                                        .clipShape(Circle())
+                                } else if phase.error != nil {
+                                    Image("profil")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .clipShape(Circle())
+                                        .frame(width: 150)
+                                } else {
+                                    ProgressView()
+                                }
+                            }
+                            .frame(width: 150, height: 150)
+                        }
+                        
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "pencil.circle.fill")
+                                .resizable()
+                                .foregroundColor(.marron)
+                                .background(.white)
+                                .clipShape(Circle())
+                                .frame(width: 35, height: 35)
+                                .overlay(Circle()
+                                    .stroke(.white, lineWidth: 2))
+                        }
+                    }.padding(.bottom, 40)
+                }
+            }
+        }.frame(width: 400, height: 250)
+        VStack {
+            
+            ScrollView {
                 VStack{
-                    Button{
-                    } label: {
-                        Image("ProfilPic")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200)
-                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    }
                     
-                    TextField("Nouveau Prénom", text: $data.user.firstName)
-                        .frame(width: 300)
-                        .textFieldStyle(.roundedBorder)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 8)
                     
-                    TextField("Nouveau Nom", text: $data.user.lastName)
-                        .frame(width: 300)
-                        .textFieldStyle(.roundedBorder)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 8)
+                    TextField("Nouveau Prénom", text: $dataFilter.userRef.user.firstName)
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(.beige, lineWidth: 2)
+                                .frame(height: 40)
+                        ).padding(.horizontal)
                     
-                    TextField("Nouvelle adresse mail", text: $data.user.email)
-                        .frame(width: 300)
-                        .textFieldStyle(.roundedBorder)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 8)
+                    TextField("Nouveau Nom", text: $dataFilter.userRef.user.lastName)
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(.beige, lineWidth: 2)
+                                .frame(height: 40)
+                        ).padding(.horizontal)
                     
-                    SecureField("Nouveau mot de passe", text: $data.user.password)
-                        .frame(width: 300)
-                        .textFieldStyle(.roundedBorder)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 8)
+                    TextField("Nouvelle adresse mail", text: $dataFilter.userRef.user.email)
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(.beige, lineWidth: 2)
+                                .frame(height: 40)
+                        ).padding(.horizontal)
                     
-                    TextField("Nouvelle adresse", text: $data.user.adress)
-                        .frame(width: 300)
-                        .textFieldStyle(.roundedBorder)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 8)
+                    SecureField("Nouveau mot de passe", text: $dataFilter.userRef.user.password)
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(.beige, lineWidth: 2)
+                                .frame(height: 40)
+                        ).padding(.horizontal)
+                    
+                    TextField("Nouvelle adresse", text: $dataFilter.userRef.user.adress)
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(.beige, lineWidth: 2)
+                                .frame(height: 40)
+                        ).padding(.horizontal)
                     
                     HStack{
-                        TextField("Code postal", value: $data.user.postalCode, formatter: NumberFormatter())
-                            .frame(width: 146)
-                            .textFieldStyle(.roundedBorder)
-                            .multilineTextAlignment(.center)
-                            .padding([.top, .leading], 8)
+                        TextField("Code postal", value: $dataFilter.userRef.user.postalCode, formatter: NumberFormatter())
+                            .padding()
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .stroke(.beige, lineWidth: 2)
+                                    .frame(height: 40)
+                            ).padding(.horizontal)
                         
-                        TextField("Nouvelle ville", text: $data.user.city)
-                            .frame(width: 146)
-                            .textFieldStyle(.roundedBorder)
-                            .multilineTextAlignment(.center)
-                            .padding([.top, .leading, .trailing], 8)
-                    }
-                    
-                    Button{
-                        
-                    } label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 30)
-                                .foregroundColor(.marron)
-                                .frame(width: 300, height: 50)
-                            Text("Enregistrer les modifications")
-                                .foregroundStyle(.white)
-                                .font(.custom("Italiana", size: 20))
-                        }
-                    }
-                    .padding(8)
-                    
-                    Button{
-                        
-                    } label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 30)
-                                .foregroundColor(.red)
-                                .frame(width: 300, height: 50)
-                            Text("Annuler")
-                                .foregroundStyle(.white)
-                                .font(.custom("Italiana", size: 20))
-                        }
+                        TextField("Nouvelle ville", text: $dataFilter.userRef.user.city)
+                           
+                            .padding()
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .stroke(.beige, lineWidth: 2)
+                                    .frame(height: 40)
+                            ).padding(.horizontal)
                     }
                 }
-                .padding(.bottom, 100)
+                    .font(.custom("Libre Franklin", size: 16))
+
                 
-            }
-            .padding(.top, 100.0)
+                LargeButton(labelButton: "Enregistrer les modifications", colorSelect: .marron)
+                    .padding(.top)
+                LargeButton(labelButton: "Annuler",  colorSelect: .red)
+                    .padding(.bottom)
+            }.padding(.bottom)
+           
         }
-        .environmentObject(data)
+        
+        }
     }
-}
+
 
 #Preview {
     ModifCompteView()
-        .environmentObject(UserAPIRequest())
-        .environmentObject(UserObservable(user: User(firstName: "", avatar: [DataBaseImage](), id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "", transactions: [String]())))
+        .environmentObject(DataFilterModel())
 }

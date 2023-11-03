@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ProfilView: View {
-        
-    @EnvironmentObject var data: UserObservable
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var dataFilter: DataFilterModel
+    
+    @State private var isCardViewPresented = false
     
     var body: some View {
         
@@ -23,17 +25,17 @@ struct ProfilView: View {
                     .ignoresSafeArea()
                     
                     VStack {
-                        Text("Bonjour \(data.user.firstName),")
+                        Text("Bonjour \(dataFilter.userRef.user.firstName),")
                             .font(.custom("Italianno", size: 50))
                             .padding(-10)
-                        
-                        if let imageFound = data.user.avatar.first {
+                        Spacer()
+                        if let imageFound = dataFilter.userRef.user.avatar.first {
                             AsyncImage(url: URL(string: imageFound.url)) { phase in
                                 if let image = phase.image {
                                     image
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .scaledToFit()
+                                        .scaledToFill()
                                         .clipShape(Circle())
                                 } else if phase.error != nil {
                                     Image("profil")
@@ -45,61 +47,87 @@ struct ProfilView: View {
                                     ProgressView()
                                 }
                             }
-                            .frame(width: 150)
-                        }
+                            .frame(width: 150, height: 150)
                         }
                     }
                 }
-                .frame(width: 400, height: 300)
-                
-                List {
-                    NavigationLink(destination: MyCommandsView()) {
-                        Label("Mes commandes", systemImage: "purchased")
-                    }
-                    NavigationLink(destination: ReturnArticleView()) {
-                        Label("Mes retours", systemImage: "arrow.backward.circle")
-                    }
-                    NavigationLink(destination: ModifCompteView()) {
-                        Label("Mes informations", systemImage: "info.circle")
-                    }
-                    NavigationLink(destination: FollowedCreatorView(name: "Chloé Schwarz", entreprise: "Ribambelle", city: "Paris", img: "creatrice")) {
-                        Label("Mes créateurs suivis", systemImage: "person")
-                    }
-                    NavigationLink(destination: NotifParamView()) {
-                        Label("Mes paramètres notifications", systemImage: "bell")
-                    }
-                    NavigationLink(destination: RGPDView()) {
-                        Label("Protection des données", systemImage: "lock.shield")
-                    }
-                    NavigationLink(destination: LangueView()) {
-                        Label("Langue", systemImage: "character.bubble")
-                    }
-                    NavigationLink(destination: AboutView()) {
-                        Label("A propos", systemImage: "questionmark.app")
-                    }
-                    NavigationLink(destination: SupportView()) {
-                        Label("Support", systemImage: "ellipsis.message")
-                    }
-                }.accentColor(.marron)
-                    .navigationBarHidden(true) // Cacher la barre de navigation
-                    .listStyle(InsetGroupedListStyle())
-                    .scrollContentBackground(.hidden)
-                    .foregroundColor(.marron)
-                    .fontWeight(.bold)
-                    .navigationTitle("") // Cacher le titre de la navigation bar
-                    .navigationBarTitleDisplayMode(.inline)
-                
+            }
+            .frame(width: 400, height: 300)
+            
+            Button {
+                isCardViewPresented.toggle()
+            } label: {
+                VStack {
+                    Image(systemName: "creditcard.fill")
+                        .font(.system(size: 30))
+                    Text("Carte de fidélité")
+                        .font(.custom("Libre Franklin", size: 16))
+                }
                 
             }
-            .accentColor(.marron)
-            .environmentObject(data)
+            .sheet(isPresented: $isCardViewPresented) {
+                FidelityView(firstName: dataFilter.userRef.user.firstName, lastName: dataFilter.userRef.user.lastName)
+            }.padding(.vertical, 1)
+            
+            List {
+                if dataFilter.userRef.user.role == "createur" {
+                    NavigationLink(destination: AddArticleView()) {
+                        Label("Ajouter un article", systemImage: "tshirt.circle")
+                    }
+                }
+                NavigationLink(destination: MyCommandsView()) {
+                    Label("Mes commandes", systemImage: "purchased")
+                }
+                NavigationLink(destination: ReturnArticleView()) {
+                    Label("Mes retours", systemImage: "arrow.backward.circle")
+                }
+                NavigationLink(destination: ModifCompteView()) {
+                    Label("Mes informations", systemImage: "info.circle")
+                }
+                NavigationLink(destination: FollowedCreatorView(name: "Chloé Schwarz", entreprise: "Ribambelle", city: "Paris", img: "creatrice")) {
+                    Label("Mes créateurs suivis", systemImage: "person")
+                }
+                NavigationLink(destination: NotifParamView()) {
+                    Label("Mes paramètres notifications", systemImage: "bell")
+                }
+                NavigationLink(destination: RGPDView()) {
+                    Label("Protection des données", systemImage: "lock.shield")
+                }
+                NavigationLink(destination: LangueView()) {
+                    Label("Langue", systemImage: "character.bubble")
+                }
+                NavigationLink(destination: AboutView()) {
+                    Label("A propos", systemImage: "questionmark.app")
+                }
+                NavigationLink(destination: SupportView()) {
+                    Label("Support", systemImage: "ellipsis.message")
+                }
+                
+                Button {
+                    dataFilter.isLogged = false
+                    presentationMode.wrappedValue.dismiss() // Ferme la vue actuelle
+                    
+                }label: {
+                    Label("Deconnexion", systemImage: "xmark.circle")
+                }
+                
+            }.accentColor(.marron)
+                .navigationBarHidden(true) // Cacher la barre de navigation
+                .listStyle(InsetGroupedListStyle())
+                .scrollContentBackground(.hidden)
+                .foregroundColor(.marron)
+                .fontWeight(.bold)
+                .navigationTitle("") // Cacher le titre de la navigation bar
+                .navigationBarTitleDisplayMode(.inline)
+                .font(.custom("Libre Franklin", size: 16))
         }
+        .accentColor(.marron)
     }
-       
+}
+
 
 
 #Preview {
     ProfilView()
-        .environmentObject(UserAPIRequest())
-        .environmentObject(UserObservable(user: User(firstName: "", avatar: [DataBaseImage](), id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "", transactions: [String]())))
+        .environmentObject(DataFilterModel())
 }

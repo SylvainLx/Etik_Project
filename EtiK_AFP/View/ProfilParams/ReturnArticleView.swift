@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ReturnArticleView: View {
+    
+    @EnvironmentObject var dataFilter: DataFilterModel
+
 
     var body: some View {
         NavigationStack {
@@ -16,12 +19,13 @@ struct ReturnArticleView: View {
                     TitleCard(title: "Mes retours")
                       
                     ScrollView {
-                    NavigationLink(destination: CommandDetailView(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")) {
-                        CommandReturnCard(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")
-                    }.foregroundColor(.black)
-                    NavigationLink(destination: CommandDetailView(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 100, statut: "En cours de traitement...")) {
-                        CommandReturnCard(name: "Chemise en Lin", category: "Made in France", type: "Vegan", price: 100, numberOfOrder: 3005643, productSize: "XS", progress: 200, statut: "En cours de livraison...")
-                    }.foregroundColor(.black)
+                        ForEach(dataFilter.productsTransactionRef.transactionToProducts) { product in
+                                NavigationLink(destination: CommandDetailView(name: product.name, category: product.category[0], type: product.collection[0], price: Int(product.price), numberOfOrder: Int(dataFilter.transactionRef.transaction[0].id) ?? 123456, productSize: "XS", progress: 100, statut: "En cours de traitement...", imgUrl: product.photo[0].url)) {
+                                    CommandReturnCard(name: product.name, category: product.category[0], type: product.collection[0], price: Int(product.price), numberOfOrder: Int(dataFilter.transactionRef.transaction[0].id) ?? 123456, productSize: "XS", progress: 100, statut: "En cours de traitement...", imgUrl: product.photo[0].url)
+                                }.foregroundColor(.black)
+                            }
+                        
+                       
                 }
                 .padding(8)
             }

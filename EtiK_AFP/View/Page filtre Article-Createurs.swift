@@ -11,9 +11,7 @@ struct Page_filtre_Article_Createurs: View {
     @State private var message: String?
     @State private var searchText = ""
     
-    @State private var filteredProduits: [String] = ["Apple", "Banana", "Cherry", "Date", "Fig", "Grapes"]
-    
-    @State private var filteredCreateurs: [String] = ["Pomme", "Banane", "Cerise", "Date", "Figue", "Raisin"]
+    @EnvironmentObject var dataFilter: DataFilterModel
     
     let columns1 = [
         GridItem(.flexible(),spacing: 0)
@@ -65,13 +63,13 @@ struct Page_filtre_Article_Createurs: View {
                         ScrollView {
                             LazyVGrid(columns: columns2,spacing: 10) {
                                 
-                                ForEach(filteredProduits.filter {
-                                    searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText)
-                                }, id: \.self) { item in
-                                    // a faire : callAPI BDD Produits
-                                 //   CardProduit(produit: )
-                                    Text("ok")
-                                        .padding(.top, 20)
+                                ForEach(dataFilter.productsRequest.allProducts.filter {
+                                    searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(searchText)
+                                }, id: \.self) { produit in
+                                    NavigationLink(destination: DetailProduit(produit: produit)) {
+                                        CardProduit(produit: produit)
+                                            .padding(.top, 20)
+                                    }
                                 }
                             }
                             
@@ -79,15 +77,14 @@ struct Page_filtre_Article_Createurs: View {
                     else if message == "Créateurs" {
                         ScrollView {
                             LazyVGrid(columns: columns1,spacing: 20) {
-                                
-                                ForEach(filteredCreateurs.filter {
-                                    searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText)
-                                }, id: \.self) { item in
-                                    CreateurFiltre()
-                                        .padding(.top, 20)
+                                    ForEach(dataFilter.creatorRequest.allCreator.filter {
+                                        searchText.isEmpty ? true : $0.firstName.localizedCaseInsensitiveContains(searchText)
+                                    }, id: \.self) { creator in
+                                            CreateurFiltre(creator: creator)
+                                                .padding(.top, 20)
+                                        
+                                    }
                                 }
-                            }
-                            
                         }
                     }
                 }
@@ -99,4 +96,5 @@ struct Page_filtre_Article_Createurs: View {
 }
 #Preview {
     Page_filtre_Article_Createurs()
+        .environmentObject(DataFilterModel())
 }
