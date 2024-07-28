@@ -40,9 +40,6 @@ class UserAPIRequest: ObservableObject {
             decodedUsers.records.forEach { record in
                 resultUser.append(record.fields)
             }
-            resultUser.sort {
-                $0.lastName < $1.lastName
-            }
             
             print(resultUser)
             return resultUser

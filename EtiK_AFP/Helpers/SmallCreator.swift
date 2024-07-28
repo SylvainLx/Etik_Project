@@ -22,7 +22,8 @@ struct SmallCreator: View {
                 Image(img)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 50, height: 50)
+                    .clipShape(Circle())
+                    .frame(width: 70)
             }
         }
     }

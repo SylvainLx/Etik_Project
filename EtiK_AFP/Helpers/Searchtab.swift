@@ -11,6 +11,7 @@ struct SearchBar: View {
     @Binding var searchText: String
 
     var body: some View {
+        
         NavigationStack {
         }
         .searchable(text: $searchText, prompt: "Veuillez taper votre recherche ici")

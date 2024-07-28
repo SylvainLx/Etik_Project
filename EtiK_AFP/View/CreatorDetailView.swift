@@ -9,11 +9,14 @@ import SwiftUI
 
 struct CreatorDetailView: View {
     
+    @EnvironmentObject var productRequest: ProductsAPIRequest
+    
     @State var destination:AnyView?
+    @State var creatorId = "573"
     
     var body: some View {
         NavigationStack {
-             
+            
             VStack {
                 HStack(alignment: .center, spacing: 26) {
                     ZStack {
@@ -22,7 +25,9 @@ struct CreatorDetailView: View {
                             .frame(width: 100, height:100)
                         Image("creatrice")
                             .resizable()
-                            .frame(width: 80, height: 80)
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .frame(width: 80)
                     }
                     VStack {
                         Text("Chloé")
@@ -32,7 +37,7 @@ struct CreatorDetailView: View {
                         StarView(note: 4.6)
                         Text("4.6/5")
                         Text("(121 avis)")
-                        NavigationLink(destination: destination) {
+                        NavigationLink(destination: AvisView()) {
                             Text("Voir les avis")
                         }.foregroundColor(.blue)
                     } .font(.caption)
@@ -44,8 +49,11 @@ struct CreatorDetailView: View {
                 }
                 ScrollView {
                     HStack {
+                        
                         Text("Mon Histoire")
-                            .font(.custom("LibreFranklin", size: 18))
+                            .font(.custom("Italianno", size: 30))
+                            .padding(.vertical, -1)
+                        
                         Spacer()
                         NavigationLink(destination: destination) {
                             Text("En savoir plus")
@@ -54,19 +62,27 @@ struct CreatorDetailView: View {
                         }.foregroundColor(.blue)
                     }.padding()
                     Text("Je m'appelle Chloé Schwarz, et j'ai toujours aimé la mode. Cependant, mon amour pour les animaux et l'environnement m'a poussé à devenir créatrice de vêtements vegan. J'ai cherché des matériaux alternatifs, comme le coton biologique et le lin, pour créer des pièces élégantes sans utiliser de produits d'origine animale. J'ai commencé modestement, en exposant mes créations sur des marchés locaux, mais au fil du temps, ma boutique vegan a prospéré...")
+                        .font(.custom("LibreFranklin", size: 15))
+                        .foregroundStyle(.gray)
+                        .padding(.horizontal)
                         .multilineTextAlignment(.center)
-                        .padding(.horizontal, 16)
-                        .font(.custom("LibreFranklin", size: 10))
+                    
                     HStack {
                         Text("Mes Collections")
-                            .font(.custom("LibreFranklin", size: 18))
+                            .font(.custom("Italianno", size: 30))
+                            .padding(.vertical, -1)
                         Spacer()
                     }
                     .padding(.horizontal)
                     .padding(.top)
                     ScrollView(.horizontal) {
                         HStack {
-                            CardCollection()
+                            NavigationLink(destination: CatalogueView(filtre: creatorId)) {
+                                CardCollection()
+                            }.foregroundColor(.black)
+                                .navigationTitle("")
+                                .navigationBarTitleDisplayMode(.inline)
+                            
                             CardCollection()
                             CardCollection()
                         }.padding()
@@ -74,17 +90,29 @@ struct CreatorDetailView: View {
                     
                     HStack {
                         Text("Mes Produits")
-                            .font(.custom("LibreFranklin", size: 18))
+                            .font(.custom("Italianno", size: 30))
+                            .padding(.vertical, -1)
                         Spacer()
                     }
                     .padding(.horizontal)
-                    ScrollView(.horizontal) {
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
-                            CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
-                            CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin", category: "Made in France", type: "Vegan")
-                        }.padding()
-                    }
+                            
+                            ForEach(productRequest.allProducts) { product in
+                                if product.idFromCreator[0] == creatorId {
+                                    NavigationLink(destination: DetailProduit(produit: product)) {
+                                        CardProduit(produit: product)
+                                    }.navigationTitle("")
+                                        .navigationBarTitleDisplayMode(.inline)
+                                    
+                                }
+                            }
+                            
+                        }.scrollTargetLayout()
+                            .padding()
+                    }.scrollTargetBehavior(.viewAligned)
+                    
                 }
             }
         }
@@ -94,4 +122,5 @@ struct CreatorDetailView: View {
 
 #Preview {
     CreatorDetailView()
+        .environmentObject(ProductsAPIRequest())
 }

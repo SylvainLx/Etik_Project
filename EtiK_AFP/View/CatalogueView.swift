@@ -8,25 +8,45 @@
 import SwiftUI
 
 struct CatalogueView: View {
+    
+    @EnvironmentObject var productRequest: ProductsAPIRequest
+    var filtre:String?
+    
     var body: some View {
         
         
-        Text("Catalogue  ")
-            .font(.custom("Italianno", size: 50))
-            .padding(.vertical, -10)
-            .padding(.leading, 2) 
+        TitleCard(title: "Catalogue  ")
         
         ScrollView(showsIndicators: false) {
             LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
-                ForEach(1...7, id: \.self) { _ in
-                    CardProduit(titre: "Chemise en lin", prix: 80, photo: "lin3", category: "Made in France", type: "Vegan")
-                }
+                ForEach(productRequest.allProducts) { product in
+                    
+                    if product.category[0] == filtre {
+                        NavigationLink(destination: DetailProduit(produit: product)) {
+                            CardProduit(produit: product)
+                        }.navigationTitle("")
+                            .navigationBarTitleDisplayMode(.inline) 
+                        
+                    } else if product.idFromCreator[0] == filtre {
+                        NavigationLink(destination: DetailProduit(produit: product)) {
+                            CardProduit(produit: product)
+                        }
+                            .navigationTitle("")
+                            .navigationBarTitleDisplayMode(.inline)
+                        
+                    }
+                }.foregroundColor(.black)
             }
-        }
+        }.onAppear {
+            Task {
+                productRequest.allProducts = await productRequest.fetchedProducts()
+            }
+        } 
         .padding()
     }
 }
 
 #Preview {
-    CatalogueView()
+    CatalogueView(filtre: "Vegan")
+        .environmentObject(ProductsAPIRequest())
 }

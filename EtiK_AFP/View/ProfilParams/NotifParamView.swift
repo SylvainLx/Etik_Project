@@ -22,17 +22,22 @@ struct NotifParamView: View {
             VStack(spacing: 32) {
                 Toggle(isOn: $newCreator) {
                     Text("Nouveau Créateur")
+                       
                 }
                 Toggle(isOn: $newProduct) {
                     Text("Nouveau produit d'un créateur suivi")
+                        
                 }
                 Toggle(isOn: $commandFollow) {
                     Text("Suivis de commande")
+                       
                 }
                 Toggle(isOn: $eventFollow) {
                     Text("Evènements à venir")
                 }
             }.toggleStyle(SwitchToggleStyle(tint: Color.marron))
+                .font(.custom("Italiana", size: 20))
+
             Spacer()
         }.padding()
     }

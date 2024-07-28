@@ -9,10 +9,13 @@ import SwiftUI
 
 struct FavorisView: View {
     
+    @EnvironmentObject var productRequest: ProductsAPIRequest
+    //    @State var produit: Product
+    
     var body: some View {
         
         NavigationStack {
-             
+            
             Text("Favoris  ")
                 .font(.custom("Italianno", size: 50))
                 .padding(.leading, 2)
@@ -20,15 +23,18 @@ struct FavorisView: View {
             
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                    ForEach(1...7, id: \.self) { _ in
-                        NavigationLink(destination: DetailProduit()) {
-                            CardProduit(titre: "Chemise en lin", prix: 89, photo: "lin", category: "Made in france", type: "Vegan")
-                                .foregroundColor(.black)
+                    ForEach(productRequest.allProducts) { product in
+                        ForEach(productRequest.allProducts) { product in
+                            NavigationLink(destination: DetailProduit(produit: product)) {
+                                CardProduit(produit: product)
+                                    .scrollTransition(.animated) { content, phase in
+                                        content
+                                            .opacity(phase.isIdentity ? 1 : 0.5)
+                                    }
+                            } .navigationTitle("")
+                                .navigationBarTitleDisplayMode(.inline)
                         }
-                            .navigationTitle("")  // Cacher le titre de la navigation bar
-                            .navigationBarTitleDisplayMode(.inline)
-                            
-                            
+                        
                     }
                 }
                 .padding()
@@ -39,4 +45,5 @@ struct FavorisView: View {
 
 #Preview {
     FavorisView()
+        .environmentObject(ProductsAPIRequest())
 }

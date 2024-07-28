@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfilView: View {
+        
+    @EnvironmentObject var data: UserObservable
+    
     var body: some View {
         
         NavigationStack {
@@ -15,21 +18,37 @@ struct ProfilView: View {
             VStack {
                 
                 ZStack {
-                    Circle()
-                        .fill(.beige)
-                        .frame(width: 475, height: 475)
-                        .offset(CGSize(width: 0, height: -200))
+                    RadialGradient(stops: [
+                        .init(color: Color(.beige), location: 0.3),
+                        .init(color: Color(.white), location: 0.3),
+                    ], center: .top, startRadius: 100, endRadius: 600)
+                    .ignoresSafeArea()
                     
                     VStack {
-                        Text("Profil  ")
+                        Text("Profil : ")
                             .font(.custom("Italianno", size: 50))
                             .padding(-10)
                         
-                        Image("profil")
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(Circle())
+                        
+                        if data.user.avatar.isEmpty == false {
+                            AsyncImage(url: URL(string: String(data.user.avatar[0].url))) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .scaledToFit()
+                                    .clipShape(Circle())
+                                
+                            } placeholder: {
+                                Color.gray
+                            }
                             .frame(width: 150)
+                        } else {
+                            Image("profil")
+                               .resizable()
+                               .scaledToFit()
+                               .clipShape(Circle())
+                               .frame(width: 150)
+                        }
                     }
                 }
                 .frame(width: 400, height: 300)
@@ -41,50 +60,46 @@ struct ProfilView: View {
                     NavigationLink(destination: ReturnArticleView()) {
                         Label("Mes retours", systemImage: "arrow.backward.circle")
                     }
-
                     NavigationLink(destination: ModifCompteView()) {
-                        Label("Mes informations", systemImage: "person")
+                        Label("Mes informations", systemImage: "info.circle")
                     }
-
                     NavigationLink(destination: FollowedCreatorView(name: "Chloé Schwarz", entreprise: "Ribambelle", city: "Paris", img: "creatrice")) {
-                        Label("Mes créateurs suivis", systemImage: "person.fill.checkmark")
+                        Label("Mes créateurs suivis", systemImage: "person")
                     }
-
                     NavigationLink(destination: NotifParamView()) {
-                        Label("Mes notifications", systemImage: "bell")
+                        Label("Mes paramètres notifications", systemImage: "bell")
                     }
-
                     NavigationLink(destination: RGPDView()) {
                         Label("Protection des données", systemImage: "lock.shield")
                     }
-                    
                     NavigationLink(destination: LangueView()) {
                         Label("Langue", systemImage: "character.bubble")
                     }
-                    
                     NavigationLink(destination: AboutView()) {
                         Label("A propos", systemImage: "questionmark.app")
                     }
-
                     NavigationLink(destination: SupportView()) {
                         Label("Support", systemImage: "ellipsis.message")
                     }
-                    
                 }.accentColor(.marron)
-                .navigationBarHidden(true) // Cacher la barre de navigation
-                .listStyle(InsetGroupedListStyle())
-                .scrollContentBackground(.hidden)
-                .foregroundColor(.marron)
-                .fontWeight(.bold)
-                .navigationTitle("") // Cacher le titre de la navigation bar
-                .navigationBarTitleDisplayMode(.inline) 
-               
-               
+                    .navigationBarHidden(true) // Cacher la barre de navigation
+                    .listStyle(InsetGroupedListStyle())
+                    .scrollContentBackground(.hidden)
+                    .foregroundColor(.marron)
+                    .fontWeight(.bold)
+                    .navigationTitle("") // Cacher le titre de la navigation bar
+                    .navigationBarTitleDisplayMode(.inline)
+                
+                
             }
         }.accentColor(.marron)
+            .environmentObject(data)
     }
+       
 }
 
 #Preview {
     ProfilView()
+        .environmentObject(UserAPIRequest())
+        .environmentObject(UserObservable(user: User(firstName: "", id: "", lastName: "", email: "", phone: "", adress: "", postalCode: 0, city: "", password: "")))
 }

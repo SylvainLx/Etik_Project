@@ -6,23 +6,27 @@
 //
 
 // MARK: - DataBaseImage
-struct DataBaseImage: Codable {
+struct DataBaseImage: Codable, Identifiable {
     let id: String
-    let width, height: Int
+    let width: Int
+    let height: Int
     let url: String
     let filename: String
     let size: Int
     let type: String
-    let thumbnails: Thumbails
+    let thumbnails: Thumbails?
 }
 
 // MARK: - Thumbnails
 struct Thumbails: Codable {
-    let small, large, full: Full
+    let small: Full
+        let large: Full
+        let full: Full
 }
 
 // MARK: - Full
 struct Full: Codable {
     let url: String
-    let width, height: Int
+    let width: Int
+let height: Int
 }

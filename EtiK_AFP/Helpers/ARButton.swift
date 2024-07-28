@@ -20,8 +20,12 @@ struct ARButton: View {
                     .frame(width: 75, height: 40)
                 .foregroundColor(.white)
                 
-                Text("Tester en AR")
-                    .font(.custom("LibreFranklin", size: 10))
+                    HStack {
+                        Image(systemName: "eye")
+                            .font(.custom("LibreFranklin", size: 10))
+                        Text("AR")
+                            .font(.custom("LibreFranklin", size: 10))
+                    }
                 }
             }).foregroundColor(.black)
            

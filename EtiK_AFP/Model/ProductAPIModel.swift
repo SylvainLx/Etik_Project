@@ -14,30 +14,22 @@ struct ProductRecord: Codable {
 }
 
 // MARK: - Product
-struct Product: Codable {
-    let idProduit: Int
-    let idCréateur: [String]
-    let nom: String
+struct Product: Codable, Identifiable {
+    let id: String
+    let name: String
     let photo: [DataBaseImage]
     let description: String
-    let catégories: [String]
-    let prix: Double
-    let tailles: [String]
-    let quantitéDispo: Int
-    let collection, transactions2, idFromIDCréateur: [String]
-
+    let category: [String]
+    let price: Double
+    let sizes: [String]
+    let quantity: Int
+    let collection, transactions2, creator, idFromCreator: [String]
+    
     enum CodingKeys: String, CodingKey {
-        case idProduit = "ID Produit"
-        case idCréateur = "ID Créateur"
-        case nom = "Nom"
-        case photo = "Photo"
-        case description = "Description"
-        case catégories = "Catégories"
-        case prix = "Prix"
-        case tailles = "Tailles"
-        case quantitéDispo = "Quantité dispo"
-        case collection = "Collection"
+        case id = "ID Produit"
+        case name, photo, description, category, price, sizes, quantity, collection
         case transactions2 = "Transactions 2"
-        case idFromIDCréateur = "id (from ID Créateur)"
+        case creator = "Creator"
+        case idFromCreator = "id (from Creator)"
     }
 }

@@ -47,7 +47,7 @@ struct PanierView: View {
                     .scrollContentBackground(.hidden)
                     .listStyle(PlainListStyle())
                     
-                    var totalPrice: Double = articles.reduce(0) { $0 + $1.price }
+                    let totalPrice: Double = articles.reduce(0) { $0 + $1.price }
                     
                     HStack {
                         
@@ -60,7 +60,7 @@ struct PanierView: View {
                         } label: {
                             Image(systemName: "checkmark.circle.fill")
                                 .foregroundColor(.beige)
-                                .font(.system(size: 40))
+                                .font(.system(size: 30))
                         }
                         
                     }.padding(.horizontal)

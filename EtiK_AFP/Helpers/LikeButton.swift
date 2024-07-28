@@ -21,7 +21,7 @@ struct LikeButton: View {
             }, label: {
                 Image(systemName: isLiked ? "heart.fill" : "heart")
                     .resizable()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 18, height: 16)
                     .foregroundColor(.red)
             })
         }

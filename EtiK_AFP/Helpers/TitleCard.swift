@@ -15,7 +15,7 @@ struct TitleCard: View {
         Text(title)
             .font(.custom("Italianno", size: 50))
             .padding(.top, -50)
-            .padding(.bottom)
+            .padding(.bottom, 1)
             .frame(width: 300)
             .multilineTextAlignment(.center)
     }
